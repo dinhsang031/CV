@@ -19,7 +19,7 @@
             color: #00FFFF; /* Electric Cyan accent for titles */
             font-weight: 700;
             text-align: center;
-            text-transform: uppercase;
+            text-transform: uppercase; /* Keep uppercase for display */
             letter-spacing: 0.1em;
             padding-bottom: 1rem;
             border-bottom: 2px solid #00FFFF; /* Electric Cyan accent */
@@ -37,12 +37,30 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            height: 100%; /* Ensure card fills its container's height */
         }
+        /* Project card specific styles for clickable area */
+        .project-card-link-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Ensure link covers full card height */
+            text-decoration: none; /* Remove underline from link by default */
+            color: inherit; /* Inherit text color */
+        }
+
         .card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
             border-color: #00FFFF;
         }
+        /* Hover for project cards that are links */
+        .project-card-link-wrapper:hover .card {
+            border-color: #00FFFF; /* Highlight border on hover */
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
         .skill-badge {
             background-color: #34495E; /* Darker blue-grey for skills */
             color: #82E0FF; /* Lighter blue for contrast */
@@ -143,15 +161,15 @@
             box-shadow: 0 4px 8px rgba(0, 255, 255, 0.4);
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease; /* Added background-color transition */
+            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
             z-index: 1000;
         }
         #back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-        #back-to-top:hover { /* Hover effect for back-to-top button */
-            background-color: #00C0FF; /* Darker blue on hover */
+        #back-to-top:hover {
+            background-color: #00C0FF;
         }
 
         /* Language toggle button styles */
@@ -159,26 +177,35 @@
             position: fixed;
             bottom: 20px;
             left: 20px;
-            background-color: #00FFFF; /* Electric Cyan accent */
-            color: #121212; /* Dark text for contrast */
+            background-color: #00FFFF;
+            color: #121212;
             padding: 10px 15px;
             border-radius: 8px;
             cursor: pointer;
-            border: 1px solid #00FFFF; /* Border matches background */
+            border: 1px solid #00FFFF;
             font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3); /* Shadow matches accent */
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
             z-index: 1000;
         }
         #language-toggle:hover {
-            background-color: #00C0FF; /* Brighter Blue on hover */
-            color: #121212; /* Keep text dark for contrast */
-            border-color: #00C0FF; /* Border matches new background */
+            background-color: #00C0FF;
+            color: #121212;
+            border-color: #00C0FF;
         }
 
         /* Added min-height for the typing headline to ensure space */
         #typing-headline {
             min-height: 48px; /* Approx height for text-4xl */
+        }
+
+        /* Project content wrapper to allow flexibility for equal height */
+        .project-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to top */
+            min-height: 0; /* Allow content to shrink if needed */
         }
     </style>
 </head>
@@ -315,8 +342,9 @@
                 DỰ ÁN NỔI BẬT
             </h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- HR Dashboards Development - NOT CLICKABLE -->
                 <div class="card p-8">
-                    <div>
+                    <div class="project-content">
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="hrDashboardsTitle">Phát triển HR Dashboards cho Tập đoàn gồm 20 công ty con</h4>
                         <p class="project-description" style="color: #B0B0B0;" data-lang-key="hrDashboardsDesc">Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo, cung cấp các insight quan trọng để quản lý nguồn nhân lực hiệu quả trên nhiều đơn vị.</p>
                     </div>
@@ -326,29 +354,37 @@
                         <span class="skill-badge" data-lang-key="tagSQL">SQL</span>
                     </div>
                 </div>
-                <div class="card p-8">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="turnoverPredictionTitle">Mô hình Dự đoán Tỷ lệ nghỉ việc của nhân viên</h4>
-                        <p class="project-description" style="color: #B0B0B0;" data-lang-key="turnoverPredictionDesc">Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc của nhân viên và xác định các lý do chính gây ra sự biến động. Đạt độ chính xác mô hình 86%, giảm tỷ lệ nghỉ việc từ 25% xuống 17% bằng cách giải quyết các yếu tố đã xác định.</p>
+
+                <!-- Employee Turnover Prediction Model - CLICKABLE -->
+                <a href="https://github.com/dinhsang031/Employee_Attrition_Predictor" target="_blank" class="project-card-link-wrapper">
+                    <div class="card p-8">
+                        <div class="project-content">
+                            <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="turnoverPredictionTitle">Mô hình Dự đoán Tỷ lệ nghỉ việc của nhân viên</h4>
+                            <p class="project-description" style="color: #B0B0B0;" data-lang-key="turnoverPredictionDesc">Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc của nhân viên và xác định các lý do chính gây ra sự biến động. Đạt độ chính xác mô hình 86%, giảm tỷ lệ nghỉ việc từ 25% xuống 17% bằng cách giải quyết các yếu tố đã xác định.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                            <span class="skill-badge" data-lang-key="tagML">Machine Learning</span>
+                            <span class="skill-badge" data-lang-key="tagPython">Python</span>
+                            <span class="skill-badge" data-lang-key="tagPredictiveAnalytics">Phân tích Dự đoán</span>
+                        </div>
                     </div>
-                    <div class="flex flex-wrap gap-2 mt-4 justify-center">
-                        <span class="skill-badge" data-lang-key="tagML">Machine Learning</span>
-                        <span class="skill-badge" data-lang-key="tagPython">Python</span>
-                        <span class="skill-badge" data-lang-key="tagPredictiveAnalytics">Phân tích Dự đoán</span>
+                </a>
+
+                <!-- AI CV Screening System - CLICKABLE -->
+                <a href="https://github.com/dinhsang031/AI-HR-CV-Scan" target="_blank" class="project-card-link-wrapper">
+                    <div class="card p-8">
+                        <div class="project-content">
+                            <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="aiCVScreeningTitle">Hệ thống Sàng lọc CV bằng AI</h4>
+                            <p class="project-description" style="color: #B0B0B0;" data-lang-key="aiCVScreeningDesc">Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc. Đạt độ chính xác trích xuất dữ liệu 90%, giảm đáng kể thời gian sàng lọc thủ công 90%.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 justify-center">
+                            <span class="skill-badge" data-lang-key="tagAI">AI</span>
+                            <span class="skill-badge" data-lang-key="tagAutomation">Tự động hóa</span>
+                            <span class="skill-badge" data-lang-key="tagPython">Python</span>
+                            <span class="skill-badge" data-lang-key="tagN8N">n8n</span>
+                        </div>
                     </div>
-                </div>
-                <div class="card p-8">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="aiCVScreeningTitle">Hệ thống Sàng lọc CV bằng AI</h4>
-                        <p class="project-description" style="color: #B0B0B0;" data-lang-key="aiCVScreeningDesc">Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc. Đạt độ chính xác trích xuất dữ liệu 90%, giảm đáng kể thời gian sàng lọc thủ công 90%.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-4 justify-center">
-                        <span class="skill-badge" data-lang-key="tagAI">AI</span>
-                        <span class="skill-badge" data-lang-key="tagAutomation">Tự động hóa</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge" data-lang-key="tagN8N">n8n</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -499,21 +535,21 @@
             "linkedinBtn": { "vi": "LinkedIn", "en": "LinkedIn" },
             "portfolioBtn": { "vi": "Portfolio (GitHub)", "en": "Portfolio (GitHub)" },
 
-            "summaryTitle": { "vi": "TÓM TẮT", "en": "SUMMARY" },
+            "summaryTitle": { "vi": "Tóm tắt", "en": "Summary" }, // Changed to sentence case
             "summaryParagraph": {
                 "vi": "Tôi là một chuyên gia phân tích dữ liệu được chứng nhận với 3 năm kinh nghiệm trong ngành nhân sự và F&B. Tôi đã góp phần giảm 25% thời gian thu thập và phân tích dữ liệu thông qua việc cập nhật các quy trình streaming. Kỹ năng vượt trội của tôi nằm ở trực quan hóa dữ liệu, học máy (ML) và quản lý dự án. Tôi cam kết biến dữ liệu thô thành những insight giá trị, hỗ trợ các quyết định chiến lược hiệu quả.",
                 "en": "I am a Certified D.A. with 3 years of experience serving HR and F&B industries. My achievements include updating data streaming processes for a 25% reduction in redundancy. I am highly-skilled in data visualization, ML & project management. I am committed to transforming raw data into valuable insights, supporting effective strategic decisions."
             },
 
-            "experienceTitle": { "vi": "KINH NGHIỆM LÀM VIỆC", "en": "WORK EXPERIENCE" },
+            "experienceTitle": { "vi": "Kinh nghiệm làm việc", "en": "Work Experience" }, // Changed to sentence case
             "kimTinTitle": { "vi": "Data Analyst - KIM TIN GROUP", "en": "Data Analyst - KIM TIN GROUP" },
             "kimTinDuration": { "vi": "Tháng 8/2023 - Hiện tại | Hồ Chí Minh, Việt Nam", "en": "Aug, 2023 - current | Ho Chi Minh City, Vietnam" },
-            "kimTinDesc1": { "vi": "Thiết kế Dashboard (20%): Phát triển các dashboard HR toàn diện sử dụng Power BI cho Tuyển dụng, Lương, Phúc lợi và Đào tạo, bao gồm dữ liệu cho 3K5 nhân viên trên 20 công ty con. Giảm 40% thời gian báo cáo.", "en": "Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%." },
+            "kimTinDesc1": { "vi": "Dashboard Design (20%): Phát triển các dashboard HR toàn diện sử dụng Power BI cho Tuyển dụng, Lương, Phúc lợi và Đào tạo, bao gồm dữ liệu cho 3K5 nhân viên trên 20 công ty con. Giảm 40% thời gian báo cáo.", "en": "Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%." },
             "kimTinDesc2": { "vi": "Phân tích Ad-Hoc (30%): Áp dụng Python để phân tích ad-hoc động và phát triển mô hình học máy tiết lộ các insight quan trọng cho việc ra quyết định chiến lược về HR, được trình bày trước Hội đồng quản trị.", "en": "Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors." },
             "kimTinDesc3": { "vi": "Phát triển Giải pháp Dữ liệu (20%): Phát triển các giải pháp dữ liệu tích hợp sử dụng App Sheet, App Script, Forms, n8n. Bao gồm các ứng dụng HR tùy chỉnh, hợp lý hóa thu thập dữ liệu, tiên phong áp dụng công nghệ AI và tự động hóa trong các phòng ban HR để nâng cao 30% hiệu quả hoạt động và insight dựa trên dữ liệu.", "en": "Data Solutions Development (20%): Developed integrated data solutions using App Sheet, App Script, Forms, n8n. Included custom HR apps, streamlined data collection, spearheaded the application of AI and automation technologies within the HR depts in group to enhance 30% operational efficiency and data-driven insights." },
             "kimTinDesc4": { "vi": "Tích hợp Dữ liệu (10%): Hợp nhất dữ liệu HR từ nhiều nguồn khác nhau (API, ERP, Sheets, Web Scraping dựa trên Python) vào một cơ sở dữ liệu tập trung, nâng cao độ chính xác dữ liệu lên 25%.", "en": "Data Integration (10%): Consolidated HR data from various sources (API, ERP, Sheets, Python-based Web Scraping) into a centralized database, enhancing data accuracy by 25%." },
             "kimTinDesc5": { "vi": "Đối tác Phân tích Dữ liệu (Ngoài HR) (10%): Đóng vai trò đối tác phân tích dữ liệu bằng cách phân tích các chỉ số hiệu suất & hoạt động, giải pháp dữ liệu để xác định các cơ hội cải tiến chiến lược.", "en": "Data Analysis Partner (Non-HR) (10%): Served as a data analysis partner by analyzing performance & operational metrics, data solution to identify strategic improvement opportunities." },
-            "kimTinDesc6": { "vi": "Đào tạo và Hỗ trợ (10%): Tổ chức các khóa đào tạo Dashboard hiệu quả cho người dùng cuối và các bên liên quan, phát triển và triển khai các chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Dữ liệu, nâng cao khả năng phân tích và khả năng tự phục vụ dữ liệu của người dùng.", "en": "Training and Support (10%): Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization." },
+            "kimTinDesc6": { "vi": "Đào tạo và Hỗ trợ (10%): Tổ chức các khóa đào tạo Dashboard hiệu quả cho người dùng cuối và các bên liên quan, phát triển và triển khai các chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Dữ liệu, nâng cao khả năng phân tích và khả năng tự phục vụ dữ liệu của người dùng.", "en": "Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization." },
             "novaFnBTitle": { "vi": "Data Analyst - NOVA FnB", "en": "Data Analyst - NOVA FnB" },
             "novaFnBDuration": { "vi": "Tháng 8/2022 - Tháng 9/2023 (1 năm 2 tháng) | Hồ Chí Minh, Việt Nam", "en": "August 2022 - September 2023 (1 year 2 months) | Ho Chi Minh City Metropolitan Area" },
             "novaFnBDesc1": { "vi": "Xử lý dữ liệu, mô hình hóa dữ liệu, tạo scorecard và báo cáo, thiết kế dashboard.", "en": "Data Handling, Data Modeling, Scorecard and Reporting, Dashboard Creation." },
@@ -528,24 +564,24 @@
             "freelancerDuration": { "vi": "Tháng 1/2017 - Tháng 2/2020 (3 năm 2 tháng) | Đà Nẵng, Việt Nam", "en": "January 2017 - February 2020 (3 years 2 months) | Da Nang City, Vietnam" },
             "freelancerDesc1": { "vi": "Hướng dẫn viên du lịch tự do.", "en": "Freelance tour guide." },
 
-            "projectsTitle": { "vi": "DỰ ÁN NỔI BẬT", "en": "KEY PROJECTS" },
+            "projectsTitle": { "vi": "Dự án nổi bật", "en": "Key Projects" }, // Changed to sentence case
             "hrDashboardsTitle": { "vi": "Phát triển HR Dashboards cho Tập đoàn gồm 20 công ty con", "en": "HR Dashboards Development for Group of 20 Subsidiaries" },
             "hrDashboardsDesc": { "vi": "Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo, cung cấp các insight quan trọng để quản lý nguồn nhân lực hiệu quả trên nhiều đơn vị.", "en": "Designed and implemented comprehensive HR dashboards covering Recruitment, Payroll, Benefit & Training data, providing critical insights for efficient human resource management across multiple entities." },
-            "turnoverPredictionTitle": { "vi": "Mô hình Dự đoán Tỷ lệ nghỉ việc của nhân viên", "en": "Employee Turnover Prediction Model" },
+            "turnoverPredictionTitle": { "vi": "Mô hình dự đoán tỷ lệ nghỉ việc của nhân viên", "en": "Employee Turnover Prediction Model" }, // Changed to sentence case
             "turnoverPredictionDesc": { "vi": "Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc của nhân viên và xác định các lý do chính gây ra sự biến động. Đạt độ chính xác mô hình 86%, giảm tỷ lệ nghỉ việc từ 25% xuống 17% bằng cách giải quyết các yếu tố đã xác định.", "en": "Developed a Machine Learning model to predict employee turnover and identify key reasons for attrition. Achieved 86% model accuracy, reducing turnover from 25% to 17% by addressing identified factors." },
-            "aiCVScreeningTitle": { "vi": "Hệ thống Sàng lọc CV bằng AI", "en": "AI CV Screening System" },
+            "aiCVScreeningTitle": { "vi": "Hệ thống sàng lọc CV bằng AI", "en": "AI CV Screening System" }, // Changed to sentence case
             "aiCVScreeningDesc": { "vi": "Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc. Đạt độ chính xác trích xuất dữ liệu 90%, giảm đáng kể thời gian sàng lọc thủ công 90%.", "en": "Developed an AI system to automate CV extraction and candidate analysis against job requirements. Achieved 90% data extraction accuracy, significantly reducing manual screening time by 90%." },
 
-            "skillsTitle": { "vi": "KỸ NĂNG", "en": "SKILLS" },
+            "skillsTitle": { "vi": "Kỹ năng", "en": "Skills" }, // Changed to sentence case
             "keySkillsTitle": { "vi": "Kỹ năng chính", "en": "Key Skills" },
             "skillDataViz": { "vi": "Trực quan hóa dữ liệu", "en": "Data Visualization" },
-            "skillDataManipulation": { "vi": "Thao tác Dữ liệu", "en": "Data Manipulation" },
+            "skillDataManipulation": { "vi": "Thao tác dữ liệu", "en": "Data Manipulation" }, // Changed to sentence case
             "skillPresentation": { "vi": "Thuyết trình", "en": "Presentation" },
             "skillInterpersonal": { "vi": "Giao tiếp cá nhân", "en": "Interpersonal" },
             "skillResearch": { "vi": "Nghiên cứu", "en": "Research" },
             "skillProjectManagement": { "vi": "Quản lý dự án", "en": "Project Management" },
-            "skillStorytelling": { "vi": "Kể chuyện bằng Dữ liệu", "en": "Storytelling with Data" },
-            "skillAnalyticalThinking": { "vi": "Tư duy Phân tích", "en": "Analytical Thinking" },
+            "skillStorytelling": { "vi": "Kể chuyện bằng dữ liệu", "en": "Storytelling with Data" }, // Changed to sentence case
+            "skillAnalyticalThinking": { "vi": "Tư duy phân tích", "en": "Analytical Thinking" }, // Changed to sentence case
             "technicalSkillsTitle": { "vi": "Kỹ năng kỹ thuật", "en": "Technical Skills" },
             "skillPowerBI": { "vi": "Power BI", "en": "Power BI" },
             "skillPostgreSQL": { "vi": "Postgre SQL", "en": "Postgre SQL" },
@@ -556,16 +592,16 @@
             "skillStatistics": { "vi": "Thống kê", "en": "Statistics" },
             "skillAIAutomation": { "vi": "AI & Tự động hóa", "en": "AI & Automation" },
             "tagPowerBI": { "vi": "Power BI", "en": "Power BI" },
-            "tagDataViz": { "vi": "Trực quan hóa Dữ liệu", "en": "Data Visualization" },
+            "tagDataViz": { "vi": "Trực quan hóa dữ liệu", "en": "Data Visualization" },
             "tagSQL": { "vi": "SQL", "en": "SQL" },
             "tagML": { "vi": "Machine Learning", "en": "Machine Learning" },
             "tagPython": { "vi": "Python", "en": "Python" },
-            "tagPredictiveAnalytics": { "vi": "Phân tích Dự đoán", "en": "Predictive Analytics" },
+            "tagPredictiveAnalytics": { "vi": "Phân tích dự đoán", "en": "Predictive Analytics" }, // Changed to sentence case
             "tagAI": { "vi": "AI", "en": "AI" },
             "tagAutomation": { "vi": "Tự động hóa", "en": "Automation" },
             "tagN8N": { "vi": "n8n", "en": "n8n" },
 
-            "certificationsTitle": { "vi": "CHỨNG CHỈ", "en": "CERTIFICATIONS" },
+            "certificationsTitle": { "vi": "Chứng chỉ", "en": "Certifications" }, // Changed to sentence case
             "certBI": { "vi": "Business Intelligence by Coursera - Google", "en": "Business Intelligence by Coursera - Google" },
             "certBIDate": { "vi": "Tháng 7 - 2023", "en": "July - 2023" },
             "certDA": { "vi": "Data Analytic Professional Certificate by Coursera - Google", "en": "Data Analytic Professional Certificate by Coursera - Google" },
@@ -577,12 +613,12 @@
             "certTOEIC": { "vi": "TOEIC 750 - IIG Vietnam", "en": "TOEIC 750 - IIG Vietnam" },
             "certTOEICDate": { "vi": "Tháng 4 - 2017", "en": "April - 2017" },
 
-            "educationTitle": { "vi": "HỌC VẤN", "en": "EDUCATION" },
+            "educationTitle": { "vi": "Học vấn", "en": "Education" }, // Changed to sentence case
             "eduDegree": { "vi": "Cử nhân Quản trị Dịch vụ Du lịch và Lữ hành", "en": "Bachelor's Degree, Tourism and Travel Services Management" },
             "eduUniversity": { "vi": "Đại học Kinh tế - Đại học Đà Nẵng", "en": "University of Economics - The University of Danang" },
             "eduDuration": { "vi": "Tháng 10/2012 - Tháng 1/2017", "en": "October 2012 - January 2017" },
 
-            "contactTitle": { "vi": "LIÊN HỆ VỚI TÔI", "en": "CONTACT ME" },
+            "contactTitle": { "vi": "Liên hệ với tôi", "en": "Contact Me" }, // Changed to sentence case
             "contactParagraph": { "vi": "Tôi luôn sẵn lòng kết nối và khám phá những cơ hội mới!", "en": "I'm always open to connecting and exploring new opportunities!" },
             "contactEmail": { "vi": "dinhsang031@gmail.com", "en": "dinhsang031@gmail.com" },
             "contactPhone": { "vi": "+84935764976", "en": "+84935764976" },
@@ -629,7 +665,9 @@
         function initTypingEffect(textToType) {
             const headlineElement = document.getElementById('typing-headline');
             if (headlineElement) {
-                headlineElement.textContent = ""; // Clear existing text
+                // Set the initial text immediately for visibility
+                headlineElement.textContent = textToType;
+
                 let i = 0;
                 const typingSpeed = 70; // milliseconds per character
 
@@ -638,13 +676,15 @@
                     clearTimeout(headlineElement.typingTimeout);
                 }
 
+                // Only start typing if the element is visible (not just cleared)
+                // Clear content first, then type for the animation effect
+                headlineElement.textContent = "";
                 function typeWriter() {
                     if (i < textToType.length) {
                         headlineElement.innerHTML += textToType.charAt(i);
                         i++;
                         headlineElement.typingTimeout = setTimeout(typeWriter, typingSpeed);
                     } else {
-                        // Animation complete, optionally clear timeout reference
                         delete headlineElement.typingTimeout;
                     }
                 }
