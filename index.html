@@ -125,6 +125,7 @@
             fill: currentColor;
         }
 
+        /* Back-to-top button styles */
         #back-to-top {
             position: fixed;
             bottom: 20px;
@@ -168,6 +169,11 @@
             background-color: #363640;
             color: #00C0FF;
         }
+
+        /* Added min-height for the typing headline to ensure space */
+        #typing-headline {
+            min-height: 48px; /* Approx height for text-4xl */
+        }
     </style>
 </head>
 <body class="antialiased leading-normal tracking-tight">
@@ -191,7 +197,8 @@
     <!-- Hero Section -->
     <section id="about" class="bg-gradient-to-r from-blue-900 to-gray-900 text-white py-20 px-4 animate-fade-in">
         <div class="container mx-auto text-center">
-            <h2 id="typing-headline" class="text-4xl font-extrabold mb-4 text-white">Data Analytics | Business Intelligence Analyst</h2>
+            <!-- Typing effect headline - text populated by JS -->
+            <h2 id="typing-headline" class="text-4xl font-extrabold mb-4 text-white" data-lang-key="heroHeadline"></h2>
             <p class="text-xl mb-8 opacity-90" data-lang-key="heroParagraph">Chứng nhận D.A. với 3 năm kinh nghiệm trong ngành HR và F&B. Luôn hướng đến việc chuyển đổi dữ liệu thành các quyết định chiến lược.</p>
             <div class="flex justify-center space-x-4">
                 <a href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" class="btn-primary flex items-center">
@@ -215,7 +222,7 @@
             </h3>
             <div class="card p-8 text-center">
                 <p class="text-lg leading-relaxed" style="color: #B0B0B0;" data-lang-key="summaryParagraph">
-                    Tôi là một chuyên gia phân tích dữ liệu được chứng nhận với 3 năm kinh nghiệm trong ngành nhân sự và F&B. Tôi đã góp phần giảm 25% sự dư thừa dữ liệu thông qua việc cập nhật các quy trình streaming. Kỹ năng vượt trội của tôi nằm ở trực quan hóa dữ liệu, học máy (ML) và quản lý dự án. Tôi cam kết biến dữ liệu thô thành những insight giá trị, hỗ trợ các quyết định chiến lược hiệu quả.
+                    Tôi là một chuyên gia phân tích dữ liệu được chứng nhận với 3 năm kinh nghiệm trong ngành nhân sự và F&B. Tôi đã góp phần giảm 25% thời gian thu thập và phân tích dữ liệu thông qua việc cập nhật các quy trình streaming. Kỹ năng vượt trội của tôi nằm ở trực quan hóa dữ liệu, học máy (ML) và quản lý dự án. Tôi cam kết biến dữ liệu thô thành những insight giá trị, hỗ trợ các quyết định chiến lược hiệu quả.
                 </p>
             </div>
         </div>
@@ -234,14 +241,14 @@
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="kimTinTitle">Data Analyst - KIM TIN GROUP</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="kimTinDuration">Tháng 8/2023 - Hiện tại | Hồ Chí Minh, Việt Nam</p>
+                        <p class="text-gray-400 mb-4" data-lang-key="kimTinDuration">Aug, 2023 - current | Ho Chi Minh City, Vietnam</p>
                         <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="kimTinDesc1">Thiết kế <strong>dashboard HR toàn diện</strong> bằng Power BI cho Tuyển dụng, Lương thưởng, Phúc lợi và Đào tạo, phục vụ 3.500 nhân viên ở 20 công ty con, giảm 40% thời gian báo cáo.</li>
-                            <li data-lang-key="kimTinDesc2">Áp dụng Python để thực hiện <strong>phân tích ad-hoc động</strong> và phát triển mô hình Machine Learning, đưa ra các insight then chốt cho quyết định chiến lược HR, trình bày trước Ban Giám đốc.</li>
-                            <li data-lang-key="kimTinDesc3">Phát triển <strong>giải pháp dữ liệu tích hợp</strong> bằng App Sheet, App Script, Forms, n8n, bao gồm các ứng dụng HR tùy chỉnh, hợp lý hóa thu thập dữ liệu và tiên phong ứng dụng công nghệ AI & tự động hóa trong các phòng ban HR để tăng 30% hiệu quả hoạt động và insight dựa trên dữ liệu.</li>
-                            <li data-lang-key="kimTinDesc4">Hợp nhất dữ liệu HR từ nhiều nguồn (API, ERP, Sheets, Web Scraping bằng Python) vào <strong>cơ sở dữ liệu tập trung</strong>, nâng cao độ chính xác dữ liệu 25%.</li>
-                            <li data-lang-key="kimTinDesc5">Hỗ trợ phân tích dữ liệu cho các bộ phận ngoài HR, phân tích chỉ số hiệu suất & hoạt động, đưa ra giải pháp dữ liệu để xác định cơ hội cải tiến chiến lược.</li>
-                            <li data-lang-key="kimTinDesc6">Tổ chức các buổi <strong>đào tạo Dashboard hiệu quả</strong> cho người dùng cuối và các bên liên quan, phát triển & triển khai chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Data, nâng cao năng lực phân tích và khả năng tự phục vụ dữ liệu của người dùng.</li>
+                            <li data-lang-key="kimTinDesc1">Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%.</li>
+                            <li data-lang-key="kimTinDesc2">Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors.</li>
+                            <li data-lang-key="kimTinDesc3">Data Solutions Development (20%): Developed integrated data solutions using App Sheet, App Script, Forms, n8n. Included custom HR apps, streamlined data collection, spearheaded the application of AI and automation technologies within the HR depts in group to enhance 30% operational efficiency and data-driven insights.</li>
+                            <li data-lang-key="kimTinDesc4">Data Integration (10%): Consolidated HR data from various sources (API, ERP, Sheets, Python-based Web Scraping) into a centralized database, enhancing data accuracy by 25%.</li>
+                            <li data-lang-key="kimTinDesc5">Data Analysis Partner (Non-HR) (10%): Served as a data analysis partner by analyzing performance & operational metrics, data solution to identify strategic improvement opportunities.</li>
+                            <li data-lang-key="kimTinDesc6">Training and Support (10%): Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization.</li>
                         </ul>
                     </div>
                 </div>
@@ -250,7 +257,7 @@
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="novaFnBTitle">Data Analyst - NOVA FnB</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="novaFnBDuration">Tháng 8/2022 - Tháng 9/2023 (1 năm 2 tháng) | Hồ Chí Minh, Việt Nam</p>
+                        <p class="text-gray-400 mb-4" data-lang-key="novaFnBDuration">Tháng 8/2022 - Tháng 9/2023 | Hồ Chí Minh, Việt Nam</p>
                         <ul class="list-disc list-inside" style="color: #B0B0B0;">
                             <li data-lang-key="novaFnBDesc1">Xử lý dữ liệu, mô hình hóa dữ liệu, tạo scorecard và báo cáo, thiết kế dashboard.</li>
                             <li data-lang-key="novaFnBDesc2">Thực hiện các phân tích ad-hoc theo yêu cầu.</li>
@@ -262,7 +269,7 @@
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="sebangTitle">B2B Area Sales Officer - Sebang Global Battery Co Ltd</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="sebangDuration">Tháng 6/2021 - Tháng 5/2022 (1 năm) | Việt Nam</p>
+                        <p class="text-gray-400 mb-4" data-lang-key="sebangDuration">Tháng 6/2021 - Tháng 5/2022 | Việt Nam</p>
                         <ul class="list-disc list-inside" style="color: #B0B0B0;">
                             <li data-lang-key="sebangDesc1">Hỗ trợ kinh doanh và phát triển thị trường B2B.</li>
                         </ul>
@@ -273,7 +280,7 @@
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="sunWorldTitle">Training Assistant - Sun World Group</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="sunWorldDuration">Tháng 5/2020 - Tháng 3/2021 (11 tháng) | Đà Nẵng, Việt Nam</p>
+                        <p class="text-gray-400 mb-4" data-lang-key="sunWorldDuration">Tháng 5/2020 - Tháng 3/2021 | Đà Nẵng, Việt Nam</p>
                         <ul class="list-disc list-inside" style="color: #B0B0B0;">
                             <li data-lang-key="sunWorldDesc1">Hỗ trợ tổ chức và triển khai các chương trình đào tạo.</li>
                         </ul>
@@ -284,7 +291,7 @@
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="freelancerTitle">Tour Guide - Freelancer</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="freelancerDuration">Tháng 1/2017 - Tháng 2/2020 (3 năm 2 tháng) | Đà Nẵng, Việt Nam</p>
+                        <p class="text-gray-400 mb-4" data-lang-key="freelancerDuration">Tháng 1/2017 - Tháng 2/2020 | Đà Nẵng, Việt Nam</p>
                         <ul class="list-disc list-inside" style="color: #B0B0B0;">
                             <li data-lang-key="freelancerDesc1">Hướng dẫn viên du lịch tự do.</li>
                         </ul>
@@ -332,7 +339,7 @@
                     <div class="flex flex-wrap gap-2 mt-4 justify-center">
                         <span class="skill-badge" data-lang-key="tagAI">AI</span>
                         <span class="skill-badge" data-lang-key="tagAutomation">Tự động hóa</span>
-                        <span class="skill-badge" data-lang-key="tagPython">Python</span>
+                        <span class="skill-badge">Python</span>
                         <span class="skill-badge" data-lang-key="tagN8N">n8n</span>
                     </div>
                 </div>
@@ -355,10 +362,10 @@
                         <span class="skill-badge" data-lang-key="skillDataManipulation">Data Manipulation</span>
                         <span class="skill-badge" data-lang-key="skillPresentation">Presentation</span>
                         <span class="skill-badge" data-lang-key="skillInterpersonal">Interpersonal</span>
-                        <span class="skill-badge" data-lang-key="skillResearch">Research</span>
-                        <span class="skill-badge" data-lang-key="skillProjectManagement">Project Management</span>
-                        <span class="skill-badge" data-lang-key="skillStorytelling">Storytelling with Data</span>
-                        <span class="skill-badge" data-lang-key="skillAnalyticalThinking">Analytical Thinking</span>
+                        <span class="skill-badge" data-lang-key="skillResearch">Nghiên cứu</span>
+                        <span class="skill-badge" data-lang-key="skillProjectManagement">Quản lý dự án</span>
+                        <span class="skill-badge" data-lang-key="skillStorytelling">Kể chuyện bằng Dữ liệu</span>
+                        <span class="skill-badge" data-lang-key="skillAnalyticalThinking">Tư duy Phân tích</span>
                     </div>
                 </div>
                 <div class="card p-6">
@@ -369,7 +376,7 @@
                         <span class="skill-badge">Python</span>
                         <span class="skill-badge" data-lang-key="skillAppSheet">AppSheet</span>
                         <span class="skill-badge" data-lang-key="skillML">Machine Learning</span>
-                        <span class="skill-badge" data-lang-key="skillExcelGSheet">Excel, GG Sheet</span>
+                        <span class="skill-badge">Excel, GG Sheet</span>
                         <span class="skill-badge" data-lang-key="skillStatistics">Thống kê</span>
                         <span class="skill-badge" data-lang-key="skillAIAutomation">AI & Tự động hóa</span>
                     </div>
@@ -459,7 +466,7 @@
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-500 py-6 text-sm">
-        <div class="container mx-auto px-4 text-right"> <!-- Align to right -->
+        <div class="container mx-auto px-4 text-right">
             <p data-lang-key="footerCopyright">&copy; 2025 Sang Nguyen Dinh. All rights reserved.</p>
         </div>
     </footer>
@@ -494,13 +501,13 @@
 
             "experienceTitle": { "vi": "KINH NGHIỆM LÀM VIỆC", "en": "WORK EXPERIENCE" },
             "kimTinTitle": { "vi": "Data Analyst - KIM TIN GROUP", "en": "Data Analyst - KIM TIN GROUP" },
-            "kimTinDuration": { "vi": "Tháng 8/2023 - Hiện tại | Hồ Chí Minh, Việt Nam", "en": "August 2023 - Present | Ho Chi Minh City, Vietnam" },
-            "kimTinDesc1": { "vi": "Thiết kế <strong>dashboard HR toàn diện</strong> bằng Power BI cho Tuyển dụng, Lương thưởng, Phúc lợi và Đào tạo, phục vụ 3.500 nhân viên ở 20 công ty con, giảm 40% thời gian báo cáo.", "en": "Designed <strong>comprehensive HR dashboards</strong> using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3,500 employees across 20 subsidiaries, reducing reporting time by 40%." },
-            "kimTinDesc2": { "vi": "Áp dụng Python để thực hiện <strong>phân tích ad-hoc động</strong> và phát triển mô hình Machine Learning, đưa ra các insight then chốt cho quyết định chiến lược HR, trình bày trước Ban Giám đốc.", "en": "Applied Python for dynamic <strong>ad-hoc analyses</strong> and developed Machine Learning models, revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors." },
-            "kimTinDesc3": { "vi": "Phát triển <strong>giải pháp dữ liệu tích hợp</strong> bằng App Sheet, App Script, Forms, n8n, bao gồm các ứng dụng HR tùy chỉnh, hợp lý hóa thu thập dữ liệu và tiên phong ứng dụng công nghệ AI & tự động hóa trong các phòng ban HR để tăng 30% hiệu quả hoạt động và insight dựa trên dữ liệu.", "en": "Developed integrated <strong>data solutions</strong> using App Sheet, App Script, Forms, n8n, including custom HR apps, streamlining data collection and spearheading the application of AI & automation technologies within HR departments to enhance 30% operational efficiency and data-driven insights." },
-            "kimTinDesc4": { "vi": "Hợp nhất dữ liệu HR từ nhiều nguồn (API, ERP, Sheets, Web Scraping bằng Python) vào <strong>cơ sở dữ liệu tập trung</strong>, nâng cao độ chính xác dữ liệu 25%.", "en": "Consolidated HR data from various sources (API, ERP, Sheets, Python-based Web Scraping) into a <strong>centralized database</strong>, enhancing data accuracy by 25%." },
-            "kimTinDesc5": { "vi": "Hỗ trợ phân tích dữ liệu cho các bộ phận ngoài HR, phân tích chỉ số hiệu suất & hoạt động, đưa ra giải pháp dữ liệu để xác định cơ hội cải tiến chiến lược.", "en": "Served as a data analysis partner by analyzing performance & operational metrics, providing data solutions to identify strategic improvement opportunities." },
-            "kimTinDesc6": { "vi": "Tổ chức các buổi <strong>đào tạo Dashboard hiệu quả</strong> cho người dùng cuối và các bên liên quan, phát triển & triển khai chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Data, nâng cao năng lực phân tích và khả năng tự phục vụ dữ liệu của người dùng.", "en": "Organized impactful <strong>Dashboard training</strong> for end-users and stakeholders, developed & implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization." },
+            "kimTinDuration": { "vi": "Tháng 8/2023 - Hiện tại | Hồ Chí Minh, Việt Nam", "en": "Aug, 2023 - current | Ho Chi Minh City, Vietnam" },
+            "kimTinDesc1": { "vi": "Thiết kế Dashboard (20%): Phát triển các dashboard HR toàn diện sử dụng Power BI cho Tuyển dụng, Lương, Phúc lợi và Đào tạo, bao gồm dữ liệu cho 3K5 nhân viên trên 20 công ty con. Giảm 40% thời gian báo cáo.", "en": "Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%." },
+            "kimTinDesc2": { "vi": "Phân tích Ad-Hoc (30%): Áp dụng Python để phân tích ad-hoc động và phát triển mô hình học máy tiết lộ các insight quan trọng cho việc ra quyết định chiến lược về HR, được trình bày trước Hội đồng quản trị.", "en": "Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors." },
+            "kimTinDesc3": { "vi": "Phát triển Giải pháp Dữ liệu (20%): Phát triển các giải pháp dữ liệu tích hợp sử dụng App Sheet, App Script, Forms, n8n. Bao gồm các ứng dụng HR tùy chỉnh, hợp lý hóa thu thập dữ liệu, tiên phong áp dụng công nghệ AI và tự động hóa trong các phòng ban HR để nâng cao 30% hiệu quả hoạt động và insight dựa trên dữ liệu.", "en": "Data Solutions Development (20%): Developed integrated data solutions using App Sheet, App Script, Forms, n8n. Included custom HR apps, streamlined data collection, spearheaded the application of AI and automation technologies within the HR depts in group to enhance 30% operational efficiency and data-driven insights." },
+            "kimTinDesc4": { "vi": "Tích hợp Dữ liệu (10%): Hợp nhất dữ liệu HR từ nhiều nguồn khác nhau (API, ERP, Sheets, Web Scraping dựa trên Python) vào một cơ sở dữ liệu tập trung, nâng cao độ chính xác dữ liệu lên 25%.", "en": "Data Integration (10%): Consolidated HR data from various sources (API, ERP, Sheets, Python-based Web Scraping) into a centralized database, enhancing data accuracy by 25%." },
+            "kimTinDesc5": { "vi": "Đối tác Phân tích Dữ liệu (Ngoài HR) (10%): Đóng vai trò đối tác phân tích dữ liệu bằng cách phân tích các chỉ số hiệu suất & hoạt động, giải pháp dữ liệu để xác định các cơ hội cải tiến chiến lược.", "en": "Data Analysis Partner (Non-HR) (10%): Served as a data analysis partner by analyzing performance & operational metrics, data solution to identify strategic improvement opportunities." },
+            "kimTinDesc6": { "vi": "Đào tạo và Hỗ trợ (10%): Tổ chức các khóa đào tạo Dashboard hiệu quả cho người dùng cuối và các bên liên quan, phát triển và triển khai các chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Dữ liệu, nâng cao khả năng phân tích và khả năng tự phục vụ dữ liệu của người dùng.", "en": "Training and Support (10%): Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization." },
             "novaFnBTitle": { "vi": "Data Analyst - NOVA FnB", "en": "Data Analyst - NOVA FnB" },
             "novaFnBDuration": { "vi": "Tháng 8/2022 - Tháng 9/2023 (1 năm 2 tháng) | Hồ Chí Minh, Việt Nam", "en": "August 2022 - September 2023 (1 year 2 months) | Ho Chi Minh City Metropolitan Area" },
             "novaFnBDesc1": { "vi": "Xử lý dữ liệu, mô hình hóa dữ liệu, tạo scorecard và báo cáo, thiết kế dashboard.", "en": "Data Handling, Data Modeling, Scorecard and Reporting, Dashboard Creation." },
@@ -620,14 +627,22 @@
                 let i = 0;
                 const typingSpeed = 70; // milliseconds per character
 
+                // Clear any existing timeout to prevent multiple typing effects running
+                if (headlineElement.typingTimeout) {
+                    clearTimeout(headlineElement.typingTimeout);
+                }
+
                 function typeWriter() {
                     if (i < textToType.length) {
                         headlineElement.innerHTML += textToType.charAt(i);
                         i++;
-                        setTimeout(typeWriter, typingSpeed);
+                        headlineElement.typingTimeout = setTimeout(typeWriter, typingSpeed);
+                    } else {
+                        // Animation complete, optionally clear timeout reference
+                        delete headlineElement.typingTimeout;
                     }
                 }
-                typeWriter();
+                typeWriter(); // Initial call to start typing
             }
         }
 
