@@ -143,31 +143,37 @@
             box-shadow: 0 4px 8px rgba(0, 255, 255, 0.4);
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease; /* Added background-color transition */
             z-index: 1000;
         }
         #back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
+        #back-to-top:hover { /* Hover effect for back-to-top button */
+            background-color: #00C0FF; /* Darker blue on hover */
+        }
+
+        /* Language toggle button styles */
         #language-toggle {
             position: fixed;
             bottom: 20px;
             left: 20px;
-            background-color: #1A1A2A;
-            color: #00FFFF;
+            background-color: #00FFFF; /* Electric Cyan accent */
+            color: #121212; /* Dark text for contrast */
             padding: 10px 15px;
             border-radius: 8px;
             cursor: pointer;
-            border: 1px solid #363640;
+            border: 1px solid #00FFFF; /* Border matches background */
             font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.2s ease, color 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3); /* Shadow matches accent */
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
             z-index: 1000;
         }
         #language-toggle:hover {
-            background-color: #363640;
-            color: #00C0FF;
+            background-color: #00C0FF; /* Brighter Blue on hover */
+            color: #121212; /* Keep text dark for contrast */
+            border-color: #00C0FF; /* Border matches new background */
         }
 
         /* Added min-height for the typing headline to ensure space */
@@ -376,7 +382,7 @@
                         <span class="skill-badge">Python</span>
                         <span class="skill-badge" data-lang-key="skillAppSheet">AppSheet</span>
                         <span class="skill-badge" data-lang-key="skillML">Machine Learning</span>
-                        <span class="skill-badge">Excel, GG Sheet</span>
+                        <span class="skill-badge" data-lang-key="skillExcelGSheet">Excel, GG Sheet</span>
                         <span class="skill-badge" data-lang-key="skillStatistics">Thống kê</span>
                         <span class="skill-badge" data-lang-key="skillAIAutomation">AI & Tự động hóa</span>
                     </div>
