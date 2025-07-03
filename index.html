@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-lang-key="pageTitle">Sang Nguyen Dinh - Chuyên viên Phân tích Dữ liệu | Business Intelligence</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #121212; /* Very dark grey, almost black */
-            color: #E0E0E0; /* Light grey text for contrast */
+            color: #e0e0e0; /* Light grey text for contrast */
+            margin: 0;
+            overflow-x: hidden;
         }
         .container {
             max-width: 1200px;
         }
         .section-title {
-            color: #00FFFF; /* Electric Cyan accent for titles */
+            color: #00ffff; /* Electric Cyan accent for titles */
             font-weight: 700;
             text-align: center;
             text-transform: uppercase; /* Keep uppercase for display */
             letter-spacing: 0.1em;
             padding-bottom: 1rem;
-            border-bottom: 2px solid #00FFFF; /* Electric Cyan accent */
+            border-bottom: 2px solid #00ffff; /* Electric Cyan accent */
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
         }
         .card {
-            background-color: #1A1A2A; /* Slightly lighter dark grey/blue for cards */
+            background-color: #1a1a2a; /* Slightly lighter dark grey/blue for cards */
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Stronger shadow */
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
@@ -52,33 +54,33 @@
         .card:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-            border-color: #00FFFF;
+            border-color: #00ffff;
         }
         /* Hover for project cards that are links */
         .project-card-link-wrapper:hover .card {
-            border-color: #00FFFF; /* Highlight border on hover */
+            border-color: #00ffff; /* Highlight border on hover */
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
         }
 
         .skill-badge {
-            background-color: #34495E; /* Darker blue-grey for skills */
-            color: #82E0FF; /* Lighter blue for contrast */
+            background-color: #34495e; /* Darker blue-grey for skills */
+            color: #82e0ff; /* Lighter blue for contrast */
             border-radius: 12px;
             padding: 4px 10px;
             font-weight: 600;
             font-size: 0.8rem;
             margin: 2px;
-            border: 1px solid #4A5A6A;
+            border: 1px solid #4a5a6a;
             display: inline-block;
             transition: background-color 0.2s ease, transform 0.2s ease;
         }
         .skill-badge:hover {
-            background-color: #4A5A6A;
+            background-color: #4a5a6a;
             transform: scale(1.05);
         }
         .btn-primary {
-            background-color: #00FFFF; /* Electric Cyan accent for buttons */
+            background-color: #00ffff; /* Electric Cyan accent for buttons */
             color: #121212; /* Dark text for contrast */
             padding: 12px 24px;
             border-radius: 8px;
@@ -87,7 +89,7 @@
             box-shadow: 0 4px 8px rgba(0, 255, 255, 0.4);
         }
         .btn-primary:hover {
-            background-color: #00C0FF;
+            background-color: #00c0ff;
             transform: translateY(-2px);
         }
         .icon {
@@ -96,24 +98,24 @@
             height: 24px;
             vertical-align: middle;
             margin-right: 8px;
-            color: #00FFFF;
+            color: #00ffff;
         }
         .icon-dark {
             color: #121212;
             transition: color 0.3s ease;
         }
         .btn-primary:hover .icon-dark {
-            color: #00FFFF;
+            color: #00ffff;
         }
         .nav-link {
-            color: #00FFFF;
+            color: #00ffff;
             transition: color 0.2s ease;
         }
         .nav-link:hover {
-            color: #00C0FF;
+            color: #00c0ff;
         }
         .project-description {
-            color: #B0B0B0;
+            color: #b0b0b0;
             font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -121,21 +123,43 @@
 
         /* Fade-in animation */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .animate-fade-in {
             animation: fadeIn 0.8s ease-out forwards;
             opacity: 0;
         }
-        #about { animation-delay: 0.1s; }
-        .summary-section .card { animation-delay: 0.3s; }
-        #experience { animation-delay: 0.5s; }
-        #projects { animation-delay: 0.7s; }
-        #skills { animation-delay: 0.9s; }
-        #certifications { animation-delay: 1.1s; }
-        #education { animation-delay: 1.3s; }
-        #contact { animation-delay: 1.5s; }
+        #about {
+            animation-delay: 0.1s;
+        }
+        .summary-section .card {
+            animation-delay: 0.3s;
+        }
+        #experience {
+            animation-delay: 0.5s;
+        }
+        #projects {
+            animation-delay: 0.7s;
+        }
+        #skills {
+            animation-delay: 0.9s;
+        }
+        #certifications {
+            animation-delay: 1.1s;
+        }
+        #education {
+            animation-delay: 1.3s;
+        }
+        #contact {
+            animation-delay: 1.5s;
+        }
 
         .section-icon {
             width: 32px;
@@ -148,7 +172,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #00FFFF;
+            background-color: #00ffff;
             color: #121212;
             width: 50px;
             height: 50px;
@@ -169,7 +193,7 @@
             visibility: visible;
         }
         #back-to-top:hover {
-            background-color: #00C0FF;
+            background-color: #00c0ff;
         }
 
         /* Language toggle button styles */
@@ -177,21 +201,21 @@
             position: fixed;
             bottom: 20px;
             left: 20px;
-            background-color: #00FFFF;
+            background-color: #00ffff;
             color: #121212;
             padding: 10px 15px;
             border-radius: 8px;
             cursor: pointer;
-            border: 1px solid #00FFFF;
+            border: 1px solid #00ffff;
             font-weight: 600;
             box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
             transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
             z-index: 1000;
         }
         #language-toggle:hover {
-            background-color: #00C0FF;
+            background-color: #00c0ff;
             color: #121212;
-            border-color: #00C0FF;
+            border-color: #00c0ff;
         }
 
         /* Added min-height for the typing headline to ensure space */
@@ -210,9 +234,10 @@
     </style>
 </head>
 <body class="antialiased leading-normal tracking-tight">
+    <canvas id="space-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
 
     <!-- Header Section -->
-    <header class="bg-gray-900 text-white py-6 shadow-lg animate-fade-in">
+    <header class="bg-gray-900 text-white py-6 shadow-lg animate-fade-in" style="position: relative; z-index: 1;">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-3xl font-bold text-center md:text-left mb-4 md:mb-0 text-white">Sang Nguyen Dinh</h1>
             <nav>
@@ -692,8 +717,109 @@
             }
         }
 
+        // Space effect with stars and spaceship
+        const canvas = document.getElementById('space-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let stars = [];
+        let spaceship = {
+            x: 0,
+            y: 0,
+            size: 20,
+            angle: 0,
+            speed: 0.5
+        };
 
-        document.addEventListener('DOMContentLoaded', function() {
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+
+        function createStars(count) {
+            stars = [];
+            for (let i = 0; i < count; i++) {
+                stars.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 1.2 + 0.3,
+                    alpha: Math.random(),
+                    alphaChange: (Math.random() * 0.02) + 0.005
+                });
+            }
+        }
+
+        function drawStars() {
+            ctx.clearRect(0, 0, width, height);
+            for (let star of stars) {
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
+                ctx.fill();
+                star.alpha += star.alphaChange;
+                if (star.alpha <= 0 || star.alpha >= 1) {
+                    star.alphaChange = -star.alphaChange;
+                }
+            }
+        }
+
+        function drawSpaceship() {
+            const shipX = spaceship.x;
+            const shipY = spaceship.y;
+            const size = spaceship.size;
+            const angle = spaceship.angle;
+
+            ctx.save();
+            ctx.translate(shipX, shipY);
+            ctx.rotate(angle);
+
+            // Draw simple spaceship shape
+            ctx.beginPath();
+            ctx.moveTo(0, -size / 2);
+            ctx.lineTo(size / 2, size / 2);
+            ctx.lineTo(0, size / 4);
+            ctx.lineTo(-size / 2, size / 2);
+            ctx.closePath();
+
+            ctx.fillStyle = 'rgba(0, 255, 255, 0.8)';
+            ctx.fill();
+
+            ctx.restore();
+        }
+
+        function updateSpaceship() {
+            spaceship.x += spaceship.speed;
+            spaceship.angle += 0.01;
+            if (spaceship.x > width + spaceship.size) {
+                spaceship.x = -spaceship.size;
+                spaceship.y = Math.random() * height * 0.6 + height * 0.2;
+            }
+        }
+
+        function animate() {
+            drawStars();
+            drawSpaceship();
+            updateSpaceship();
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            createStars(150);
+        });
+
+        function loadParticles() {
+            resize();
+            createStars(150);
+            spaceship.x = -spaceship.size;
+            spaceship.y = Math.random() * height * 0.6 + height * 0.2;
+            animate();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadParticles();
+
             // Initial content update based on stored language or default
             updateContent(currentLang);
 
