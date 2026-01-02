@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title data-lang-key="pageTitle">Sang Nguyen Dinh - Chuyên viên Phân tích Dữ liệu | Business Intelligence</title>
+    <title data-lang-key="pageTitle">Sang Nguyen Dinh - Data Analyst | People Cost Budgeting & HR Analytics</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
@@ -236,7 +236,6 @@
 <body class="antialiased leading-normal tracking-tight">
     <canvas id="space-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
 
-    <!-- Header Section -->
     <header class="bg-gray-900 text-white py-6 shadow-lg animate-fade-in" style="position: relative; z-index: 1;">
         <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-3xl font-bold text-center md:text-left mb-4 md:mb-0 text-white">Sang Nguyen Dinh</h1>
@@ -252,12 +251,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="about" class="bg-gradient-to-r from-blue-900 to-gray-900 text-white py-20 px-4 animate-fade-in">
         <div class="container mx-auto text-center">
-            <!-- Typing effect headline - text populated by JS -->
             <h2 id="typing-headline" class="text-4xl font-extrabold mb-4 text-white" data-lang-key="heroHeadline"></h2>
-            <p class="text-xl mb-8 opacity-90" data-lang-key="heroParagraph">Chứng nhận D.A. với 3 năm kinh nghiệm trong ngành HR và F&B. Luôn hướng đến việc chuyển đổi dữ liệu thành các quyết định chiến lược.</p>
+            <p class="text-xl mb-8 opacity-90" data-lang-key="heroParagraph">Chứng nhận D.A. với 4 năm kinh nghiệm trong ngành Nhân sự, F&B và Bán lẻ. Thành tích nổi bật bao gồm việc cập nhật quy trình luân chuyển dữ liệu giúp giảm 40% sự trùng lặp. <br> <strong>Tech Stack:</strong> DAX, Power Query, Data Automation, ML & Quản lý Dự án.</p>
             <div class="flex justify-center space-x-4">
                 <a href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" class="btn-primary flex items-center">
                     <svg class="icon-dark" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" preserveAspectRatio="xMidYMid meet"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
@@ -271,7 +268,6 @@
         </div>
     </section>
 
-    <!-- Summary Section -->
     <section class="py-16 px-4 summary-section animate-fade-in">
         <div class="container mx-auto">
             <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="summaryTitle">
@@ -280,13 +276,12 @@
             </h3>
             <div class="card p-8 text-center">
                 <p class="text-lg leading-relaxed" style="color: #B0B0B0;" data-lang-key="summaryParagraph">
-                    Tôi là một chuyên gia phân tích dữ liệu được chứng nhận với 3 năm kinh nghiệm trong ngành nhân sự và F&B. Tôi đã góp phần giảm 25% thời gian thu thập và phân tích dữ liệu thông qua việc cập nhật các quy trình streaming. Kỹ năng vượt trội của tôi nằm ở trực quan hóa dữ liệu, học máy (ML) và quản lý dự án. Tôi cam kết biến dữ liệu thô thành những insight giá trị, hỗ trợ các quyết định chiến lược hiệu quả.
+                    Hiện đang làm việc tại Central Retail, tôi quản lý Hệ sinh thái Dữ liệu Nhân sự cho danh mục đa dạng gồm hơn 10 thương hiệu toàn cầu (Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop...) tại hơn 150 cửa hàng trên toàn quốc. Tôi tận dụng sự hiểu biết sâu sắc về quy trình nhân sự để xây dựng các mô hình dữ liệu tự động và báo cáo tài chính. Sứ mệnh của tôi là chuyển đổi dữ liệu nhân sự phức tạp thành các insight tài chính hành động, giúp tổ chức tối ưu hóa Chi phí Nhân sự và cải thiện hiệu quả vận hành.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="bg-gray-900 py-16 px-4 animate-fade-in">
         <div class="container mx-auto">
             <h3 class="section-title text-3xl mb-12 mx-auto" data-lang-key="experienceTitle">
@@ -295,11 +290,24 @@
             </h3>
 
             <div class="grid grid-cols-1 gap-8">
-                <!-- KIM TIN GROUP -->
+                <div class="card p-8 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="centralRetailTitle">Data Analyst - CENTRAL RETAIL</h4>
+                        <p class="text-gray-400 mb-4" data-lang-key="centralRetailDuration">Aug, 2025 - Current | Ho Chi Minh City, Vietnam</p>
+                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
+                            <li data-lang-key="centralRetailDesc1"><strong>Quản lý Dữ liệu:</strong> Chuẩn hóa các nguồn dữ liệu rời rạc từ nhiều Đơn vị Kinh doanh thành Mô hình Dữ liệu 4 Lớp thống nhất. Giám sát hạ tầng dữ liệu nhân sự tập trung cho hệ sinh thái bán lẻ phức tạp gồm các thương hiệu quốc tế và hơn 800 nhân viên.</li>
+                            <li data-lang-key="centralRetailDesc2"><strong>Hoạch định Tài chính & Tối ưu Chi phí:</strong> Dẫn dắt việc tự động hóa Chi phí Nhân sự & Ngân sách Hàng năm, hỗ trợ Kiểm soát Tài chính và Giám đốc Nhân sự kiểm soát ngân sách lao động hàng triệu đô la. Phát triển các mô hình tài chính động để mô phỏng tác động chi phí của tuyển dụng, tăng lương và thay đổi phúc lợi với độ chính xác 99%.</li>
+                            <li data-lang-key="centralRetailDesc3"><strong>Phân tích Chiến lược & Insights:</strong> Chuyển đổi dữ liệu nhân sự phức tạp thành các insight kinh doanh hành động, tập trung vào Phân tích Nguyên nhân Gốc rễ Nghỉ việc và Năng suất Lao động để hỗ trợ ra quyết định cho Quản lý Vận hành và Thương hiệu.</li>
+                            <li data-lang-key="centralRetailDesc4"><strong>BI, Tự động hóa & AI:</strong> Xây dựng các pipeline tự động end-to-end sử dụng M & DAX, giảm chu kỳ báo cáo 90%. Thiết kế các dashboard chiến lược (Chi phí PE, Headcount, Hiệu quả Tuyển dụng...). Triển khai Power Automate (RPA) để nhập liệu vào ERP và tiên phong giải pháp AI Agent để trích xuất CV tự động.</li>
+                            <li data-lang-key="centralRetailDesc5"><strong>Quản trị & Chiến lược Dữ liệu:</strong> Đóng vai trò "người gác cổng" cho chất lượng Dữ liệu Chủ (Master Data) HR, thực thi các quy tắc xác thực nghiêm ngặt và quy trình làm việc chéo giữa các bộ phận (Ops - TA - C&B - Finance).</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="kimTinTitle">Data Analyst - KIM TIN GROUP</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="kimTinDuration">Aug, 2023 - current | Ho Chi Minh City, Vietnam</p>
+                        <p class="text-gray-400 mb-4" data-lang-key="kimTinDuration">Aug, 2023 - Aug, 2025 | Ho Chi Minh City, Vietnam</p>
                         <ul class="list-disc list-inside" style="color: #B0B0B0;">
                             <li data-lang-key="kimTinDesc1">Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%.</li>
                             <li data-lang-key="kimTinDesc2">Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors.</li>
@@ -311,7 +319,6 @@
                     </div>
                 </div>
 
-                <!-- NOVA FnB -->
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="novaFnBTitle">Data Analyst - NOVA FnB</h4>
@@ -323,7 +330,6 @@
                     </div>
                 </div>
 
-                <!-- SEBANG GLOBAL BATTERY CO LTD -->
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="sebangTitle">B2B Area Sales Officer - Sebang Global Battery Co Ltd</h4>
@@ -334,7 +340,6 @@
                     </div>
                 </div>
 
-                <!-- SUN WORLD GROUP -->
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="sunWorldTitle">Training Assistant - Sun World Group</h4>
@@ -345,7 +350,6 @@
                     </div>
                 </div>
 
-                <!-- FREELANCER -->
                 <div class="card p-8 flex flex-col justify-between">
                     <div>
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="freelancerTitle">Tour Guide - Freelancer</h4>
@@ -359,7 +363,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="py-16 px-4 animate-fade-in">
         <div class="container mx-auto">
             <h3 class="section-title text-3xl mb-12 mx-auto" data-lang-key="projectsTitle">
@@ -367,7 +370,6 @@
                 DỰ ÁN NỔI BẬT
             </h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- HR Dashboards Development - NOT CLICKABLE -->
                 <div class="card p-8">
                     <div class="project-content">
                         <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="hrDashboardsTitle">Phát triển HR Dashboards cho Tập đoàn gồm 20 công ty con</h4>
@@ -380,7 +382,6 @@
                     </div>
                 </div>
 
-                <!-- Employee Turnover Prediction Model - CLICKABLE -->
                 <a href="https://github.com/dinhsang031/Employee_Attrition_Predictor" target="_blank" class="project-card-link-wrapper">
                     <div class="card p-8">
                         <div class="project-content">
@@ -395,7 +396,6 @@
                     </div>
                 </a>
 
-                <!-- AI CV Screening System - CLICKABLE -->
                 <a href="https://github.com/dinhsang031/AI-HR-CV-Scan" target="_blank" class="project-card-link-wrapper">
                     <div class="card p-8">
                         <div class="project-content">
@@ -414,7 +414,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="bg-gray-900 py-16 px-4 animate-fade-in">
         <div class="container mx-auto">
             <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="skillsTitle">
@@ -452,7 +451,6 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
     <section id="certifications" class="py-16 px-4 animate-fade-in">
         <div class="container mx-auto">
             <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="certificationsTitle">
@@ -484,7 +482,6 @@
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education" class="bg-gray-900 py-16 px-4 animate-fade-in">
         <div class="container mx-auto">
             <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="educationTitle">
@@ -499,7 +496,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="bg-gradient-to-r from-blue-900 to-gray-900 text-white py-16 px-4 animate-fade-in">
         <div class="container mx-auto text-center">
             <h3 class="text-3xl font-extrabold mb-8 text-white" data-lang-key="contactTitle">
@@ -523,15 +519,12 @@
         </div>
     </section>
 
-    <!-- Back to Top Button -->
     <a href="#" id="back-to-top">
         <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8.414l-4.293 4.293a1 1 0 01-1.414-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L12 8.414z"/></svg>
     </a>
 
-    <!-- Language Toggle Button -->
     <button id="language-toggle" data-lang-key="languageToggleBtn">English</button>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 text-gray-500 py-6 text-sm">
         <div class="container mx-auto px-4 text-right">
             <p data-lang-key="footerCopyright">&copy; 2025 Sang Nguyen Dinh. All rights reserved.</p>
@@ -541,8 +534,8 @@
     <script>
         const langData = {
             "pageTitle": {
-                "vi": "Sang Nguyen Dinh - Chuyên viên Phân tích Dữ liệu | Business Intelligence",
-                "en": "Sang Nguyen Dinh - Data Analytics | Business Intelligence Analyst"
+                "vi": "Sang Nguyen Dinh - Data Analyst | People Cost Budgeting & HR Analytics",
+                "en": "Sang Nguyen Dinh - Data Analyst | People Cost Budgeting & HR Analytics"
             },
             "aboutLink": { "vi": "Giới thiệu", "en": "About" },
             "experienceLink": { "vi": "Kinh nghiệm", "en": "Experience" },
@@ -550,25 +543,51 @@
             "skillsLink": { "vi": "Kỹ năng", "en": "Skills" },
             "contactLink": { "vi": "Liên hệ", "en": "Contact" },
             "heroHeadline": { // This is for the typing effect, handled separately
-                "vi": "Data Analytics | Business Intelligence Analyst", // Keep English for typing effect
-                "en": "Data Analytics | Business Intelligence Analyst"
+                "vi": "Data Analyst | People Cost Budgeting & HR Analytics | AI & Automation Enthusiast", 
+                "en": "Data Analyst | People Cost Budgeting & HR Analytics | AI & Automation Enthusiast"
             },
             "heroParagraph": {
-                "vi": "Chứng nhận D.A. với 3 năm kinh nghiệm trong ngành HR và F&B. Luôn hướng đến việc chuyển đổi dữ liệu thành các quyết định chiến lược.",
-                "en": "Certified D.A. with 3 years of experience serving HR and F&B industries. Dedicated to transforming data into strategic decisions."
+                "vi": "Chuyên viên D.A được chứng nhận với 4 năm kinh nghiệm trong ngành Nhân sự, F&B và Bán lẻ. Thành tích nổi bật bao gồm việc cập nhật quy trình luân chuyển dữ liệu giúp giảm 40% sự trùng lặp. <br> <strong>Tech Stack:</strong> DAX, Power Query, Data Automation, ML & Quản lý Dự án.",
+                "en": "Certified D.A with 4 years of experience serving HR, F&B and Retail industries. Achievements include updating data streaming processes for an 40% reduction in redundancy. <br> <strong>Tech Stack:</strong> DAX, Power Query, Data Automation, ML & Project Management"
             },
             "linkedinBtn": { "vi": "LinkedIn", "en": "LinkedIn" },
             "portfolioBtn": { "vi": "Portfolio (GitHub)", "en": "Portfolio (GitHub)" },
 
             "summaryTitle": { "vi": "Tóm tắt", "en": "Summary" }, // Changed to sentence case
             "summaryParagraph": {
-                "vi": "Tôi là một chuyên gia phân tích dữ liệu được chứng nhận với 3 năm kinh nghiệm trong ngành nhân sự và F&B. Tôi đã góp phần giảm 25% thời gian thu thập và phân tích dữ liệu thông qua việc cập nhật các quy trình streaming. Kỹ năng vượt trội của tôi nằm ở trực quan hóa dữ liệu, học máy (ML) và quản lý dự án. Tôi cam kết biến dữ liệu thô thành những insight giá trị, hỗ trợ các quyết định chiến lược hiệu quả.",
-                "en": "I am a Certified D.A. with 3 years of experience serving HR and F&B industries. My achievements include updating data streaming processes for a 25% reduction in redundancy. I am highly-skilled in data visualization, ML & project management. I am committed to transforming raw data into valuable insights, supporting effective strategic decisions."
+                "vi": "Hiện đang làm việc tại Central Retail, tôi quản lý Hệ sinh thái Dữ liệu Nhân sự cho danh mục đa dạng gồm hơn 10 thương hiệu toàn cầu (Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop...) tại hơn 150 cửa hàng trên toàn quốc. Tôi tận dụng sự hiểu biết sâu sắc về quy trình nhân sự để xây dựng các mô hình dữ liệu tự động và báo cáo tài chính. Sứ mệnh của tôi là chuyển đổi dữ liệu nhân sự phức tạp thành các insight tài chính hành động, giúp tổ chức tối ưu hóa Chi phí Nhân sự và cải thiện hiệu quả vận hành.",
+                "en": "Currently working at Central Retail, I managing the HR Data Ecosystem for a diverse portfolio of 10+ global brands (including Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop) across 150+ stores nationwide and leverage my deep understanding of HR processes to build automated data models and financial reports. My mission is to translate complex HR data into actionable financial insights, helping organizations optimize People Cost and improve operational efficiency."
             },
 
             "experienceTitle": { "vi": "Kinh nghiệm làm việc", "en": "Work Experience" }, // Changed to sentence case
+            
+            /* CENTRAL RETAIL DATA */
+            "centralRetailTitle": { "vi": "Data Analyst - CENTRAL RETAIL", "en": "Data Analyst - CENTRAL RETAIL" },
+            "centralRetailDuration": { "vi": "Tháng 8/2025 - Hiện tại | Hồ Chí Minh, Việt Nam", "en": "Aug, 2025 - Current | Ho Chi Minh City, Vietnam" },
+            "centralRetailDesc1": { 
+                "vi": "<strong>Quản lý Dữ liệu:</strong> Chuẩn hóa các nguồn dữ liệu rời rạc từ nhiều Đơn vị Kinh doanh thành Mô hình Dữ liệu 4 Lớp thống nhất. Giám sát hạ tầng dữ liệu nhân sự tập trung cho hệ sinh thái bán lẻ phức tạp gồm các thương hiệu quốc tế và hơn 800 nhân viên.", 
+                "en": "<strong>Data Management:</strong> Standardized disparate data sources from various Business Units into a unified 4-Layer Data Model. Overseeing the central HR data infrastructure for a complex retail ecosystem of the international brands (Dyson, Crocs, SuperSports, Columbia, Speedo, Fitflop...) and 800+ employees." 
+            },
+            "centralRetailDesc2": { 
+                "vi": "<strong>Hoạch định Tài chính & Tối ưu Chi phí:</strong> Dẫn dắt việc tự động hóa Chi phí Nhân sự & Ngân sách Hàng năm, hỗ trợ Kiểm soát Tài chính và Giám đốc Nhân sự kiểm soát ngân sách lao động hàng triệu đô la. Phát triển các mô hình tài chính động để mô phỏng tác động chi phí của tuyển dụng, tăng lương và thay đổi phúc lợi với độ chính xác 99%.", 
+                "en": "<strong>Financial Planning & Cost Optimization:</strong> Leading the automation of People Cost & Annual Budgeting, supporting the Business Controller and HR Director in controlling a multi-million dollar labor budget. Developed dynamic financial models to simulate cost impacts of recruitment plans, salary increments, and benefit changes with 99% accuracy." 
+            },
+            "centralRetailDesc3": { 
+                "vi": "<strong>Phân tích Chiến lược & Insights:</strong> Chuyển đổi dữ liệu nhân sự phức tạp thành các insight kinh doanh hành động, tập trung vào Phân tích Nguyên nhân Gốc rễ Nghỉ việc và Năng suất Lao động để hỗ trợ ra quyết định cho Quản lý Vận hành và Thương hiệu. Thực hiện đánh giá định kỳ về hiệu quả C&B, đảm bảo công bằng nội bộ và khả năng cạnh tranh thị trường.", 
+                "en": "<strong>Strategic Analytics & Insights:</strong> Translated complex HR data into actionable business insights, focusing on Turnover Root Cause Analysis and Workforce Productivity to support decision-making for Operations and Brand Managers. Conducted periodic reviews of Compensation & Benefits effectiveness, ensuring internal equity and market competitiveness through data benchmarking." 
+            },
+            "centralRetailDesc4": { 
+                "vi": "<strong>BI, Tự động hóa & AI:</strong> Xây dựng các pipeline tự động end-to-end sử dụng M & DAX, giảm chu kỳ báo cáo 90%, từ nhiều ngày xuống còn vài giờ. Thiết kế các dashboard chiến lược (Chi phí PE, Headcount, Nghỉ việc, Hiệu quả Tuyển dụng...) hỗ trợ các bên liên quan. Triển khai quy trình Power Automate (RPA) để tự động hóa nhập liệu vào ERP và tiên phong giải pháp AI Agent để trích xuất CV tự động, tăng tốc độ sàng lọc cho đội ngũ Tuyển dụng.", 
+                "en": "<strong>BI, Automation & AI:</strong> Engineered end-to-end automated pipelines using M & DAX, reducing reporting cycle time by 90%, from days to hours. Designed strategic dashboards (PE Cost, Headcount, Turnover, Recruitment Efficiency...) to support key stakeholders in Operations and Brand Management. Deployed and maintained Power Automate (RPA) workflows to automate complex data entry into ERP systems; Pioneered an AI Agent solution for automated CV Parsing, leveraging AI to extract and structure candidate data, significantly accelerating the screening process for the Talent Acquisition team." 
+            },
+            "centralRetailDesc5": { 
+                "vi": "<strong>Quản trị & Chiến lược Dữ liệu:</strong> Đóng vai trò 'người gác cổng' cho chất lượng Dữ liệu Chủ (Master Data) HR, thực thi các quy tắc xác thực nghiêm ngặt và quy trình làm việc chéo giữa các bộ phận (Ops - TA - C&B - Finance).", 
+                "en": "<strong>Data Governance & Strategy:</strong> Acting as the gatekeeper for HR Master Data quality, enforcing strict validation rules and cross-departmental workflows (Ops - TA - C&B - Finance)." 
+            },
+
+
             "kimTinTitle": { "vi": "Data Analyst - KIM TIN GROUP", "en": "Data Analyst - KIM TIN GROUP" },
-            "kimTinDuration": { "vi": "Tháng 8/2023 - Hiện tại | Hồ Chí Minh, Việt Nam", "en": "Aug, 2023 - current | Ho Chi Minh City, Vietnam" },
+            "kimTinDuration": { "vi": "Tháng 8/2023 - Tháng 8/2025 | Hồ Chí Minh, Việt Nam", "en": "Aug, 2023 - Aug, 2025 | Ho Chi Minh City, Vietnam" },
             "kimTinDesc1": { "vi": "Dashboard Design (20%): Phát triển các dashboard HR toàn diện sử dụng Power BI cho Tuyển dụng, Lương, Phúc lợi và Đào tạo, bao gồm dữ liệu cho 3K5 nhân viên trên 20 công ty con. Giảm 40% thời gian báo cáo.", "en": "Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%." },
             "kimTinDesc2": { "vi": "Phân tích Ad-Hoc (30%): Áp dụng Python để phân tích ad-hoc động và phát triển mô hình học máy tiết lộ các insight quan trọng cho việc ra quyết định chiến lược về HR, được trình bày trước Hội đồng quản trị.", "en": "Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors." },
             "kimTinDesc3": { "vi": "Phát triển Giải pháp Dữ liệu (20%): Phát triển các giải pháp dữ liệu tích hợp sử dụng App Sheet, App Script, Forms, n8n. Bao gồm các ứng dụng HR tùy chỉnh, hợp lý hóa thu thập dữ liệu, tiên phong áp dụng công nghệ AI và tự động hóa trong các phòng ban HR để nâng cao 30% hiệu quả hoạt động và insight dựa trên dữ liệu.", "en": "Data Solutions Development (20%): Developed integrated data solutions using App Sheet, App Script, Forms, n8n. Included custom HR apps, streamlined data collection, spearheaded the application of AI and automation technologies within the HR depts in group to enhance 30% operational efficiency and data-driven insights." },
@@ -576,17 +595,17 @@
             "kimTinDesc5": { "vi": "Đối tác Phân tích Dữ liệu (Ngoài HR) (10%): Đóng vai trò đối tác phân tích dữ liệu bằng cách phân tích các chỉ số hiệu suất & hoạt động, giải pháp dữ liệu để xác định các cơ hội cải tiến chiến lược.", "en": "Data Analysis Partner (Non-HR) (10%): Served as a data analysis partner by analyzing performance & operational metrics, data solution to identify strategic improvement opportunities." },
             "kimTinDesc6": { "vi": "Đào tạo và Hỗ trợ (10%): Tổ chức các khóa đào tạo Dashboard hiệu quả cho người dùng cuối và các bên liên quan, phát triển và triển khai các chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Dữ liệu, nâng cao khả năng phân tích và khả năng tự phục vụ dữ liệu của người dùng.", "en": "Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization." },
             "novaFnBTitle": { "vi": "Data Analyst - NOVA FnB", "en": "Data Analyst - NOVA FnB" },
-            "novaFnBDuration": { "vi": "Tháng 8/2022 - Tháng 9/2023 (1 năm 2 tháng) | Hồ Chí Minh, Việt Nam", "en": "August 2022 - September 2023 (1 year 2 months) | Ho Chi Minh City Metropolitan Area" },
+            "novaFnBDuration": { "vi": "Tháng 8/2022 - Tháng 9/2023 | Hồ Chí Minh, Việt Nam", "en": "August 2022 - September 2023 | Ho Chi Minh City Metropolitan Area" },
             "novaFnBDesc1": { "vi": "Xử lý dữ liệu, mô hình hóa dữ liệu, tạo scorecard và báo cáo, thiết kế dashboard.", "en": "Data Handling, Data Modeling, Scorecard and Reporting, Dashboard Creation." },
             "novaFnBDesc2": { "vi": "Thực hiện các phân tích ad-hoc theo yêu cầu.", "en": "Conducted ad-hoc analyses." },
             "sebangTitle": { "vi": "B2B Area Sales Officer - Sebang Global Battery Co Ltd", "en": "B2B Area Sales Officer - Sebang Global Battery Co Ltd" },
-            "sebangDuration": { "vi": "Tháng 6/2021 - Tháng 5/2022 (1 năm) | Việt Nam", "en": "June 2021 - May 2022 (1 year) | Vietnam" },
+            "sebangDuration": { "vi": "Tháng 6/2021 - Tháng 5/2022 | Việt Nam", "en": "June 2021 - May 2022 | Vietnam" },
             "sebangDesc1": { "vi": "Hỗ trợ kinh doanh và phát triển thị trường B2B.", "en": "Supported B2B sales and market development." },
             "sunWorldTitle": { "vi": "Training Assistant - Sun World Group", "en": "Training Assistant - Sun World Group" },
-            "sunWorldDuration": { "vi": "Tháng 5/2020 - Tháng 3/2021 (11 tháng) | Đà Nẵng, Việt Nam", "en": "May 2020 - March 2021 (11 months) | Da Nang City, Vietnam" },
+            "sunWorldDuration": { "vi": "Tháng 5/2020 - Tháng 3/2021 | Đà Nẵng, Việt Nam", "en": "May 2020 - March 2021 | Da Nang City, Vietnam" },
             "sunWorldDesc1": { "vi": "Hỗ trợ tổ chức và triển khai các chương trình đào tạo.", "en": "Assisted in organizing and implementing training programs." },
             "freelancerTitle": { "vi": "Hướng dẫn viên du lịch tự do - Freelancer", "en": "Tour Guide - Freelancer" },
-            "freelancerDuration": { "vi": "Tháng 1/2017 - Tháng 2/2020 (3 năm 2 tháng) | Đà Nẵng, Việt Nam", "en": "January 2017 - February 2020 (3 years 2 months) | Da Nang City, Vietnam" },
+            "freelancerDuration": { "vi": "Tháng 1/2017 - Tháng 2/2020 | Đà Nẵng, Việt Nam", "en": "January 2017 - February 2020 | Da Nang City, Vietnam" },
             "freelancerDesc1": { "vi": "Hướng dẫn viên du lịch tự do.", "en": "Freelance tour guide." },
 
             "projectsTitle": { "vi": "Dự án nổi bật", "en": "Key Projects" }, // Changed to sentence case
@@ -664,7 +683,7 @@
                 if (langData[key] && langData[key][lang]) {
                     // Specific handling for heroHeadline (typing effect) - always English
                     if (key === 'heroHeadline') {
-                         initTypingEffect(langData.heroHeadline.en); // Always pass English text
+                         initTypingEffect(langData.heroHeadline[lang]); // Pass language specific text
                     } else if (key === 'linkedinBtn' || key === 'portfolioBtn') {
                         // For buttons with SVG, update only the text content
                         const textSpan = element.querySelector('span');
