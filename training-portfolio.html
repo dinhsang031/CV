@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ Sơ Năng Lực Đào Tạo - Nguyễn Đình Sang</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Be Vietnam Pro', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* --- UI EXPERT BUTTON STYLES --- */
+        .btn-interaction {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-interaction:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-interaction:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        /* Tab Styles */
+        .tab-active {
+            background-color: #2563eb;
+            color: white;
+            font-weight: 600;
+            border-radius: 9999px; /* Pill shape fully rounded */
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+            border: 2px solid transparent;
+        }
+        .tab-inactive {
+            color: #4b5563;
+            font-weight: 500;
+            border-radius: 9999px;
+            background-color: white;
+            border: 1px solid #e5e7eb;
+        }
+        .tab-inactive:hover {
+            background-color: #f9fafb;
+            color: #2563eb;
+            border-color: #bfdbfe;
+        }
+
+        /* Card Hover */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- HERO SECTION -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer btn-interaction" onclick="window.scrollTo(0,0)">
+                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md">S</div>
+                <div>
+                    <h1 class="text-xl font-bold text-gray-900">Nguyễn Đình Sang</h1>
+                    <p class="text-xs text-gray-500">Data Analyst & Corporate Trainer</p>
+                </div>
+            </div>
+            <!-- Nav with Hover Effects -->
+            <nav class="hidden md:flex items-center space-x-1">
+                <a href="#about" class="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Giới thiệu</a>
+                <a href="#programs" class="px-4 py-2 text-gray-600 hover:text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors">Chương trình đào tạo</a>
+                <!-- Removed "Dự án mẫu" button as requested -->
+                <a href="#contact" class="ml-4 px-6 py-2.5 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 shadow-lg shadow-blue-600/30 btn-interaction flex items-center">
+                    Liên hệ <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- INTRO -->
+    <section id="about" class="bg-white py-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-up">
+                    <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold uppercase tracking-wide mb-4">
+                        <span class="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span> Trainer
+                    </span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mb-6 leading-tight">Biến dữ liệu thành <br><span class="gradient-text">Quyết định chiến lược</span></h2>
+                    <p class="text-lg text-gray-600 mb-6 text-justify leading-relaxed">
+                        Chào bạn, tôi là <strong>Sang Nguyễn Đình</strong>. Với kinh nghiệm thực chiến tại các tập đoàn lớn như <strong>Central Retail, Kim Tín, Nova FnB</strong>, tôi không chỉ hướng dẫn công cụ, tôi chia sẻ tư duy giải quyết vấn đề. 
+                    </p>
+                    <p class="text-gray-600 mb-8 text-justify leading-relaxed">
+                        Phương pháp hướng dẫn của tôi tập trung vào tính ứng dụng: <strong>Học là làm được ngay</strong>. Từ việc tự động hóa báo cáo tài chính P&L, xử lý dữ liệu lớn từ SAP đến ứng dụng AI để tăng gấp đôi hiệu suất làm việc.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center text-gray-700 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
+                            <i data-lucide="bar-chart-2" class="w-5 h-5 mr-2 text-blue-600"></i> Power BI & SQL
+                        </div>
+                        <div class="flex items-center text-gray-700 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
+                            <i data-lucide="file-spreadsheet" class="w-5 h-5 mr-2 text-green-600"></i> Advanced Excel
+                        </div>
+                        <div class="flex items-center text-gray-700 bg-gray-50 px-4 py-2 rounded-lg border border-gray-100">
+                            <i data-lucide="bot" class="w-5 h-5 mr-2 text-purple-600"></i> AI Automation
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-purple-600 rounded-3xl transform rotate-3 opacity-20 group-hover:rotate-2 transition-transform duration-500"></div>
+                    <!-- Profile Card -->
+                    <div class="relative bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 transform transition duration-500 hover:-translate-y-1">
+                        <div class="flex items-center mb-8">
+                            <div class="w-20 h-20 bg-gray-200 rounded-full overflow-hidden mr-5 border-4 border-white shadow-lg ring-2 ring-blue-50">
+                                <img src="https://ui-avatars.com/api/?name=Sang+Nguyen&background=2563eb&color=fff&size=128" alt="Sang Nguyen" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-2xl text-gray-900">Nguyễn Đình Sang</h3>
+                                <p class="text-sm font-medium text-blue-600">HR Data Analyst @ Central Retail</p>
+                            </div>
+                        </div>
+                        <div class="space-y-5 text-sm">
+                            <div class="flex justify-between border-b border-gray-50 pb-3">
+                                <span class="text-gray-500">Kinh nghiệm</span>
+                                <span class="font-bold text-gray-900">4+ Năm (HR, F&B, Retail)</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-50 pb-3 items-start">
+                                <span class="text-gray-500 mt-1">Chứng chỉ</span>
+                                <div class="text-right">
+                                    <span class="block font-bold text-gray-900">Google Data Analytics Pro</span>
+                                    <span class="block font-bold text-gray-900">Google Business Intelligence</span>
+                                    <span class="block font-bold text-gray-900">SQL for Data Analysis</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Lĩnh vực</span>
+                                <span class="font-bold text-gray-900">Data Analysis, Automation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAINING PROGRAMS -->
+    <section id="programs" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Chương Trình Đào Tạo</h2>
+                <p class="mt-4 text-gray-600">Lộ trình từ Căn bản đến Nâng cao - May đo theo nhu cầu doanh nghiệp</p>
+            </div>
+
+            <!-- TABS (Optimized for Clicks) -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12" id="courseTabs">
+                <button onclick="switchTab('pbi')" id="tab-pbi" class="tab-active py-3 px-8 text-base flex items-center justify-center btn-interaction">
+                    <i data-lucide="bar-chart" class="w-5 h-5 mr-2"></i> Power BI
+                </button>
+                <button onclick="switchTab('excel')" id="tab-excel" class="tab-inactive py-3 px-8 text-base flex items-center justify-center btn-interaction">
+                    <i data-lucide="table" class="w-5 h-5 mr-2"></i> Modern Excel & Data
+                </button>
+                <button onclick="switchTab('ai')" id="tab-ai" class="tab-inactive py-3 px-8 text-base flex items-center justify-center btn-interaction">
+                    <i data-lucide="cpu" class="w-5 h-5 mr-2"></i> Ứng dụng AI
+                </button>
+            </div>
+
+            <!-- CONTENT AREAS -->
+            
+            <!-- 1. POWER BI (Balanced Layout) -->
+            <div id="content-pbi" class="block animate-fade-in">
+                <!-- Sử dụng flex-row để cân bằng chiều cao 2 cột -->
+                <div class="flex flex-col lg:flex-row gap-8 mb-12 items-stretch">
+                    
+                    <!-- Left Column: Course Overview (Chiếm 2/3) -->
+                    <div class="lg:w-2/3 flex flex-col">
+                        <div class="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 h-full flex flex-col relative overflow-hidden">
+                            <!-- Decorative accent -->
+                            <div class="absolute top-0 left-0 w-2 h-full bg-yellow-400"></div>
+                            
+                            <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                                <h3 class="text-2xl font-bold flex items-center text-gray-900">
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs px-2.5 py-1 rounded-md font-bold mr-3 tracking-wide">HOT</span>
+                                    Power BI: Tạo Báo Cáo Tự Động
+                                </h3>
+                                <a href="https://github.com/dinhsang031/PowerBI-Training-Program" target="_blank" class="btn-interaction flex items-center text-sm font-semibold text-gray-700 bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-black hover:border-gray-400">
+                                    <i data-lucide="github" class="w-4 h-4 mr-2"></i> Xem chi tiết
+                                </a>
+                            </div>
+                            
+                            <div class="flex items-center text-sm font-medium text-gray-500 mb-6 bg-gray-50 w-fit px-3 py-1 rounded-full border border-gray-200">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2 text-blue-600"></i>
+                                Thời lượng: <span class="text-gray-900 ml-1">2 - 3 tháng</span>
+                            </div>
+
+                            <p class="text-gray-600 mb-8 text-justify flex-grow leading-relaxed">
+                                Chương trình chuyên sâu kéo dài <strong>2 - 3 tháng</strong> giúp bạn chuyển đổi hoàn toàn từ những file Excel rời rạc sang hệ thống báo cáo Dashboard tương tác tự động. Dù bạn làm Finance, Sales, Supply Chain hay HR, khóa hướng dẫn đều tập trung giải quyết bài toán dữ liệu cụ thể của bạn.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-auto">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 hover:border-yellow-200 transition-colors">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center"><span class="w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center mr-2">1</span> Level 1: Căn Bản</h4>
+                                    <ul class="text-sm text-gray-600 space-y-2.5">
+                                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i><span><strong>Tư duy dữ liệu:</strong> Hiểu đúng về Data Analysis.</span></li>
+                                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i><span><strong>Power Query:</strong> Làm sạch dữ liệu sai logic.</span></li>
+                                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i><span><strong>Data Modeling:</strong> Mô hình Star Schema.</span></li>
+                                        <li class="flex items-start"><i data-lucide="check" class="w-4 h-4 text-green-500 mr-2 mt-0.5"></i><span><strong>Visualization:</strong> Biểu đồ chuẩn mực.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-blue-50 p-5 rounded-xl border border-blue-100 hover:border-blue-300 transition-colors">
+                                    <h4 class="font-bold text-blue-900 mb-3 flex items-center"><span class="w-6 h-6 rounded-full bg-blue-200 text-xs flex items-center justify-center mr-2 text-blue-800">2</span> Level 2: Nâng Cao</h4>
+                                    <ul class="text-sm text-gray-700 space-y-2.5">
+                                        <li class="flex items-start"><i data-lucide="zap" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i><span><strong>DAX Chuyên sâu:</strong> Time Intelligence.</span></li>
+                                        <li class="flex items-start"><i data-lucide="zap" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i><span><strong>Report Technique:</strong> Ma trận động.</span></li>
+                                        <li class="flex items-start"><i data-lucide="zap" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i><span><strong>Interactive:</strong> Tooltips, Bookmarks.</span></li>
+                                        <li class="flex items-start"><i data-lucide="zap" class="w-4 h-4 text-blue-500 mr-2 mt-0.5"></i><span><strong>Custom Chart:</strong> Vẽ biểu đồ SVG.</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Benefits & Contact (Chiếm 1/3, Stretch to fill height) -->
+                    <div class="lg:w-1/3 flex flex-col gap-6">
+                        <!-- Benefits Box -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
+                            <h4 class="font-bold text-gray-900 mb-4 text-lg">Kết quả đạt được</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
+                                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-700 pt-1">Tự động hóa 100% việc tổng hợp số liệu cuối tháng.</span>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
+                                        <i data-lucide="database" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-700 pt-1">Hiểu rõ cấu trúc bảng Dim - Fact trong Data Warehouse.</span>
+                                </li>
+                                <li class="flex items-start p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-3">
+                                        <i data-lucide="trending-up" class="w-5 h-5"></i>
+                                    </div>
+                                    <span class="text-sm text-gray-700 pt-1">Tạo ra báo cáo kể chuyện được (Data Storytelling).</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Contact Box (Flex Grow to fill remaining height) -->
+                        <div class="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl text-white shadow-xl shadow-blue-200 flex flex-col justify-center flex-grow btn-interaction cursor-pointer relative overflow-hidden group">
+                            <!-- Background decoration -->
+                            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white opacity-10 rounded-full group-hover:scale-150 transition-transform duration-700"></div>
+                            
+                            <h4 class="font-bold text-xl mb-3 relative z-10">Bạn cần tư vấn?</h4>
+                            <p class="text-blue-100 text-sm mb-6 leading-relaxed relative z-10">Tôi có thể tùy chỉnh dữ liệu bài tập theo ngành của bạn (Retail, F&B, Logistics) để sát với thực tế nhất.</p>
+                            <a href="#contact" class="inline-block w-full text-center py-3 bg-white text-blue-700 rounded-xl font-bold hover:bg-blue-50 transition shadow-lg relative z-10">Liên hệ ngay</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects Gallery -->
+                <div class="w-full">
+                     <h4 class="font-bold text-xl mb-6 text-gray-800 border-l-4 border-blue-600 pl-4 py-1">Dự án & Case Study Thực Hành</h4>
+                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                         <!-- Cards with hover effects -->
+                         <div class="project-card bg-white rounded-2xl shadow-sm p-6 border border-gray-100 card-hover">
+                             <div class="flex items-center mb-5">
+                                 <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mr-4 shadow-sm">
+                                    <i data-lucide="pie-chart" class="w-6 h-6"></i>
+                                 </div>
+                                 <h5 class="font-bold text-gray-900 text-lg">Báo Cáo P&L</h5>
+                             </div>
+                             <div class="border-t border-gray-100 pt-5">
+                                 <p class="text-xs font-bold text-gray-400 uppercase mb-3 tracking-wider">Nội dung thực hành</p>
+                                 <ul class="text-sm text-gray-600 space-y-3">
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-1.5 flex-shrink-0"></span>Phân tích Doanh thu & Giá vốn.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-1.5 flex-shrink-0"></span>Lợi nhuận gộp & Net Profit.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-1.5 flex-shrink-0"></span>So sánh tăng trưởng cùng kỳ.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2 mt-1.5 flex-shrink-0"></span>Waterfall Chart biến động.</li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <div class="project-card bg-white rounded-2xl shadow-sm p-6 border border-gray-100 card-hover">
+                             <div class="flex items-center mb-5">
+                                 <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mr-4 shadow-sm">
+                                    <i data-lucide="truck" class="w-6 h-6"></i>
+                                 </div>
+                                 <h5 class="font-bold text-gray-900 text-lg">Báo Cáo SCM</h5>
+                             </div>
+                             <div class="border-t border-gray-100 pt-5">
+                                 <p class="text-xs font-bold text-gray-400 uppercase mb-3 tracking-wider">Nội dung thực hành</p>
+                                 <ul class="text-sm text-gray-600 space-y-3">
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-orange-500 mr-2 mt-1.5 flex-shrink-0"></span>Tính toán chỉ số OTIF.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-orange-500 mr-2 mt-1.5 flex-shrink-0"></span>Mức tồn kho & Vòng quay kho.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-orange-500 mr-2 mt-1.5 flex-shrink-0"></span>Hiệu suất nhà cung cấp.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-orange-500 mr-2 mt-1.5 flex-shrink-0"></span>Dự báo nhu cầu hàng hóa.</li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                         <div class="project-card bg-white rounded-2xl shadow-sm p-6 border border-gray-100 card-hover">
+                             <div class="flex items-center mb-5">
+                                 <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mr-4 shadow-sm">
+                                    <i data-lucide="users" class="w-6 h-6"></i>
+                                 </div>
+                                 <h5 class="font-bold text-gray-900 text-lg">Báo Cáo HR</h5>
+                             </div>
+                             <div class="border-t border-gray-100 pt-5">
+                                 <p class="text-xs font-bold text-gray-400 uppercase mb-3 tracking-wider">Nội dung thực hành</p>
+                                 <ul class="text-sm text-gray-600 space-y-3">
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 mt-1.5 flex-shrink-0"></span>Theo dõi biến động nhân sự.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 mt-1.5 flex-shrink-0"></span>Headcount & Chi phí lương.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 mt-1.5 flex-shrink-0"></span>Hiệu suất & KPI nhân viên.</li>
+                                     <li class="flex items-start"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mr-2 mt-1.5 flex-shrink-0"></span>Phân tích nghỉ phép.</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+
+            <!-- 2. EXCEL & DATA (Updated Layout to match Power BI) -->
+            <div id="content-excel" class="hidden animate-fade-in">
+                <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+                    <div class="lg:w-2/3 flex flex-col">
+                        <div class="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 h-full flex flex-col relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-2 h-full bg-green-500"></div>
+                            
+                            <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                                <h3 class="text-2xl font-bold text-gray-900">Phân Tích Dữ Liệu Hiện Đại với Excel</h3>
+                                <!-- Removed "Xem chi tiết" button as requested -->
+                            </div>
+                            
+                            <div class="flex items-center text-sm font-medium text-gray-500 mb-6 bg-gray-50 w-fit px-3 py-1 rounded-full border border-gray-200">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2 text-green-600"></i>
+                                Thời lượng: <span class="text-gray-900 ml-1">1 - 2 tháng</span>
+                            </div>
+
+                            <p class="text-gray-600 mb-8 text-justify leading-relaxed">
+                                Quên đi VLOOKUP hay Copy-Paste thủ công. Khóa học kéo dài <strong>1 - 2 tháng</strong> này giúp bạn lột xác Excel với Power Query, DAX và Automation. Xử lý hàng triệu dòng dữ liệu từ SAP/ERP một cách nhẹ nhàng.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-auto">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 hover:border-green-200 transition-colors">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center"><span class="w-6 h-6 rounded-full bg-gray-200 text-xs flex items-center justify-center mr-2">1</span> Căn Bản & Tư Duy</h4>
+                                    <p class="text-sm text-gray-600">Chuẩn hóa cấu trúc bảng, các hàm xử lý chuỗi/ngày tháng tối ưu, Pivot Table cơ bản và định dạng có điều kiện.</p>
+                                </div>
+                                <div class="bg-green-50 p-5 rounded-xl border border-green-100 hover:border-green-300 transition-colors">
+                                    <h4 class="font-bold text-green-800 mb-3 flex items-center"><span class="w-6 h-6 rounded-full bg-green-200 text-xs flex items-center justify-center mr-2 text-green-900">2</span> Automation Focus</h4>
+                                    <ul class="text-sm text-gray-700 space-y-2">
+                                        <li><strong>M-Query & DAX:</strong> Viết code M tự động hóa ETL.</li>
+                                        <li><strong>Macros & Automate:</strong> Quy trình gửi mail tự động.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                     <div class="lg:w-1/3 flex flex-col gap-6">
+                         <!-- Why Learn Box -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex-grow">
+                            <h4 class="font-bold text-gray-900 mb-5 text-lg">Tại sao phải học khóa này?</h4>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0 shadow-sm">
+                                        <i data-lucide="clock" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-gray-900">Tiết kiệm thời gian</p>
+                                        <p class="text-xs text-gray-500 mt-1">Không còn cảnh làm báo cáo thủ công mỗi cuối tháng.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0 shadow-sm">
+                                        <i data-lucide="database" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-gray-900">Xử lý Big Data</p>
+                                        <p class="text-xs text-gray-500 mt-1">Vượt qua giới hạn 1 triệu dòng của Excel thường.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mr-4 flex-shrink-0 shadow-sm">
+                                        <i data-lucide="settings" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-bold text-gray-900">Tư duy Automation</p>
+                                        <p class="text-xs text-gray-500 mt-1">Quy trình tự vận hành khép kín.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                         <!-- Project Highlight -->
+                         <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl border border-green-100 shadow-sm">
+                            <h4 class="font-bold text-sm text-green-800 mb-4 uppercase tracking-wider">Dự án thực hành</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg border border-gray-100 shadow-sm text-center opacity-75">
+                                    <p class="font-bold text-gray-500 text-xs">Before</p>
+                                    <p class="text-[10px] text-gray-400 mt-1">File CSV lộn xộn, sai format</p>
+                                </div>
+                                <div class="flex justify-center text-green-500"><i data-lucide="arrow-down" class="w-5 h-5"></i></div>
+                                <div class="bg-green-600 p-4 rounded-lg text-center shadow-lg text-white">
+                                    <p class="font-bold text-xs">After (Full Automation)</p>
+                                    <p class="text-[10px] text-green-100 mt-1">Sạch 100%, Auto Refresh, Auto Email</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. AI APPLICATION -->
+            <div id="content-ai" class="hidden animate-fade-in">
+                <div class="flex flex-col lg:flex-row gap-8 items-stretch">
+                    <div class="lg:w-2/3 flex flex-col">
+                        <div class="bg-white rounded-2xl shadow-sm p-8 border border-gray-100 h-full flex flex-col relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-2 h-full bg-purple-500"></div>
+                            <div class="flex justify-between items-center mb-6 flex-wrap gap-4">
+                                <h3 class="text-2xl font-bold mb-2 text-gray-900">Ứng Dụng AI Vào Công Việc</h3>
+                                <a href="https://github.com/dinhsang031/AI-Training-Program" target="_blank" class="btn-interaction flex items-center text-sm font-semibold text-gray-700 bg-white border border-gray-300 px-4 py-2 rounded-lg hover:bg-gray-50 hover:text-black">
+                                    <i data-lucide="github" class="w-4 h-4 mr-2"></i> Xem chi tiết
+                                </a>
+                            </div>
+
+                            <div class="flex items-center text-sm font-medium text-gray-500 mb-6 bg-gray-50 w-fit px-3 py-1 rounded-full border border-gray-200">
+                                <i data-lucide="clock" class="w-4 h-4 mr-2 text-purple-600"></i>
+                                Thời lượng: <span class="text-gray-900 ml-1">1 - 2 tháng</span>
+                            </div>
+                            
+                            <p class="text-gray-600 mb-8 text-justify leading-relaxed">
+                                Trong vòng <strong>1 - 2 tháng</strong>, khóa hướng dẫn không chỉ giúp bạn biết cách "chat" với AI, mà xây dựng tư duy "AI-First". Biến AI thành trợ lý ảo đắc lực để tăng gấp đôi hiệu suất.
+                            </p>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-auto">
+                                <div class="bg-gray-50 p-5 rounded-xl border border-gray-100 hover:border-purple-200 transition-colors">
+                                    <div class="text-purple-600 mb-3"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                                    <h4 class="font-bold text-gray-800 mb-2">Level 1: AI Mindset</h4>
+                                    <p class="text-sm text-gray-600">Tư duy Prompt Engineering hiệu quả. Thực hành ChatGPT, Gemini, Suno.ai.</p>
+                                </div>
+                                <div class="bg-purple-50 p-5 rounded-xl border border-purple-100 hover:border-purple-300 transition-colors">
+                                    <div class="text-purple-600 mb-3"><i data-lucide="brain-circuit" class="w-6 h-6"></i></div>
+                                    <h4 class="font-bold text-purple-900 mb-2">Level 2: Workflow & Data</h4>
+                                    <p class="text-sm text-gray-700">Chat với tài liệu (RAG). Dùng AI viết code Excel & Phân tích dữ liệu sơ bộ.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right -->
+                    <div class="lg:w-1/3 flex flex-col">
+                        <div class="bg-gradient-to-br from-purple-700 to-indigo-800 p-8 rounded-2xl text-white shadow-xl flex flex-col justify-center h-full relative overflow-hidden">
+                            <!-- Background decoration -->
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -mr-20 -mt-20"></div>
+                            
+                            <h4 class="font-bold text-xl mb-6 border-b border-purple-400 pb-4">Giá trị cốt lõi</h4>
+                            <div class="space-y-8">
+                                <div>
+                                    <h5 class="font-bold text-purple-200 text-xs uppercase mb-2 tracking-widest">Knowledge Base</h5>
+                                    <p class="text-base font-medium">Xây dựng cơ sở tri thức cá nhân. Hỏi đáp dữ liệu tức thì.</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-purple-200 text-xs uppercase mb-2 tracking-widest">Performance</h5>
+                                    <p class="text-base font-medium">Giảm thời gian xử lý từ 2 giờ xuống 15 phút.</p>
+                                </div>
+                                <div class="bg-white/10 p-4 rounded-xl mt-4 backdrop-blur-sm">
+                                    <span class="text-purple-200 text-[10px] font-bold uppercase tracking-wider">Trainer's Philosophy</span>
+                                    <p class="text-sm mt-2 italic text-white/90">"Tôi không hướng dẫn bạn thay thế con người, tôi hướng dẫn bạn trở thành người làm chủ công nghệ."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER (Optimized Cards) -->
+    <section id="contact" class="bg-white border-t border-gray-200 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-10 text-gray-900">Sẵn sàng nâng cấp đội ngũ nhân sự?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Phone -->
+                <a href="tel:+84935764976" class="flex flex-col items-center p-6 border border-gray-200 rounded-2xl hover:shadow-lg hover:border-blue-300 transition bg-white btn-interaction group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 uppercase font-bold tracking-wide mb-1">Hotline/Zalo</p>
+                    <p class="font-bold text-gray-900 text-lg">0935 764 976</p>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:dinhsang031@gmail.com" class="flex flex-col items-center p-6 border border-gray-200 rounded-2xl hover:shadow-lg hover:border-blue-300 transition bg-white btn-interaction group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 uppercase font-bold tracking-wide mb-1">Email</p>
+                    <p class="font-bold text-gray-900 text-lg truncate w-full px-2">dinhsang031@gmail.com</p>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" class="flex flex-col items-center p-6 border border-gray-200 rounded-2xl hover:shadow-lg hover:border-blue-300 transition bg-white btn-interaction group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 uppercase font-bold tracking-wide mb-1">LinkedIn</p>
+                    <p class="font-bold text-gray-900 text-lg">Sang Nguyen Dinh</p>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/dinhsang031" target="_blank" class="flex flex-col items-center p-6 border border-gray-200 rounded-2xl hover:shadow-lg hover:border-blue-300 transition bg-white btn-interaction group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-4 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </div>
+                    <p class="text-xs text-gray-500 uppercase font-bold tracking-wide mb-1">Portfolio</p>
+                    <p class="font-bold text-gray-900 text-lg">Github</p>
+                </a>
+            </div>
+            <div class="mt-16 text-sm text-gray-400 font-medium">
+                &copy; 2026 Nguyen Dinh Sang. All rights reserved.
+            </div>
+        </div>
+    </section>
+
+    <!-- Script for Tabs -->
+    <script>
+        lucide.createIcons();
+
+        function switchTab(tabName) {
+            // Hide all contents
+            document.getElementById('content-pbi').classList.add('hidden');
+            document.getElementById('content-excel').classList.add('hidden');
+            document.getElementById('content-ai').classList.add('hidden');
+
+            // Reset tab styles to INACTIVE
+            const tabs = ['pbi', 'excel', 'ai'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}`);
+                // Remove active classes
+                btn.classList.remove('tab-active', 'bg-blue-600', 'text-white', 'shadow-md');
+                // Add inactive classes
+                btn.classList.add('tab-inactive', 'bg-white', 'text-gray-600');
+            });
+
+            // Show selected content
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            
+            // Set active tab style (Blue pill)
+            const activeBtn = document.getElementById(`tab-${tabName}`);
+            activeBtn.classList.remove('tab-inactive', 'bg-white', 'text-gray-600');
+            activeBtn.classList.add('tab-active', 'bg-blue-600', 'text-white', 'shadow-md');
+        }
+    </script>
+</body>
+</html>
