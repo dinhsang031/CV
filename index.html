@@ -1,869 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title data-lang-key="pageTitle">Sang Nguyen Dinh - Data Analyst | People Cost Budgeting & HR Analytics</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121212; /* Very dark grey, almost black */
-            color: #e0e0e0; /* Light grey text for contrast */
-            margin: 0;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 1200px;
-        }
-        .section-title {
-            color: #00ffff; /* Electric Cyan accent for titles */
-            font-weight: 700;
-            text-align: center;
-            text-transform: uppercase; /* Keep uppercase for display */
-            letter-spacing: 0.1em;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #00ffff; /* Electric Cyan accent */
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .card {
-            background-color: #1a1a2a; /* Slightly lighter dark grey/blue for cards */
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); /* Stronger shadow */
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border: 1px solid #363640; /* Subtle border */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%; /* Ensure card fills its container's height */
-        }
-        /* Project card specific styles for clickable area */
-        .project-card-link-wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%; /* Ensure link covers full card height */
-            text-decoration: none; /* Remove underline from link by default */
-            color: inherit; /* Inherit text color */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sang Nguyen Dinh — Data Analyst Portfolio</title>
+  <meta name="description" content="Sang Nguyen Dinh — Data Analyst specializing in People Cost Budgeting, HR Analytics, AI & Automation. Portfolio showcasing projects, experience, and skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+      background: #000; color: #F5F5F0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    ::selection { background: #C5A059; color: #000; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
 
-        .card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-            border-color: #00ffff;
-        }
-        /* Hover for project cards that are links */
-        .project-card-link-wrapper:hover .card {
-            border-color: #00ffff; /* Highlight border on hover */
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
-        }
+    /* === VARIABLES === */
+    :root {
+      --black: #000000;
+      --gold: #C5A059;
+      --cream: #F5F5F0;
+      --dark-grey: #121212;
+      --gold-light: #E8D5B5;
+      --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+      --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    }
 
-        .skill-badge {
-            background-color: #34495e; /* Darker blue-grey for skills */
-            color: #82e0ff; /* Lighter blue for contrast */
-            border-radius: 12px;
-            padding: 4px 10px;
-            font-weight: 600;
-            font-size: 0.8rem;
-            margin: 2px;
-            border: 1px solid #4a5a6a;
-            display: inline-block;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-        }
-        .skill-badge:hover {
-            background-color: #4a5a6a;
-            transform: scale(1.05);
-        }
-        .btn-primary {
-            background-color: #00ffff; /* Electric Cyan accent for buttons */
-            color: #121212; /* Dark text for contrast */
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 700;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.4);
-        }
-        .btn-primary:hover {
-            background-color: #00c0ff;
-            transform: translateY(-2px);
-        }
-        .icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-            margin-right: 8px;
-            color: #00ffff;
-        }
-        .icon-dark {
-            color: #121212;
-            transition: color 0.3s ease;
-        }
-        .btn-primary:hover .icon-dark {
-            color: #00ffff;
-        }
-        .nav-link {
-            color: #00ffff;
-            transition: color 0.2s ease;
-        }
-        .nav-link:hover {
-            color: #00c0ff;
-        }
-        .project-description {
-            color: #b0b0b0;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
+    /* === UTILITIES === */
+    .gold-gradient { background: linear-gradient(135deg, #C5A059 0%, #E8D5B5 50%, #C5A059 100%); }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #C5A059 0%, #E8D5B5 50%, #C5A059 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-out forwards;
-            opacity: 0;
-        }
-        #about {
-            animation-delay: 0.1s;
-        }
-        .summary-section .card {
-            animation-delay: 0.3s;
-        }
-        #experience {
-            animation-delay: 0.5s;
-        }
-        #projects {
-            animation-delay: 0.7s;
-        }
-        #skills {
-            animation-delay: 0.9s;
-        }
-        #certifications {
-            animation-delay: 1.1s;
-        }
-        #education {
-            animation-delay: 1.3s;
-        }
-        #contact {
-            animation-delay: 1.5s;
-        }
+    /* === ANIMATIONS === */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .animate-fade-in-up { animation: fadeInUp 0.8s ease forwards; }
+    .animate-fade-in-right { animation: fadeInRight 0.8s ease forwards; }
+    .animate-fade-in { animation: fadeIn 0.6s ease forwards; }
+    .animate-scale-in { animation: scaleIn 0.8s ease forwards; }
+    .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+    .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+    .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
 
-        .section-icon {
-            width: 32px;
-            height: 32px;
-            fill: currentColor;
-        }
+    /* === NAVIGATION === */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 1.5rem;
+      transition: all 0.3s ease;
+    }
+    .nav.scrolled {
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(197,160,89,0.2);
+    }
+    .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.5rem; font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+    .nav-links {
+      display: none; align-items: center; gap: 2rem;
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+    }
+    .nav-links a:hover, .nav-links button:hover { color: var(--gold); }
+    .nav-links a, .nav-links button { transition: color 0.3s ease; cursor: pointer; }
+    .lang-toggle {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      border: 1px solid rgba(197,160,89,0.3);
+      padding: 0.25rem 0.75rem; border-radius: 999px;
+      background: none; color: var(--cream);
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.25em; text-transform: uppercase;
+    }
+    .nav-cta {
+      padding: 0.5rem 1.5rem; border-radius: 2px;
+      font-weight: 700; color: var(--black) !important;
+    }
+    .mobile-toggle {
+      display: block; background: none; border: none;
+      color: var(--gold); cursor: pointer; padding: 0.5rem;
+    }
+    .mobile-toggle svg { width: 24px; height: 24px; }
 
-        /* Back-to-top button styles */
-        #back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #00ffff;
-            color: #121212;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.4);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
-            z-index: 1000;
-        }
-        #back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        #back-to-top:hover {
-            background-color: #00c0ff;
-        }
+    /* === MOBILE MENU === */
+    .mobile-menu {
+      position: fixed; inset: 0; z-index: 40;
+      background: var(--black);
+      display: none; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 2rem; font-family: var(--font-serif);
+      font-size: 1.25rem;
+    }
+    .mobile-menu.open { display: flex; animation: fadeIn 0.3s ease; }
+    .mobile-menu a, .mobile-menu button { transition: color 0.3s; cursor: pointer; }
+    .mobile-menu a:hover, .mobile-menu button:hover { color: var(--gold); }
+    .mobile-menu .lang-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      color: var(--gold); background: none; border: none;
+      font-size: 1.25rem; font-family: var(--font-serif);
+    }
 
-        /* Language toggle button styles */
-        #language-toggle {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: #00ffff;
-            color: #121212;
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            border: 1px solid #00ffff;
-            font-weight: 600;
-            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
-            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-            z-index: 1000;
-        }
-        #language-toggle:hover {
-            background-color: #00c0ff;
-            color: #121212;
-            border-color: #00c0ff;
-        }
+    /* === HERO === */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      overflow: hidden; padding-top: 5rem;
+    }
+    .hero-image-wrap {
+      width: 100%; height: 50vh; position: relative;
+      background: var(--dark-grey); overflow: hidden;
+    }
+    .hero-image-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 20%;
+      transform: scale(1.25);
+      transition: all 1s ease;
+    }
+    .hero-image-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.4), transparent, transparent);
+    }
+    .hero-content {
+      width: 100%; min-height: 50vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 3rem 2rem; background: var(--black);
+    }
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 5vw, 3.5rem);
+      line-height: 1.15; margin-bottom: 1rem;
+      white-space: nowrap;
+    }
+    .hero-subtext {
+      font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+      font-weight: 500; letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold); opacity: 0.8;
+      margin-bottom: 2.5rem;
+    }
+    .hero-buttons { display: flex; flex-direction: column; gap: 1rem; }
+    .hero-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 0.5rem; padding: 1rem 2rem;
+      font-weight: 700; font-size: 0.85rem;
+      border-radius: 2px; text-align: center;
+      transition: all 0.3s ease; border: none; cursor: pointer;
+    }
+    .hero-btn-primary { color: var(--black); }
+    .hero-btn-primary:hover { opacity: 0.9; }
+    .hero-btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(197,160,89,0.5);
+      color: var(--gold);
+    }
+    .hero-btn-secondary:hover { background: rgba(197,160,89,0.1); }
+    .hero-btn svg { width: 16px; height: 16px; }
 
-        /* Added min-height for the typing headline to ensure space */
-        #typing-headline {
-            min-height: 48px; /* Approx height for text-4xl */
-        }
+    /* === SECTIONS === */
+    .section {
+      padding: 6rem 1.5rem;
+    }
+    .section-bordered { border-top: 1px solid rgba(197,160,89,0.1); border-bottom: 1px solid rgba(197,160,89,0.1); }
+    .section-dark { background: rgba(18,18,18,0.3); }
+    .section-title {
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 3rem;
+    }
+    .section-inner { max-width: 72rem; margin: 0 auto; }
+    .section-narrow { max-width: 56rem; margin: 0 auto; }
 
-        /* Project content wrapper to allow flexibility for equal height */
-        .project-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Align content to top */
-            min-height: 0; /* Allow content to shrink if needed */
-        }
-    </style>
+    /* === SUMMARY === */
+    .summary-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.3rem, 3vw, 2.2rem);
+      line-height: 1.5; color: rgba(245,245,240,0.9);
+    }
+
+    /* === EXPERIENCE === */
+    .exp-item { display: grid; gap: 2rem; margin-bottom: 4rem; }
+    .exp-duration {
+      font-size: 0.85rem; font-weight: 500;
+      color: rgba(197,160,89,0.6); margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-family: var(--font-serif);
+      font-size: 1.5rem; margin-bottom: 0.25rem;
+    }
+    .exp-role {
+      font-size: 0.85rem; color: var(--gold); margin-top: 0.25rem;
+    }
+    .exp-points { display: flex; flex-direction: column; gap: 1rem; }
+    .exp-point {
+      display: flex; gap: 0.75rem;
+      color: rgba(245,245,240,0.7); line-height: 1.7; font-size: 0.95rem;
+    }
+    .exp-point-dot {
+      color: var(--gold); margin-top: 0.35rem; flex-shrink: 0;
+    }
+
+    /* === PROJECTS === */
+    .projects-grid { display: grid; gap: 2rem; }
+    .project-card {
+      background: var(--dark-grey);
+      padding: 2rem; display: flex; flex-direction: column;
+      border: 1px solid rgba(197,160,89,0.1);
+      transition: all 0.4s ease;
+    }
+    .project-card:hover {
+      border-color: rgba(197,160,89,0.4);
+      transform: translateY(-8px);
+    }
+    .project-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem; margin-bottom: 1rem;
+      transition: color 0.3s;
+    }
+    .project-card:hover .project-title { color: var(--gold); }
+    .project-desc {
+      font-size: 0.85rem; line-height: 1.7;
+      color: rgba(245,245,240,0.6); margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .project-tag {
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      border: 1px solid rgba(197,160,89,0.2);
+      padding: 0.25rem 0.5rem; border-radius: 2px;
+      color: rgba(197,160,89,0.8);
+    }
+
+    /* === SKILLS === */
+    .skills-grid { display: grid; gap: 4rem; }
+    .skills-key { display: flex; flex-wrap: wrap; gap: 0.25rem; }
+    .skills-key span {
+      font-family: var(--font-serif);
+      font-style: italic; font-size: 1.1rem;
+      color: rgba(245,245,240,0.8);
+    }
+    .skills-tech { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .skill-tech-item {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.85rem; color: rgba(245,245,240,0.6);
+    }
+    .skill-dot {
+      width: 4px; height: 4px;
+      background: var(--gold); border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* === CONTACT === */
+    .contact-section { text-align: center; padding: 8rem 1.5rem; }
+    .contact-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      margin-bottom: 2rem;
+    }
+    .contact-subtext {
+      font-size: 1.15rem;
+      color: rgba(245,245,240,0.6);
+      margin-bottom: 3rem;
+    }
+    .contact-links {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 1.5rem;
+      font-weight: 500; letter-spacing: 0.25em;
+      text-transform: uppercase; font-size: 0.7rem;
+      color: var(--gold);
+    }
+    .contact-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: color 0.3s;
+    }
+    .contact-link:hover { color: var(--cream); }
+    .contact-link svg { width: 16px; height: 16px; }
+    .social-links {
+      display: flex; justify-content: center;
+      gap: 1.5rem; margin-top: 4rem;
+    }
+    .social-link {
+      padding: 1rem;
+      border: 1px solid rgba(197,160,89,0.2);
+      border-radius: 50%; transition: all 0.3s;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .social-link:hover {
+      background: var(--gold); color: var(--black);
+      border-color: var(--gold);
+    }
+    .social-link svg { width: 24px; height: 24px; }
+
+    /* === FOOTER === */
+    .footer {
+      padding: 3rem 1.5rem;
+      border-top: 1px solid rgba(197,160,89,0.1);
+      display: flex; flex-direction: column;
+      align-items: center; gap: 1.5rem;
+      font-size: 0.6rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(245,245,240,0.4);
+    }
+    .footer-left { display: flex; align-items: center; gap: 0.5rem; }
+    .footer-sep { color: rgba(197,160,89,0.2); }
+    .footer-right { display: flex; gap: 2rem; }
+    .footer-right a:hover { color: var(--gold); transition: color 0.3s; }
+
+    /* === SCROLL REVEAL === */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 768px) {
+      .nav { padding: 1rem 3rem; }
+      .nav-links { display: flex; }
+      .mobile-toggle { display: none; }
+
+      .hero { flex-direction: row; padding-top: 0; }
+      .hero-image-wrap { width: 50%; height: 100vh; }
+      .hero-content { width: 50%; min-height: 100vh; padding: 3rem 4rem; }
+      .hero-buttons { flex-direction: row; }
+
+      .section { padding: 6rem 3rem; }
+      .exp-item { grid-template-columns: 1fr 2fr; }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-links { flex-direction: row; justify-content: center; gap: 2rem; }
+      .footer { flex-direction: row; justify-content: space-between; }
+    }
+    @media (min-width: 1024px) {
+      .projects-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
 </head>
-<body class="antialiased leading-normal tracking-tight">
-    <canvas id="space-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none;"></canvas>
+<body>
 
-    <header class="bg-gray-900 text-white py-6 shadow-lg animate-fade-in" style="position: relative; z-index: 1;">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-            <h1 class="text-3xl font-bold text-center md:text-left mb-4 md:mb-0 text-white">Sang Nguyen Dinh</h1>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#about" class="nav-link" data-lang-key="aboutLink">Giới thiệu</a></li>
-                    <li><a href="#experience" class="nav-link" data-lang-key="experienceLink">Kinh nghiệm</a></li>
-                    <li><a href="#projects" class="nav-link" data-lang-key="projectsLink">Dự án</a></li>
-                    <li><a href="#skills" class="nav-link" data-lang-key="skillsLink">Kỹ năng</a></li>
-                    <li><a href="#contact" class="nav-link" data-lang-key="contactLink">Liên hệ</a></li>
-                </ul>
-            </nav>
+  <!-- Navigation -->
+  <nav class="nav" id="navbar">
+    <div class="nav-logo gold-text-gradient">S.N.D.</div>
+    <div class="nav-links" id="desktopNav">
+      <a href="#work" id="nav-work">WORK</a>
+      <a href="#about" id="nav-about">ABOUT</a>
+      <a href="#experience" id="nav-experience">WORK EXPERIENCE</a>
+      <a href="#contact" id="nav-contact">CONTACT</a>
+      <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+        <span id="langToggleText">VI</span>
+      </button>
+      <a href="#contact" class="nav-cta gold-gradient" id="nav-cta">LET'S TALK</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()">
+      <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#work" onclick="closeMobileMenu()" id="mob-work">WORK</a>
+    <a href="#about" onclick="closeMobileMenu()" id="mob-about">ABOUT</a>
+    <a href="#experience" onclick="closeMobileMenu()" id="mob-experience">WORK EXPERIENCE</a>
+    <a href="#contact" onclick="closeMobileMenu()" id="mob-contact">CONTACT</a>
+    <button class="lang-btn" onclick="toggleLang(); closeMobileMenu();">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+      <span id="mobLangText">English</span>
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="heroSection">
+    <div class="hero-image-wrap">
+      <img src="avatar.png" alt="Sang Nguyen Dinh" referrerpolicy="no-referrer" />
+      <div class="hero-image-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="animate-fade-in-right animate-delay-2">
+        <h1 class="hero-headline gold-text-gradient" id="heroHeadline">Sang Nguyen Dinh</h1>
+        <p class="hero-subtext" id="heroSubtext">Data Analyst | Workforce Budgeting &amp; HR Analytics | AI &amp; Automation Enthusiast</p>
+        <div class="hero-buttons">
+          <a href="#work" class="hero-btn hero-btn-primary gold-gradient" id="heroWorkBtn">
+            <span>VIEW SELECTED WORK</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+          <a href="https://drive.google.com/uc?export=download&id=1JmUD6vx8ub9H5k5ZLLrdBzPTMEyQ30Mk" target="_blank" rel="noopener noreferrer" class="hero-btn hero-btn-secondary" id="heroDownloadBtn">
+            <span>DOWNLOAD RESUME</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          </a>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="bg-gradient-to-r from-blue-900 to-gray-900 text-white py-20 px-4 animate-fade-in">
-        <div class="container mx-auto text-center">
-            <h2 id="typing-headline" class="text-4xl font-extrabold mb-4 text-white" data-lang-key="heroHeadline"></h2>
-            <p class="text-xl mb-8 opacity-90" data-lang-key="heroParagraph">Chứng nhận D.A. với 4 năm kinh nghiệm trong ngành Nhân sự, F&B và Bán lẻ. Thành tích nổi bật bao gồm việc cập nhật quy trình luân chuyển dữ liệu giúp giảm 40% sự trùng lặp. <br> <strong>Tech Stack:</strong> DAX, Power Query, Data Automation, ML & Quản lý Dự án.</p>
-            <div class="flex justify-center space-x-4">
-                <a href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" class="btn-primary flex items-center">
-                    <svg class="icon-dark" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" preserveAspectRatio="xMidYMid meet"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    &nbsp;<span data-lang-key="linkedinBtn">LinkedIn</span>
-                </a>
-                <a href="https://github.com/dinhsang031" target="_blank" class="btn-primary flex items-center">
-                    <svg class="icon-dark" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.6.111.82-.266.82-.591 0-.291-.01-1.055-.015-2.075-3.338.724-4.042-1.61-4.042-1.61-.545-1.385-1.328-1.756-1.328-1.756-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.238 1.838 1.238 1.07 1.835 2.809 1.305 3.492.999.108-.775.419-1.305.762-1.605-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.12-.303-.535-1.523.115-3.176 0 0 1-.322 3.296 1.23.955-.266 1.96-.399 2.96-.399 1 0 2.005.133 2.96.399 2.295-1.552 3.296-1.23 3.296-1.23.65 1.653.23 2.873.115 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.804 5.624-5.475 5.923.43.37.823 1.102.823 2.222v3.293c0 .327.214.706.823.59C20.563 21.808 24 17.31 24 12c0-6.627-5.373-12-12-12z" clip-rule="evenodd"></path></svg>
-                    &nbsp;<span data-lang-key="portfolioBtn">Portfolio (GitHub)</span>
-                </a>
-            </div>
+  <!-- Summary Section -->
+  <section id="about" class="section section-bordered">
+    <div class="section-narrow reveal">
+      <h2 class="section-title" id="summaryTitle">SUMMARY</h2>
+      <p class="summary-text" id="summaryContent">Currently working at Central Retail, I managing the HR Data Ecosystem for a diverse portfolio of 10+ global brands (including Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop) across 150+ stores nationwide and leverage my deep understanding of HR processes to build automated data models and financial reports. My mission is to translate complex HR data into actionable financial insights, helping organizations optimize People Cost and improve operational efficiency.</p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section section-dark">
+    <div class="section-inner">
+      <h2 class="section-title" id="expTitle">WORK EXPERIENCE</h2>
+      <div id="experienceContainer"></div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="work" class="section">
+    <div class="section-inner">
+      <h2 class="section-title" id="projectsTitle">KEY PROJECTS</h2>
+      <div class="projects-grid" id="projectsContainer"></div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section section-dark section-bordered">
+    <div class="section-inner">
+      <div class="skills-grid">
+        <div class="reveal">
+          <h2 class="section-title" id="skillsTitle">SKILLS</h2>
+          <div class="skills-key" id="skillsKey"></div>
         </div>
-    </section>
-
-    <section class="py-16 px-4 summary-section animate-fade-in">
-        <div class="container mx-auto">
-            <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="summaryTitle">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.38 0 2.5 1.12 2.5 2.5S13.38 10 12 10s-2.5-1.12-2.5-2.5S10.62 5 12 5zm0 14.5c-2.73 0-5.27-1.17-7.46-3.23.08-1.5 2.17-2.61 4.59-3.2 1.09.43 2.3.63 3.73.63s2.64-.2 3.73-.63c2.42.59 4.51 1.7 4.59 3.2-2.19 2.06-4.73 3.23-7.46 3.23z"/></svg>
-                TÓM TẮT
-            </h3>
-            <div class="card p-8 text-center">
-                <p class="text-lg leading-relaxed" style="color: #B0B0B0;" data-lang-key="summaryParagraph">
-                    Hiện đang làm việc tại Central Retail, tôi quản lý Hệ sinh thái Dữ liệu Nhân sự cho danh mục đa dạng gồm hơn 10 thương hiệu toàn cầu (Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop...) tại hơn 150 cửa hàng trên toàn quốc. Tôi tận dụng sự hiểu biết sâu sắc về quy trình nhân sự để xây dựng các mô hình dữ liệu tự động và báo cáo tài chính. Sứ mệnh của tôi là chuyển đổi dữ liệu nhân sự phức tạp thành các insight tài chính hành động, giúp tổ chức tối ưu hóa Chi phí Nhân sự và cải thiện hiệu quả vận hành.
-                </p>
-            </div>
+        <div class="reveal">
+          <h2 class="section-title" id="techTitle">TECHNICAL</h2>
+          <div class="skills-tech" id="skillsTech"></div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience" class="bg-gray-900 py-16 px-4 animate-fade-in">
-        <div class="container mx-auto">
-            <h3 class="section-title text-3xl mb-12 mx-auto" data-lang-key="experienceTitle">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6h-6V4c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2H2c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zM10 4h4v2h-4V4zm12 17H2V8h20v13zM15 15c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1h5c.55 0 1-.45 1-1v-2z"/></svg>
-                KINH NGHIỆM LÀM VIỆC
-            </h3>
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="section-narrow reveal">
+      <h2 class="contact-title gold-text-gradient" id="contactTitle">CONTACT ME</h2>
+      <p class="contact-subtext" id="contactSubtext">I'm always open to connecting and exploring new opportunities!</p>
+      <div class="contact-links">
+        <a href="mailto:dinhsang031@gmail.com" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>dinhsang031@gmail.com</span>
+        </a>
+        <a href="tel:+84935764976" class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+84935764976</span>
+        </a>
+        <span class="contact-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span id="contactLocation">Ho Chi Minh City, Vietnam</span>
+        </span>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://github.com/dinhsang031" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <div class="grid grid-cols-1 gap-8">
-                <div class="card p-8 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="centralRetailTitle">Data Analyst - CENTRAL RETAIL</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="centralRetailDuration">Aug, 2025 - Current | Ho Chi Minh City, Vietnam</p>
-                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="centralRetailDesc1"><strong>Quản lý Dữ liệu:</strong> Chuẩn hóa các nguồn dữ liệu rời rạc từ nhiều Đơn vị Kinh doanh thành Mô hình Dữ liệu 4 Lớp thống nhất. Giám sát hạ tầng dữ liệu nhân sự tập trung cho hệ sinh thái bán lẻ phức tạp gồm các thương hiệu quốc tế và hơn 800 nhân viên.</li>
-                            <li data-lang-key="centralRetailDesc2"><strong>Hoạch định Tài chính & Tối ưu Chi phí:</strong> Dẫn dắt việc tự động hóa Chi phí Nhân sự & Ngân sách Hàng năm, hỗ trợ Kiểm soát Tài chính và Giám đốc Nhân sự kiểm soát ngân sách lao động hàng triệu đô la. Phát triển các mô hình tài chính động để mô phỏng tác động chi phí của tuyển dụng, tăng lương và thay đổi phúc lợi với độ chính xác 99%.</li>
-                            <li data-lang-key="centralRetailDesc3"><strong>Phân tích Chiến lược & Insights:</strong> Chuyển đổi dữ liệu nhân sự phức tạp thành các insight kinh doanh hành động, tập trung vào Phân tích Nguyên nhân Gốc rễ Nghỉ việc và Năng suất Lao động để hỗ trợ ra quyết định cho Quản lý Vận hành và Thương hiệu.</li>
-                            <li data-lang-key="centralRetailDesc4"><strong>BI, Tự động hóa & AI:</strong> Xây dựng các pipeline tự động end-to-end sử dụng M & DAX, giảm chu kỳ báo cáo 90%. Thiết kế các dashboard chiến lược (Chi phí PE, Headcount, Hiệu quả Tuyển dụng...). Triển khai Power Automate (RPA) để nhập liệu vào ERP và tiên phong giải pháp AI Agent để trích xuất CV tự động.</li>
-                            <li data-lang-key="centralRetailDesc5"><strong>Quản trị & Chiến lược Dữ liệu:</strong> Đóng vai trò "người gác cổng" cho chất lượng Dữ liệu Chủ (Master Data) HR, thực thi các quy tắc xác thực nghiêm ngặt và quy trình làm việc chéo giữa các bộ phận (Ops - TA - C&B - Finance).</li>
-                        </ul>
-                    </div>
-                </div>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <span>Sang Nguyen Dinh Portfolio</span>
+      <span class="footer-sep">|</span>
+      <span>&copy; 2024. All Rights Reserved.</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/dinhsang031" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
 
-                <div class="card p-8 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="kimTinTitle">Data Analyst - KIM TIN GROUP</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="kimTinDuration">Aug, 2023 - Aug, 2025 | Ho Chi Minh City, Vietnam</p>
-                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="kimTinDesc1">Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%.</li>
-                            <li data-lang-key="kimTinDesc2">Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors.</li>
-                            <li data-lang-key="kimTinDesc3">Data Solutions Development (20%): Developed integrated data solutions using App Sheet, App Script, Forms, n8n. Included custom HR apps, streamlined data collection, spearheaded the application of AI and automation technologies within the HR depts in group to enhance 30% operational efficiency and data-driven insights.</li>
-                            <li data-lang-key="kimTinDesc4">Data Integration (10%): Consolidated HR data from various sources (API, ERP, Sheets, Python-based Web Scraping) into a centralized database, enhancing data accuracy by 25%.</li>
-                            <li data-lang-key="kimTinDesc5">Data Analysis Partner (Non-HR) (10%): Served as a data analysis partner by analyzing performance & operational metrics, data solution to identify strategic improvement opportunities.</li>
-                            <li data-lang-key="kimTinDesc6">Training and Support (10%): Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card p-8 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="novaFnBTitle">Data Analyst - NOVA FnB</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="novaFnBDuration">Tháng 8/2022 - Tháng 9/2023 | Hồ Chí Minh, Việt Nam</p>
-                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="novaFnBDesc1">Xử lý dữ liệu, mô hình hóa dữ liệu, tạo scorecard và báo cáo, thiết kế dashboard.</li>
-                            <li data-lang-key="novaFnBDesc2">Thực hiện các phân tích ad-hoc theo yêu cầu.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card p-8 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="sebangTitle">B2B Area Sales Officer - Sebang Global Battery Co Ltd</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="sebangDuration">Tháng 6/2021 - Tháng 5/2022 | Việt Nam</p>
-                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="sebangDesc1">Hỗ trợ kinh doanh và phát triển thị trường B2B.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card p-8 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="sunWorldTitle">Training Assistant - Sun World Group</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="sunWorldDuration">Tháng 5/2020 - Tháng 3/2021 | Đà Nẵng, Việt Nam</p>
-                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="sunWorldDesc1">Hỗ trợ tổ chức và triển khai các chương trình đào tạo.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card p-8 flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="freelancerTitle">Tour Guide - Freelancer</h4>
-                        <p class="text-gray-400 mb-4" data-lang-key="freelancerDuration">Tháng 1/2017 - Tháng 2/2020 | Đà Nẵng, Việt Nam</p>
-                        <ul class="list-disc list-inside" style="color: #B0B0B0;">
-                            <li data-lang-key="freelancerDesc1">Hướng dẫn viên du lịch tự do.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="py-16 px-4 animate-fade-in">
-        <div class="container mx-auto">
-            <h3 class="section-title text-3xl mb-12 mx-auto" data-lang-key="projectsTitle">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20h4V4h-4v16zm-6 0h4V8H4v12zM16 4v16h4V4h-4z"/></svg>
-                DỰ ÁN NỔI BẬT
-            </h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="card p-8">
-                    <div class="project-content">
-                        <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="hrDashboardsTitle">Phát triển HR Dashboards cho Tập đoàn gồm 20 công ty con</h4>
-                        <p class="project-description" style="color: #B0B0B0;" data-lang-key="hrDashboardsDesc">Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo, cung cấp các insight quan trọng để quản lý nguồn nhân lực hiệu quả trên nhiều đơn vị.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mt-4 justify-center">
-                        <span class="skill-badge" data-lang-key="tagPowerBI">Power BI</span>
-                        <span class="skill-badge" data-lang-key="tagDataViz">Trực quan hóa dữ liệu</span>
-                        <span class="skill-badge" data-lang-key="tagSQL">SQL</span>
-                    </div>
-                </div>
-
-                <a href="https://github.com/dinhsang031/Employee_Attrition_Predictor" target="_blank" class="project-card-link-wrapper">
-                    <div class="card p-8">
-                        <div class="project-content">
-                            <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="turnoverPredictionTitle">Mô hình Dự đoán Tỷ lệ nghỉ việc của nhân viên</h4>
-                            <p class="project-description" style="color: #B0B0B0;" data-lang-key="turnoverPredictionDesc">Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc của nhân viên và xác định các lý do chính gây ra sự biến động. Đạt độ chính xác mô hình 86%, giảm tỷ lệ nghỉ việc từ 25% xuống 17% bằng cách giải quyết các yếu tố đã xác định.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-4 justify-center">
-                            <span class="skill-badge" data-lang-key="tagML">Machine Learning</span>
-                            <span class="skill-badge" data-lang-key="tagPython">Python</span>
-                            <span class="skill-badge" data-lang-key="tagPredictiveAnalytics">Phân tích Dự đoán</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://github.com/dinhsang031/AI-HR-CV-Scan" target="_blank" class="project-card-link-wrapper">
-                    <div class="card p-8">
-                        <div class="project-content">
-                            <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="aiCVScreeningTitle">Hệ thống Sàng lọc CV bằng AI</h4>
-                            <p class="project-description" style="color: #B0B0B0;" data-lang-key="aiCVScreeningDesc">Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc. Đạt độ chính xác trích xuất dữ liệu 90%, giảm đáng kể thời gian sàng lọc thủ công 90%.</p>
-                        </div>
-                        <div class="flex flex-wrap gap-2 mt-4 justify-center">
-                            <span class="skill-badge" data-lang-key="tagAI">AI</span>
-                            <span class="skill-badge" data-lang-key="tagAutomation">Tự động hóa</span>
-                            <span class="skill-badge" data-lang-key="tagPython">Python</span>
-                            <span class="skill-badge" data-lang-key="tagN8N">n8n</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="bg-gray-900 py-16 px-4 animate-fade-in">
-        <div class="container mx-auto">
-            <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="skillsTitle">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 6l-3-3-3 3-3-3-4 4V22h14zM9 18H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2z"/></svg>
-                KỸ NĂNG
-            </h3>
-            <div class="grid grid-cols-1 gap-6 text-center">
-                <div class="card p-6">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="keySkillsTitle">Kỹ năng chính</h4>
-                    <div class="flex flex-wrap justify-center">
-                        <span class="skill-badge" data-lang-key="skillDataViz">Data Visualization</span>
-                        <span class="skill-badge" data-lang-key="skillDataManipulation">Data Manipulation</span>
-                        <span class="skill-badge" data-lang-key="skillPresentation">Presentation</span>
-                        <span class="skill-badge" data-lang-key="skillInterpersonal">Interpersonal</span>
-                        <span class="skill-badge" data-lang-key="skillResearch">Nghiên cứu</span>
-                        <span class="skill-badge" data-lang-key="skillProjectManagement">Quản lý dự án</span>
-                        <span class="skill-badge" data-lang-key="skillStorytelling">Kể chuyện bằng Dữ liệu</span>
-                        <span class="skill-badge" data-lang-key="skillAnalyticalThinking">Tư duy Phân tích</span>
-                    </div>
-                </div>
-                <div class="card p-6">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="technicalSkillsTitle">Kỹ năng kỹ thuật</h4>
-                    <div class="flex flex-wrap justify-center">
-                        <span class="skill-badge" data-lang-key="skillPowerBI">Power BI</span>
-                        <span class="skill-badge" data-lang-key="skillPostgreSQL">Postgre SQL</span>
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge" data-lang-key="skillAppSheet">AppSheet</span>
-                        <span class="skill-badge" data-lang-key="skillML">Machine Learning</span>
-                        <span class="skill-badge" data-lang-key="skillExcelGSheet">Excel, GG Sheet</span>
-                        <span class="skill-badge" data-lang-key="skillStatistics">Thống kê</span>
-                        <span class="skill-badge" data-lang-key="skillAIAutomation">AI & Tự động hóa</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="certifications" class="py-16 px-4 animate-fade-in">
-        <div class="container mx-auto">
-            <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="certificationsTitle">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-8-3zm0 10.99l-4-4 1.41-1.41 2.59 2.58 4.59-4.59L18 9l-6 6.99z"/></svg>
-                CHỨNG CHỈ
-            </h3>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card p-6 flex flex-col justify-center items-center">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="certBI">Business Intelligence by Coursera - Google</h4>
-                    <p class="text-gray-400 text-sm mt-1" data-lang-key="certBIDate">Tháng 7 - 2023</p>
-                </div>
-                <div class="card p-6 flex flex-col justify-center items-center">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="certDA">Data Analytic Professional Certificate by Coursera - Google</h4>
-                    <p class="text-gray-400 text-sm mt-1" data-lang-key="certDADate">Tháng 4 - 2023</p>
-                </div>
-                <div class="card p-6 flex flex-col justify-center items-center">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="certSQL">SQL for Data Analysis - Udacity</h4>
-                    <p class="text-gray-400 text-sm mt-1" data-lang-key="certSQLDate">Tháng 8 - 2022</p>
-                </div>
-                <div class="card p-6 flex flex-col justify-center items-center">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="certTourGuide">International Tour Guide</h4>
-                    <p class="text-gray-400 text-sm mt-1" data-lang-key="certTourGuideDate">Tháng 5 - 2017</p>
-                </div>
-                <div class="card p-6 flex flex-col justify-center items-center">
-                    <h4 class="text-lg font-semibold" style="color: #FFFFFF;" data-lang-key="certTOEIC">TOEIC 750 - IIG Vietnam</h4>
-                    <p class="text-gray-400 text-sm mt-1" data-lang-key="certTOEICDate">Tháng 4 - 2017</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="bg-gray-900 py-16 px-4 animate-fade-in">
-        <div class="container mx-auto">
-            <h3 class="section-title text-3xl mb-8 mx-auto" data-lang-key="educationTitle">
-                <svg class="section-icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 3L1 9l11 6 11-6-11-6zM3 17v4h18v-4H3zm9-11.99L19.53 9l-7.53 4.14L4.47 9 12 5.01z"/></svg>
-                HỌC VẤN
-            </h3>
-            <div class="card p-8 text-center">
-                <h4 class="text-xl font-bold" style="color: #FFFFFF;" data-lang-key="eduDegree">Cử nhân Quản trị Dịch vụ Du lịch và Lữ hành</h4>
-                <p class="text-gray-400 mb-2" data-lang-key="eduUniversity">Đại học Kinh tế - Đại học Đà Nẵng</p>
-                <p style="color: #B0B0B0;" data-lang-key="eduDuration">Tháng 10/2012 - Tháng 1/2017</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-gradient-to-r from-blue-900 to-gray-900 text-white py-16 px-4 animate-fade-in">
-        <div class="container mx-auto text-center">
-            <h3 class="text-3xl font-extrabold mb-8 text-white" data-lang-key="contactTitle">
-                LIÊN HỆ VỚI TÔI
-            </h3>
-            <p class="text-lg mb-4 opacity-90" data-lang-key="contactParagraph">Tôi luôn sẵn lòng kết nối và khám phá những cơ hội mới!</p>
-            <div class="flex flex-col items-center space-y-4">
-                <p class="text-lg flex items-center" style="color: #B0B0B0;">
-                    <svg class="icon" style="color: #00FFFF;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l-7.997 3.998V5.884zM22 5.884v6.998l-7.997-3.998L22 5.884zM12 14.118l-10-5V4.002l10 5 10-5V9.118z"/></svg>
-                    dinhsang031@gmail.com
-                </p>
-                <p class="text-lg flex items-center" style="color: #B0B0B0;">
-                    <svg class="icon" style="color: #00FFFF;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.57.11.35.02.75-.25 1.02L6.62 10.79z"/></svg>
-                    +84935764976
-                </p>
-                <p class="text-lg flex items-center" style="color: #B0B0B0;">
-                    <svg class="icon" style="color: #00FFFF;" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
-                    Hồ Chí Minh, Việt Nam
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <a href="#" id="back-to-top">
-        <svg fill="currentColor" viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8.414l-4.293 4.293a1 1 0 01-1.414-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L12 8.414z"/></svg>
-    </a>
-
-    <button id="language-toggle" data-lang-key="languageToggleBtn">English</button>
-
-    <footer class="bg-gray-900 text-gray-500 py-6 text-sm">
-        <div class="container mx-auto px-4 text-right">
-            <p data-lang-key="footerCopyright">&copy; 2025 Sang Nguyen Dinh. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const langData = {
-            "pageTitle": {
-                "vi": "Sang Nguyen Dinh - Data Analyst | People Cost Budgeting & HR Analytics",
-                "en": "Sang Nguyen Dinh - Data Analyst | People Cost Budgeting & HR Analytics"
+  <script>
+    // ====== DATA ======
+    const portfolioData = {
+      vi: {
+        name: "Sang Nguyen Dinh",
+        heroHeadline: "Sang Nguyen Dinh",
+        heroSubtext: "Data Analyst | Workforce Budgeting & HR Analytics | AI & Automation Enthusiast",
+        nav: { work: "CÔNG VIỆC", about: "GIỚI THIỆU", contact: "LIÊN HỆ", letsTalk: "HÃY TRÒ CHUYỆN" },
+        heroWorkBtn: "XEM CÔNG VIỆC",
+        heroDownloadBtn: "TẢI CV",
+        summary: {
+          title: "TÓM TẮT",
+          content: "Hiện đang làm việc tại Central Retail, tôi quản lý Hệ sinh thái Dữ liệu Nhân sự cho danh mục đa dạng gồm hơn 10 thương hiệu toàn cầu (Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop...) tại hơn 150 cửa hàng trên toàn quốc. Tôi tận dụng sự hiểu biết sâu sắc về quy trình nhân sự để xây dựng các mô hình dữ liệu tự động và báo cáo tài chính. Sứ mệnh của tôi là chuyển đổi dữ liệu nhân sự phức tạp thành các insight tài chính hành động, giúp tổ chức tối ưu hóa Chi phí Nhân sự và cải thiện hiệu quả vận hành."
+        },
+        experience: {
+          title: "KINH NGHIỆM LÀM VIỆC",
+          items: [
+            {
+              company: "CENTRAL RETAIL", role: "Data Analyst",
+              duration: "Tháng 8/2025 - Hiện tại",
+              points: [
+                "Quản lý Dữ liệu: Chuẩn hóa các nguồn dữ liệu rời rạc từ nhiều Đơn vị Kinh doanh thành Mô hình Dữ liệu 4 Lớp thống nhất.",
+                "Hoạch định Tài chính & Tối ưu Chi phí: Dẫn dắt việc tự động hóa Chi phí Nhân sự & Ngân sách Hàng năm, hỗ trợ kiểm soát ngân sách lao động hàng triệu đô la.",
+                "Phân tích Chiến lược & Insights: Chuyển đổi dữ liệu nhân sự phức tạp thành các insight kinh doanh hành động.",
+                "BI, Tự động hóa & AI: Xây dựng các pipeline tự động end-to-end sử dụng M & DAX, giảm chu kỳ báo cáo 90%.",
+                "Quản trị & Chiến lược Dữ liệu: Đóng vai trò 'người gác cổng' cho chất lượng Dữ liệu Chủ (Master Data) HR."
+              ]
             },
-            "aboutLink": { "vi": "Giới thiệu", "en": "About" },
-            "experienceLink": { "vi": "Kinh nghiệm", "en": "Experience" },
-            "projectsLink": { "vi": "Dự án", "en": "Projects" },
-            "skillsLink": { "vi": "Kỹ năng", "en": "Skills" },
-            "contactLink": { "vi": "Liên hệ", "en": "Contact" },
-            "heroHeadline": { // This is for the typing effect, handled separately
-                "vi": "Data Analyst | People Cost Budgeting & HR Analytics | AI & Automation Enthusiast", 
-                "en": "Data Analyst | People Cost Budgeting & HR Analytics | AI & Automation Enthusiast"
-            },
-            "heroParagraph": {
-                "vi": "Chuyên viên D.A được chứng nhận với 4 năm kinh nghiệm trong ngành Nhân sự, F&B và Bán lẻ. Thành tích nổi bật bao gồm việc cập nhật quy trình luân chuyển dữ liệu giúp giảm 40% sự trùng lặp. <br> <strong>Tech Stack:</strong> DAX, Power Query, Data Automation, ML & Quản lý Dự án.",
-                "en": "Certified D.A with 4 years of experience serving HR, F&B and Retail industries. Achievements include updating data streaming processes for an 40% reduction in redundancy. <br> <strong>Tech Stack:</strong> DAX, Power Query, Data Automation, ML & Project Management"
-            },
-            "linkedinBtn": { "vi": "LinkedIn", "en": "LinkedIn" },
-            "portfolioBtn": { "vi": "Portfolio (GitHub)", "en": "Portfolio (GitHub)" },
-
-            "summaryTitle": { "vi": "Tóm tắt", "en": "Summary" }, // Changed to sentence case
-            "summaryParagraph": {
-                "vi": "Hiện đang làm việc tại Central Retail, tôi quản lý Hệ sinh thái Dữ liệu Nhân sự cho danh mục đa dạng gồm hơn 10 thương hiệu toàn cầu (Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop...) tại hơn 150 cửa hàng trên toàn quốc. Tôi tận dụng sự hiểu biết sâu sắc về quy trình nhân sự để xây dựng các mô hình dữ liệu tự động và báo cáo tài chính. Sứ mệnh của tôi là chuyển đổi dữ liệu nhân sự phức tạp thành các insight tài chính hành động, giúp tổ chức tối ưu hóa Chi phí Nhân sự và cải thiện hiệu quả vận hành.",
-                "en": "Currently working at Central Retail, I managing the HR Data Ecosystem for a diverse portfolio of 10+ global brands (including Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop) across 150+ stores nationwide and leverage my deep understanding of HR processes to build automated data models and financial reports. My mission is to translate complex HR data into actionable financial insights, helping organizations optimize People Cost and improve operational efficiency."
-            },
-
-            "experienceTitle": { "vi": "Kinh nghiệm làm việc", "en": "Work Experience" }, // Changed to sentence case
-            
-            /* CENTRAL RETAIL DATA */
-            "centralRetailTitle": { "vi": "Data Analyst - CENTRAL RETAIL", "en": "Data Analyst - CENTRAL RETAIL" },
-            "centralRetailDuration": { "vi": "Tháng 8/2025 - Hiện tại | Hồ Chí Minh, Việt Nam", "en": "Aug, 2025 - Current | Ho Chi Minh City, Vietnam" },
-            "centralRetailDesc1": { 
-                "vi": "<strong>Quản lý Dữ liệu:</strong> Chuẩn hóa các nguồn dữ liệu rời rạc từ nhiều Đơn vị Kinh doanh thành Mô hình Dữ liệu 4 Lớp thống nhất. Giám sát hạ tầng dữ liệu nhân sự tập trung cho hệ sinh thái bán lẻ phức tạp gồm các thương hiệu quốc tế và hơn 800 nhân viên.", 
-                "en": "<strong>Data Management:</strong> Standardized disparate data sources from various Business Units into a unified 4-Layer Data Model. Overseeing the central HR data infrastructure for a complex retail ecosystem of the international brands (Dyson, Crocs, SuperSports, Columbia, Speedo, Fitflop...) and 800+ employees." 
-            },
-            "centralRetailDesc2": { 
-                "vi": "<strong>Hoạch định Tài chính & Tối ưu Chi phí:</strong> Dẫn dắt việc tự động hóa Chi phí Nhân sự & Ngân sách Hàng năm, hỗ trợ Kiểm soát Tài chính và Giám đốc Nhân sự kiểm soát ngân sách lao động hàng triệu đô la. Phát triển các mô hình tài chính động để mô phỏng tác động chi phí của tuyển dụng, tăng lương và thay đổi phúc lợi với độ chính xác 99%.", 
-                "en": "<strong>Financial Planning & Cost Optimization:</strong> Leading the automation of People Cost & Annual Budgeting, supporting the Business Controller and HR Director in controlling a multi-million dollar labor budget. Developed dynamic financial models to simulate cost impacts of recruitment plans, salary increments, and benefit changes with 99% accuracy." 
-            },
-            "centralRetailDesc3": { 
-                "vi": "<strong>Phân tích Chiến lược & Insights:</strong> Chuyển đổi dữ liệu nhân sự phức tạp thành các insight kinh doanh hành động, tập trung vào Phân tích Nguyên nhân Gốc rễ Nghỉ việc và Năng suất Lao động để hỗ trợ ra quyết định cho Quản lý Vận hành và Thương hiệu. Thực hiện đánh giá định kỳ về hiệu quả C&B, đảm bảo công bằng nội bộ và khả năng cạnh tranh thị trường.", 
-                "en": "<strong>Strategic Analytics & Insights:</strong> Translated complex HR data into actionable business insights, focusing on Turnover Root Cause Analysis and Workforce Productivity to support decision-making for Operations and Brand Managers. Conducted periodic reviews of Compensation & Benefits effectiveness, ensuring internal equity and market competitiveness through data benchmarking." 
-            },
-            "centralRetailDesc4": { 
-                "vi": "<strong>BI, Tự động hóa & AI:</strong> Xây dựng các pipeline tự động end-to-end sử dụng M & DAX, giảm chu kỳ báo cáo 90%, từ nhiều ngày xuống còn vài giờ. Thiết kế các dashboard chiến lược (Chi phí PE, Headcount, Nghỉ việc, Hiệu quả Tuyển dụng...) hỗ trợ các bên liên quan. Triển khai quy trình Power Automate (RPA) để tự động hóa nhập liệu vào ERP và tiên phong giải pháp AI Agent để trích xuất CV tự động, tăng tốc độ sàng lọc cho đội ngũ Tuyển dụng.", 
-                "en": "<strong>BI, Automation & AI:</strong> Engineered end-to-end automated pipelines using M & DAX, reducing reporting cycle time by 90%, from days to hours. Designed strategic dashboards (PE Cost, Headcount, Turnover, Recruitment Efficiency...) to support key stakeholders in Operations and Brand Management. Deployed and maintained Power Automate (RPA) workflows to automate complex data entry into ERP systems; Pioneered an AI Agent solution for automated CV Parsing, leveraging AI to extract and structure candidate data, significantly accelerating the screening process for the Talent Acquisition team." 
-            },
-            "centralRetailDesc5": { 
-                "vi": "<strong>Quản trị & Chiến lược Dữ liệu:</strong> Đóng vai trò 'người gác cổng' cho chất lượng Dữ liệu Chủ (Master Data) HR, thực thi các quy tắc xác thực nghiêm ngặt và quy trình làm việc chéo giữa các bộ phận (Ops - TA - C&B - Finance).", 
-                "en": "<strong>Data Governance & Strategy:</strong> Acting as the gatekeeper for HR Master Data quality, enforcing strict validation rules and cross-departmental workflows (Ops - TA - C&B - Finance)." 
-            },
-
-
-            "kimTinTitle": { "vi": "Data Analyst - KIM TIN GROUP", "en": "Data Analyst - KIM TIN GROUP" },
-            "kimTinDuration": { "vi": "Tháng 8/2023 - Tháng 8/2025 | Hồ Chí Minh, Việt Nam", "en": "Aug, 2023 - Aug, 2025 | Ho Chi Minh City, Vietnam" },
-            "kimTinDesc1": { "vi": "Dashboard Design (20%): Phát triển các dashboard HR toàn diện sử dụng Power BI cho Tuyển dụng, Lương, Phúc lợi và Đào tạo, bao gồm dữ liệu cho 3K5 nhân viên trên 20 công ty con. Giảm 40% thời gian báo cáo.", "en": "Dashboard Design (20%): Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training, covering data for 3K5 employees across 20 subsidiaries. Reduced reporting time by 40%." },
-            "kimTinDesc2": { "vi": "Phân tích Ad-Hoc (30%): Áp dụng Python để phân tích ad-hoc động và phát triển mô hình học máy tiết lộ các insight quan trọng cho việc ra quyết định chiến lược về HR, được trình bày trước Hội đồng quản trị.", "en": "Ad-Hoc Analysis (30%): Applied Python for dynamic ad-hoc analyses and developed Machine learning model revealing key insights crucial for strategic HR decision-making, presented to the Board of Directors." },
-            "kimTinDesc3": { "vi": "Phát triển Giải pháp Dữ liệu (20%): Phát triển các giải pháp dữ liệu tích hợp sử dụng App Sheet, App Script, Forms, n8n. Bao gồm các ứng dụng HR tùy chỉnh, hợp lý hóa thu thập dữ liệu, tiên phong áp dụng công nghệ AI và tự động hóa trong các phòng ban HR để nâng cao 30% hiệu quả hoạt động và insight dựa trên dữ liệu.", "en": "Data Solutions Development (20%): Developed integrated data solutions using App Sheet, App Script, Forms, n8n. Included custom HR apps, streamlined data collection, spearheaded the application of AI and automation technologies within the HR depts in group to enhance 30% operational efficiency and data-driven insights." },
-            "kimTinDesc4": { "vi": "Tích hợp Dữ liệu (10%): Hợp nhất dữ liệu HR từ nhiều nguồn khác nhau (API, ERP, Sheets, Web Scraping dựa trên Python) vào một cơ sở dữ liệu tập trung, nâng cao độ chính xác dữ liệu lên 25%.", "en": "Data Integration (10%): Consolidated HR data from various sources (API, ERP, Sheets, Python-based Web Scraping) into a centralized database, enhancing data accuracy by 25%." },
-            "kimTinDesc5": { "vi": "Đối tác Phân tích Dữ liệu (Ngoài HR) (10%): Đóng vai trò đối tác phân tích dữ liệu bằng cách phân tích các chỉ số hiệu suất & hoạt động, giải pháp dữ liệu để xác định các cơ hội cải tiến chiến lược.", "en": "Data Analysis Partner (Non-HR) (10%): Served as a data analysis partner by analyzing performance & operational metrics, data solution to identify strategic improvement opportunities." },
-            "kimTinDesc6": { "vi": "Đào tạo và Hỗ trợ (10%): Tổ chức các khóa đào tạo Dashboard hiệu quả cho người dùng cuối và các bên liên quan, phát triển và triển khai các chương trình đào tạo giải pháp dữ liệu cho lĩnh vực Dữ liệu, nâng cao khả năng phân tích và khả năng tự phục vụ dữ liệu của người dùng.", "en": "Organized impactful Dashboards training for end-users and stakeholders, Developed and implemented data solution training programs for the Data field, enhancing user analytical capabilities and self-service data utilization." },
-            "novaFnBTitle": { "vi": "Data Analyst - NOVA FnB", "en": "Data Analyst - NOVA FnB" },
-            "novaFnBDuration": { "vi": "Tháng 8/2022 - Tháng 9/2023 | Hồ Chí Minh, Việt Nam", "en": "August 2022 - September 2023 | Ho Chi Minh City Metropolitan Area" },
-            "novaFnBDesc1": { "vi": "Xử lý dữ liệu, mô hình hóa dữ liệu, tạo scorecard và báo cáo, thiết kế dashboard.", "en": "Data Handling, Data Modeling, Scorecard and Reporting, Dashboard Creation." },
-            "novaFnBDesc2": { "vi": "Thực hiện các phân tích ad-hoc theo yêu cầu.", "en": "Conducted ad-hoc analyses." },
-            "sebangTitle": { "vi": "B2B Area Sales Officer - Sebang Global Battery Co Ltd", "en": "B2B Area Sales Officer - Sebang Global Battery Co Ltd" },
-            "sebangDuration": { "vi": "Tháng 6/2021 - Tháng 5/2022 | Việt Nam", "en": "June 2021 - May 2022 | Vietnam" },
-            "sebangDesc1": { "vi": "Hỗ trợ kinh doanh và phát triển thị trường B2B.", "en": "Supported B2B sales and market development." },
-            "sunWorldTitle": { "vi": "Training Assistant - Sun World Group", "en": "Training Assistant - Sun World Group" },
-            "sunWorldDuration": { "vi": "Tháng 5/2020 - Tháng 3/2021 | Đà Nẵng, Việt Nam", "en": "May 2020 - March 2021 | Da Nang City, Vietnam" },
-            "sunWorldDesc1": { "vi": "Hỗ trợ tổ chức và triển khai các chương trình đào tạo.", "en": "Assisted in organizing and implementing training programs." },
-            "freelancerTitle": { "vi": "Hướng dẫn viên du lịch tự do - Freelancer", "en": "Tour Guide - Freelancer" },
-            "freelancerDuration": { "vi": "Tháng 1/2017 - Tháng 2/2020 | Đà Nẵng, Việt Nam", "en": "January 2017 - February 2020 | Da Nang City, Vietnam" },
-            "freelancerDesc1": { "vi": "Hướng dẫn viên du lịch tự do.", "en": "Freelance tour guide." },
-
-            "projectsTitle": { "vi": "Dự án nổi bật", "en": "Key Projects" }, // Changed to sentence case
-            "hrDashboardsTitle": { "vi": "Phát triển HR Dashboards cho Tập đoàn gồm 20 công ty con", "en": "HR Dashboards Development for Group of 20 Subsidiaries" },
-            "hrDashboardsDesc": { "vi": "Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo, cung cấp các insight quan trọng để quản lý nguồn nhân lực hiệu quả trên nhiều đơn vị.", "en": "Designed and implemented comprehensive HR dashboards covering Recruitment, Payroll, Benefit & Training data, providing critical insights for efficient human resource management across multiple entities." },
-            "turnoverPredictionTitle": { "vi": "Mô hình dự đoán tỷ lệ nghỉ việc của nhân viên", "en": "Employee Turnover Prediction Model" }, // Changed to sentence case
-            "turnoverPredictionDesc": { "vi": "Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc của nhân viên và xác định các lý do chính gây ra sự biến động. Đạt độ chính xác mô hình 86%, giảm tỷ lệ nghỉ việc từ 25% xuống 17% bằng cách giải quyết các yếu tố đã xác định.", "en": "Developed a Machine Learning model to predict employee turnover and identify key reasons for attrition. Achieved 86% model accuracy, reducing turnover from 25% to 17% by addressing identified factors." },
-            "aiCVScreeningTitle": { "vi": "Hệ thống sàng lọc CV bằng AI", "en": "AI CV Screening System" }, // Changed to sentence case
-            "aiCVScreeningDesc": { "vi": "Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc. Đạt độ chính xác trích xuất dữ liệu 90%, giảm đáng kể thời gian sàng lọc thủ công 90%.", "en": "Developed an AI system to automate CV extraction and candidate analysis against job requirements. Achieved 90% data extraction accuracy, significantly reducing manual screening time by 90%." },
-
-            "skillsTitle": { "vi": "Kỹ năng", "en": "Skills" }, // Changed to sentence case
-            "keySkillsTitle": { "vi": "Kỹ năng chính", "en": "Key Skills" },
-            "skillDataViz": { "vi": "Trực quan hóa dữ liệu", "en": "Data Visualization" },
-            "skillDataManipulation": { "vi": "Thao tác dữ liệu", "en": "Data Manipulation" }, // Changed to sentence case
-            "skillPresentation": { "vi": "Thuyết trình", "en": "Presentation" },
-            "skillInterpersonal": { "vi": "Giao tiếp cá nhân", "en": "Interpersonal" },
-            "skillResearch": { "vi": "Nghiên cứu", "en": "Research" },
-            "skillProjectManagement": { "vi": "Quản lý dự án", "en": "Project Management" },
-            "skillStorytelling": { "vi": "Kể chuyện bằng dữ liệu", "en": "Storytelling with Data" }, // Changed to sentence case
-            "skillAnalyticalThinking": { "vi": "Tư duy phân tích", "en": "Analytical Thinking" }, // Changed to sentence case
-            "technicalSkillsTitle": { "vi": "Kỹ năng kỹ thuật", "en": "Technical Skills" },
-            "skillPowerBI": { "vi": "Power BI", "en": "Power BI" },
-            "skillPostgreSQL": { "vi": "Postgre SQL", "en": "Postgre SQL" },
-            "skillPython": { "vi": "Python", "en": "Python" },
-            "skillAppSheet": { "vi": "AppSheet", "en": "AppSheet" },
-            "skillML": { "vi": "Machine Learning", "en": "Machine Learning" },
-            "skillExcelGSheet": { "vi": "Excel, GG Sheet", "en": "Excel, GG Sheet" },
-            "skillStatistics": { "vi": "Thống kê", "en": "Statistics" },
-            "skillAIAutomation": { "vi": "AI & Tự động hóa", "en": "AI & Automation" },
-            "tagPowerBI": { "vi": "Power BI", "en": "Power BI" },
-            "tagDataViz": { "vi": "Trực quan hóa dữ liệu", "en": "Data Visualization" },
-            "tagSQL": { "vi": "SQL", "en": "SQL" },
-            "tagML": { "vi": "Machine Learning", "en": "Machine Learning" },
-            "tagPython": { "vi": "Python", "en": "Python" },
-            "tagPredictiveAnalytics": { "vi": "Phân tích dự đoán", "en": "Predictive Analytics" }, // Changed to sentence case
-            "tagAI": { "vi": "AI", "en": "AI" },
-            "tagAutomation": { "vi": "Tự động hóa", "en": "Automation" },
-            "tagN8N": { "vi": "n8n", "en": "n8n" },
-
-            "certificationsTitle": { "vi": "Chứng chỉ", "en": "Certifications" }, // Changed to sentence case
-            "certBI": { "vi": "Business Intelligence by Coursera - Google", "en": "Business Intelligence by Coursera - Google" },
-            "certBIDate": { "vi": "Tháng 7 - 2023", "en": "July - 2023" },
-            "certDA": { "vi": "Data Analytic Professional Certificate by Coursera - Google", "en": "Data Analytic Professional Certificate by Coursera - Google" },
-            "certDADate": { "vi": "Tháng 4 - 2023", "en": "April - 2023" },
-            "certSQL": { "vi": "SQL for Data Analysis - Udacity", "en": "SQL for Data Analysis - Udacity" },
-            "certSQLDate": { "vi": "Tháng 8 - 2022", "en": "August - 2022" },
-            "certTourGuide": { "vi": "International Tour Guide", "en": "International Tour Guide" },
-            "certTourGuideDate": { "vi": "Tháng 5 - 2017", "en": "May - 2017" },
-            "certTOEIC": { "vi": "TOEIC 750 - IIG Vietnam", "en": "TOEIC 750 - IIG Vietnam" },
-            "certTOEICDate": { "vi": "Tháng 4 - 2017", "en": "April - 2017" },
-
-            "educationTitle": { "vi": "Học vấn", "en": "Education" }, // Changed to sentence case
-            "eduDegree": { "vi": "Cử nhân Quản trị Dịch vụ Du lịch và Lữ hành", "en": "Bachelor's Degree, Tourism and Travel Services Management" },
-            "eduUniversity": { "vi": "Đại học Kinh tế - Đại học Đà Nẵng", "en": "University of Economics - The University of Danang" },
-            "eduDuration": { "vi": "Tháng 10/2012 - Tháng 1/2017", "en": "October 2012 - January 2017" },
-
-            "contactTitle": { "vi": "Liên hệ với tôi", "en": "Contact Me" }, // Changed to sentence case
-            "contactParagraph": { "vi": "Tôi luôn sẵn lòng kết nối và khám phá những cơ hội mới!", "en": "I'm always open to connecting and exploring new opportunities!" },
-            "contactEmail": { "vi": "dinhsang031@gmail.com", "en": "dinhsang031@gmail.com" },
-            "contactPhone": { "vi": "+84935764976", "en": "+84935764976" },
-            "contactLocation": { "vi": "Hồ Chí Minh, Việt Nam", "en": "Ho Chi Minh City, Vietnam" },
-            "footerCopyright": { "vi": "&copy; 2025 Sang Nguyen Dinh. All rights reserved.", "en": "&copy; 2025 Sang Nguyen Dinh. All rights reserved." },
-            "languageToggleBtn": { "vi": "English", "en": "Tiếng Việt" } // Button text shows the OTHER language
-        };
-
-        let currentLang = localStorage.getItem('lang') || 'en'; // Default to English
-
-        function updateContent(lang) {
-            document.documentElement.lang = lang; // Set HTML lang attribute
-            document.title = langData.pageTitle[lang]; // Update page title
-
-            // Update elements with data-lang-key
-            document.querySelectorAll('[data-lang-key]').forEach(element => {
-                const key = element.getAttribute('data-lang-key');
-                if (langData[key] && langData[key][lang]) {
-                    // Specific handling for heroHeadline (typing effect) - always English
-                    if (key === 'heroHeadline') {
-                         initTypingEffect(langData.heroHeadline[lang]); // Pass language specific text
-                    } else if (key === 'linkedinBtn' || key === 'portfolioBtn') {
-                        // For buttons with SVG, update only the text content
-                        const textSpan = element.querySelector('span');
-                        if (textSpan) {
-                            textSpan.textContent = langData[key][lang];
-                        }
-                    } else if (key === 'languageToggleBtn') {
-                        // Special handling for the language toggle button itself
-                        element.textContent = langData[key][lang];
-                    }
-                    else {
-                        element.innerHTML = langData[key][lang]; // Use innerHTML for bold tags
-                    }
-                }
-            });
-
-            // Update footer copyright to be right-aligned
-            document.querySelector('footer > div').classList.remove('text-center');
-            document.querySelector('footer > div').classList.add('text-right');
-        }
-
-        // Typing Effect Function
-        function initTypingEffect(textToType) {
-            const headlineElement = document.getElementById('typing-headline');
-            if (headlineElement) {
-                // Set the initial text immediately for visibility
-                headlineElement.textContent = textToType;
-
-                let i = 0;
-                const typingSpeed = 70; // milliseconds per character
-
-                // Clear any existing timeout to prevent multiple typing effects running
-                if (headlineElement.typingTimeout) {
-                    clearTimeout(headlineElement.typingTimeout);
-                }
-
-                // Only start typing if the element is visible (not just cleared)
-                // Clear content first, then type for the animation effect
-                headlineElement.textContent = "";
-                function typeWriter() {
-                    if (i < textToType.length) {
-                        headlineElement.innerHTML += textToType.charAt(i);
-                        i++;
-                        headlineElement.typingTimeout = setTimeout(typeWriter, typingSpeed);
-                    } else {
-                        delete headlineElement.typingTimeout;
-                    }
-                }
-                typeWriter(); // Initial call to start typing
+            {
+              company: "KIM TIN GROUP", role: "Data Analyst",
+              duration: "Tháng 8/2023 - Tháng 8/2025",
+              points: [
+                "Dashboard Design: Phát triển các dashboard HR toàn diện sử dụng Power BI cho Tuyển dụng, Lương, Phúc lợi và Đào tạo.",
+                "Phân tích Ad-Hoc: Áp dụng Python để phân tích ad-hoc động và phát triển mô hình học máy.",
+                "Phát triển Giải pháp Dữ liệu: Phát triển các giải pháp dữ liệu tích hợp sử dụng App Sheet, App Script, Forms, n8n.",
+                "Tích hợp Dữ liệu: Hợp nhất dữ liệu HR từ nhiều nguồn khác nhau vào một cơ sở dữ liệu tập trung."
+              ]
             }
-        }
-
-        // Space effect with stars and spaceship
-        const canvas = document.getElementById('space-canvas');
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let stars = [];
-        let spaceship = {
-            x: 0,
-            y: 0,
-            size: 20,
-            angle: 0,
-            speed: 0.5
-        };
-
-        function resize() {
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = width;
-            canvas.height = height;
-        }
-
-        function createStars(count) {
-            stars = [];
-            for (let i = 0; i < count; i++) {
-                stars.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: Math.random() * 1.2 + 0.3,
-                    alpha: Math.random(),
-                    alphaChange: (Math.random() * 0.02) + 0.005
-                });
+          ]
+        },
+        projects: {
+          title: "DỰ ÁN NỔI BẬT",
+          items: [
+            { title: "HR Dashboards cho Tập đoàn 20 công ty con", description: "Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo.", tags: ["Power BI", "SQL", "Data Viz"] },
+            { title: "Mô hình Dự đoán Tỷ lệ nghỉ việc", description: "Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc và xác định các lý do chính gây ra sự biến động.", tags: ["Machine Learning", "Python", "Predictive Analytics"] },
+            { title: "Hệ thống Sàng lọc CV bằng AI", description: "Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc.", tags: ["AI", "Automation", "Python", "n8n"] }
+          ]
+        },
+        skills: {
+          title: "KỸ NĂNG",
+          key: ["Trực quan hóa dữ liệu", "Thao tác dữ liệu", "Thuyết trình", "Giao tiếp cá nhân", "Nghiên cứu", "Quản lý dự án", "Kể chuyện bằng Dữ liệu", "Tư duy Phân tích"],
+          technical: ["Power BI", "Postgre SQL", "Python", "AppSheet", "Machine Learning", "Excel, GG Sheet", "Thống kê", "AI & Tự động hóa"]
+        },
+        contact: { title: "LIÊN HỆ VỚI TÔI", subtext: "Tôi luôn sẵn lòng kết nối và khám phá những cơ hội mới!", location: "Hồ Chí Minh, Việt Nam" },
+        techLabel: "KỸ THUẬT"
+      },
+      en: {
+        name: "Sang Nguyen Dinh",
+        heroHeadline: "Sang Nguyen Dinh",
+        heroSubtext: "Data Analyst | Workforce Budgeting & HR Analytics | AI & Automation Enthusiast",
+        nav: { work: "WORK", about: "ABOUT", contact: "CONTACT", letsTalk: "LET'S TALK" },
+        heroWorkBtn: "VIEW SELECTED WORK",
+        heroDownloadBtn: "DOWNLOAD RESUME",
+        summary: {
+          title: "SUMMARY",
+          content: "Currently working at Central Retail, I managing the HR Data Ecosystem for a diverse portfolio of 10+ global brands (including Dyson, Under Armour, HOKA, Supersports, Crocs, Fitflop) across 150+ stores nationwide and leverage my deep understanding of HR processes to build automated data models and financial reports. My mission is to translate complex HR data into actionable financial insights, helping organizations optimize People Cost and improve operational efficiency."
+        },
+        experience: {
+          title: "WORK EXPERIENCE",
+          items: [
+            {
+              company: "CENTRAL RETAIL", role: "Data Analyst",
+              duration: "Aug, 2025 - Current",
+              points: [
+                "Data Management: Standardized disparate data sources from various Business Units into a unified 4-Layer Data Model.",
+                "Financial Planning & Cost Optimization: Leading the automation of People Cost & Annual Budgeting, supporting the Business Controller and HR Director.",
+                "Strategic Analytics & Insights: Translated complex HR data into actionable business insights.",
+                "BI, Automation & AI: Engineered end-to-end automated pipelines using M & DAX, reducing reporting cycle time by 90%.",
+                "Data Governance & Strategy: Acting as the gatekeeper for HR Master Data quality."
+              ]
+            },
+            {
+              company: "KIM TIN GROUP", role: "Data Analyst",
+              duration: "Aug, 2023 - Aug, 2025",
+              points: [
+                "Dashboard Design: Developed comprehensive HR dashboards using Power BI for Recruitment, Payroll, Benefits, and Training.",
+                "Ad-Hoc Analysis: Applied Python for dynamic ad-hoc analyses and developed Machine learning models.",
+                "Data Solutions Development: Developed integrated data solutions using App Sheet, App Script, Forms, n8n.",
+                "Data Integration: Consolidated HR data from various sources into a centralized database."
+              ]
             }
-        }
+          ]
+        },
+        projects: {
+          title: "KEY PROJECTS",
+          items: [
+            { title: "HR Dashboards for Group of 20 Subsidiaries", description: "Designed and implemented comprehensive HR dashboards covering Recruitment, Payroll, Benefit & Training data.", tags: ["Power BI", "SQL", "Data Viz"] },
+            { title: "Employee Turnover Prediction Model", description: "Developed a Machine Learning model to predict employee turnover and identify key reasons for attrition.", tags: ["Machine Learning", "Python", "Predictive Analytics"] },
+            { title: "AI CV Screening System", description: "Developed an AI system to automate CV extraction and candidate analysis against job requirements.", tags: ["AI", "Automation", "Python", "n8n"] }
+          ]
+        },
+        skills: {
+          title: "SKILLS",
+          key: ["Data Visualization", "Data Manipulation", "Presentation", "Interpersonal", "Research", "Project Management", "Storytelling with Data", "Analytical Thinking"],
+          technical: ["Power BI", "Postgre SQL", "Python", "AppSheet", "Machine Learning", "Excel, GG Sheet", "Statistics", "AI & Automation"]
+        },
+        contact: { title: "CONTACT ME", subtext: "I'm always open to connecting and exploring new opportunities!", location: "Ho Chi Minh City, Vietnam" },
+        techLabel: "TECHNICAL"
+      }
+    };
 
-        function drawStars() {
-            ctx.clearRect(0, 0, width, height);
-            for (let star of stars) {
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
-                ctx.fill();
-                star.alpha += star.alphaChange;
-                if (star.alpha <= 0 || star.alpha >= 1) {
-                    star.alphaChange = -star.alphaChange;
-                }
-            }
-        }
+    // ====== STATE ======
+    let currentLang = 'en';
 
-        function drawSpaceship() {
-            const shipX = spaceship.x;
-            const shipY = spaceship.y;
-            const size = spaceship.size;
-            const angle = spaceship.angle;
+    // ====== RENDER FUNCTIONS ======
+    function renderExperience(data) {
+      const container = document.getElementById('experienceContainer');
+      container.innerHTML = data.experience.items.map((item, idx) => `
+        <div class="exp-item reveal" style="animation-delay:${idx * 0.15}s">
+          <div>
+            <p class="exp-duration">${item.duration}</p>
+            <h3 class="exp-company">${item.company}</h3>
+            <p class="exp-role">${item.role}</p>
+          </div>
+          <ul class="exp-points">
+            ${item.points.map(p => `<li class="exp-point"><span class="exp-point-dot">•</span><span>${p}</span></li>`).join('')}
+          </ul>
+        </div>
+      `).join('');
+    }
 
-            ctx.save();
-            ctx.translate(shipX, shipY);
-            ctx.rotate(angle);
+    function renderProjects(data) {
+      const container = document.getElementById('projectsContainer');
+      container.innerHTML = data.projects.items.map(project => `
+        <div class="project-card reveal">
+          <div style="flex-grow:1">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-desc">${project.description}</p>
+          </div>
+          <div class="project-tags">
+            ${project.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
 
-            // Draw simple spaceship shape
-            ctx.beginPath();
-            ctx.moveTo(0, -size / 2);
-            ctx.lineTo(size / 2, size / 2);
-            ctx.lineTo(0, size / 4);
-            ctx.lineTo(-size / 2, size / 2);
-            ctx.closePath();
+    function renderSkills(data) {
+      const keyContainer = document.getElementById('skillsKey');
+      keyContainer.innerHTML = data.skills.key.map((s, i) =>
+        `<span>${s}${i < data.skills.key.length - 1 ? ' / ' : ''}</span>`
+      ).join('');
 
-            ctx.fillStyle = 'rgba(0, 255, 255, 0.8)';
-            ctx.fill();
+      const techContainer = document.getElementById('skillsTech');
+      techContainer.innerHTML = data.skills.technical.map(s =>
+        `<div class="skill-tech-item"><div class="skill-dot"></div>${s}</div>`
+      ).join('');
+    }
 
-            ctx.restore();
-        }
+    function applyLanguage() {
+      const data = portfolioData[currentLang];
 
-        function updateSpaceship() {
-            spaceship.x += spaceship.speed;
-            spaceship.angle += 0.01;
-            if (spaceship.x > width + spaceship.size) {
-                spaceship.x = -spaceship.size;
-                spaceship.y = Math.random() * height * 0.6 + height * 0.2;
-            }
-        }
+      // Nav
+      document.getElementById('nav-work').textContent = data.nav.work;
+      document.getElementById('nav-about').textContent = data.nav.about;
+      document.getElementById('nav-experience').textContent = data.experience.title;
+      document.getElementById('nav-contact').textContent = data.nav.contact;
+      document.getElementById('nav-cta').textContent = data.nav.letsTalk;
+      document.getElementById('langToggleText').textContent = currentLang === 'en' ? 'VI' : 'EN';
 
-        function animate() {
-            drawStars();
-            drawSpaceship();
-            updateSpaceship();
-            requestAnimationFrame(animate);
-        }
+      // Mobile nav
+      document.getElementById('mob-work').textContent = data.nav.work;
+      document.getElementById('mob-about').textContent = data.nav.about;
+      document.getElementById('mob-experience').textContent = data.experience.title;
+      document.getElementById('mob-contact').textContent = data.nav.contact;
+      document.getElementById('mobLangText').textContent = currentLang === 'en' ? 'Tiếng Việt' : 'English';
 
-        window.addEventListener('resize', () => {
-            resize();
-            createStars(150);
+      // Hero
+      document.getElementById('heroHeadline').textContent = data.heroHeadline;
+      document.getElementById('heroSubtext').textContent = data.heroSubtext;
+      document.getElementById('heroWorkBtn').querySelector('span').textContent = data.heroWorkBtn;
+      document.getElementById('heroDownloadBtn').querySelector('span').textContent = data.heroDownloadBtn;
+
+      // Summary
+      document.getElementById('summaryTitle').textContent = data.summary.title;
+      document.getElementById('summaryContent').textContent = data.summary.content;
+
+      // Experience
+      document.getElementById('expTitle').textContent = data.experience.title;
+      renderExperience(data);
+
+      // Projects
+      document.getElementById('projectsTitle').textContent = data.projects.title;
+      renderProjects(data);
+
+      // Skills
+      document.getElementById('skillsTitle').textContent = data.skills.title;
+      document.getElementById('techTitle').textContent = data.techLabel;
+      renderSkills(data);
+
+      // Contact
+      document.getElementById('contactTitle').textContent = data.contact.title;
+      document.getElementById('contactSubtext').textContent = data.contact.subtext;
+      document.getElementById('contactLocation').textContent = data.contact.location;
+
+      // Re-init reveal
+      setTimeout(initReveal, 100);
+    }
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'vi' : 'en';
+      applyLanguage();
+    }
+
+    // ====== MOBILE MENU ======
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const menuIcon = document.getElementById('menuIcon');
+      const closeIcon = document.getElementById('closeIcon');
+      const isOpen = menu.classList.contains('open');
+      if (isOpen) {
+        menu.classList.remove('open');
+        menuIcon.style.display = '';
+        closeIcon.style.display = 'none';
+      } else {
+        menu.classList.add('open');
+        menuIcon.style.display = 'none';
+        closeIcon.style.display = '';
+      }
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('menuIcon').style.display = '';
+      document.getElementById('closeIcon').style.display = 'none';
+    }
+
+    // ====== SCROLL EFFECTS ======
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // ====== REVEAL ON SCROLL ======
+    function initReveal() {
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
         });
+      }, { threshold: 0.15 });
+      reveals.forEach(el => observer.observe(el));
+    }
 
-        function loadParticles() {
-            resize();
-            createStars(150);
-            spaceship.x = -spaceship.size;
-            spaceship.y = Math.random() * height * 0.6 + height * 0.2;
-            animate();
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            loadParticles();
-
-            // Initial content update based on stored language or default
-            updateContent(currentLang);
-
-            // Back to Top Button Logic
-            const backToTopButton = document.getElementById('back-to-top');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
-                }
-            });
-            backToTopButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            // Language Toggle Logic
-            const languageToggleBtn = document.getElementById('language-toggle');
-            languageToggleBtn.addEventListener('click', () => {
-                currentLang = currentLang === 'vi' ? 'en' : 'vi';
-                localStorage.setItem('lang', currentLang); // Save preference
-                updateContent(currentLang); // Update content immediately
-            });
-        });
-    </script>
+    // ====== INIT ======
+    document.addEventListener('DOMContentLoaded', () => {
+      applyLanguage();
+      initReveal();
+    });
+  </script>
 </body>
 </html>
