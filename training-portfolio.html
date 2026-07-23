@@ -212,8 +212,8 @@
 <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/hero-bg.png');">
 <div class="absolute inset-0 bg-primary/75 backdrop-blur-[2px]"></div>
 </div>
-<div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-<h1 class="font-display text-headline-lg-mobile md:text-display text-white mb-6 leading-tight">Biến dữ liệu thành Quyết định chiến lược</h1>
+<div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+<h1 class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-white mb-6 leading-tight font-bold tracking-tight">Biến dữ liệu thành Quyết định chiến lược</h1>
 <p class="font-body-lg text-body-md md:text-body-lg text-surface-variant mb-10 max-w-2xl mx-auto">Chuyên gia phân tích dữ liệu và đào tạo doanh nghiệp. Kinh nghiệm thực chiến tại Central Retail và Kim Tin Group, giúp tối ưu hóa quy trình và ra quyết định dựa trên dữ liệu.</p>
 <div class="flex flex-wrap justify-center gap-4">
   <a href="#contact" class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors active:scale-95 shadow-lg">Book Session</a>
@@ -247,7 +247,7 @@
 </div>
 <div class="order-1 md:order-2 flex justify-center">
 <div class="w-72 h-72 rounded-full overflow-hidden border-4 border-surface shadow-lg relative bg-surface-variant">
-<img class="object-cover w-full h-full" alt="Sang Nguyen Dinh" src="assets/avatar.png">
+<img class="object-cover w-full h-full" alt="Sang Nguyen Dinh" src="assets/avatar-2.png">
 </div>
 </div>
 </div>
@@ -392,37 +392,137 @@
 </div>
 </section>
 
-<!-- Case Studies -->
+<!-- Case Studies / Practical Projects -->
 <section class="py-24 px-4 md:px-margin-desktop max-w-container-max mx-auto" id="projects">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Dự án Thực hành</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group">
-<div class="h-48 bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-6xl group-hover:scale-110 transition-transform">monitoring</span>
+<div class="text-center mb-10">
+  <h2 class="font-headline-lg text-headline-lg text-primary mb-3">Dự án Thực hành theo Khóa học</h2>
+  <p class="font-body-md text-on-surface-variant">Các dự án Capstone & Bài tập thực chiến áp dụng trực tiếp cho công việc</p>
 </div>
-<div class="p-6 flex-1">
-<h3 class="font-headline-md text-headline-md mb-2">Báo cáo P&amp;L</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Phân tích chuyên sâu về lợi nhuận và chi phí, giúp ban lãnh đạo theo dõi sức khỏe tài chính.</p>
+
+<!-- Project Filter Buttons -->
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+  <button onclick="filterProjects('all')" id="project-btn-all" class="project-filter-btn bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-sm transition-all shadow-sm cursor-pointer">Tất cả (6)</button>
+  <button onclick="filterProjects('powerbi')" id="project-btn-powerbi" class="project-filter-btn bg-surface-container text-on-surface-variant px-6 py-2 rounded-full font-label-md text-sm transition-all hover:bg-surface-variant cursor-pointer">Power BI (2)</button>
+  <button onclick="filterProjects('excel')" id="project-btn-excel" class="project-filter-btn bg-surface-container text-on-surface-variant px-6 py-2 rounded-full font-label-md text-sm transition-all hover:bg-surface-variant cursor-pointer">Modern Excel (2)</button>
+  <button onclick="filterProjects('ai')" id="project-btn-ai" class="project-filter-btn bg-surface-container text-on-surface-variant px-6 py-2 rounded-full font-label-md text-sm transition-all hover:bg-surface-variant cursor-pointer">AI for Business (2)</button>
 </div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group">
-<div class="h-48 bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-6xl group-hover:scale-110 transition-transform">local_shipping</span>
-</div>
-<div class="p-6 flex-1">
-<h3 class="font-headline-md text-headline-md mb-2">SCM Dashboard</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Quản trị chuỗi cung ứng, theo dõi tồn kho và hiệu suất giao hàng.</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group">
-<div class="h-48 bg-surface-container flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary text-6xl group-hover:scale-110 transition-transform">groups</span>
-</div>
-<div class="p-6 flex-1">
-<h3 class="font-headline-md text-headline-md mb-2">HR Analytics</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">Phân tích dữ liệu nhân sự, đánh giá hiệu suất và dự báo tỷ lệ nghỉ việc.</p>
-</div>
-</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="projects-grid">
+
+  <!-- Power BI Project 1 -->
+  <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="powerbi">
+    <div class="h-44 bg-surface-container relative flex items-center justify-center">
+      <span class="material-symbols-outlined text-secondary text-6xl group-hover:scale-110 transition-transform">monitoring</span>
+      <span class="absolute top-4 right-4 bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-xs font-semibold">Power BI</span>
+    </div>
+    <div class="p-6 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">Báo cáo P&amp;L Management Dashboard</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Phân tích chuyên sâu về lợi nhuận &amp; chi phí, kết nối Data Model đa nguồn, giúp ban lãnh đạo theo dõi sức khỏe tài chính realtime.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
+        <span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full text-xs font-medium">Power BI</span>
+        <span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full text-xs font-medium">DAX Advanced</span>
+        <span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full text-xs font-medium">Financial Modeling</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Power BI Project 2 -->
+  <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="powerbi">
+    <div class="h-44 bg-surface-container relative flex items-center justify-center">
+      <span class="material-symbols-outlined text-secondary text-6xl group-hover:scale-110 transition-transform">local_shipping</span>
+      <span class="absolute top-4 right-4 bg-secondary/10 text-secondary border border-secondary/20 px-3 py-1 rounded-full text-xs font-semibold">Power BI</span>
+    </div>
+    <div class="p-6 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">SCM &amp; Inventory Dashboard</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Quản trị chuỗi cung ứng, theo dõi tỷ lệ vòng quay tồn kho, Lead time và dự báo hiệu suất giao hàng toàn quốc.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
+        <span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full text-xs font-medium">Power BI</span>
+        <span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full text-xs font-medium">Power Query</span>
+        <span class="bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full text-xs font-medium">Supply Chain</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern Excel Project 1 -->
+  <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="excel">
+    <div class="h-44 bg-surface-container relative flex items-center justify-center">
+      <span class="material-symbols-outlined text-emerald-600 text-6xl group-hover:scale-110 transition-transform">sync_alt</span>
+      <span class="absolute top-4 right-4 bg-emerald-600/10 text-emerald-700 border border-emerald-600/20 px-3 py-1 rounded-full text-xs font-semibold">Modern Excel</span>
+    </div>
+    <div class="p-6 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">Tự động hóa Báo cáo Doanh số Đa kênh</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Ứng dụng Power Query tự động gom, xử lý và làm sạch hàng trăm file Excel chi nhánh/Sàn TMĐT chỉ với 1 click (không cần VBA).</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
+        <span class="bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full text-xs font-medium">Power Query</span>
+        <span class="bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full text-xs font-medium">ETL Automation</span>
+        <span class="bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full text-xs font-medium">Excel</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modern Excel Project 2 -->
+  <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="excel">
+    <div class="h-44 bg-surface-container relative flex items-center justify-center">
+      <span class="material-symbols-outlined text-emerald-600 text-6xl group-hover:scale-110 transition-transform">calculate</span>
+      <span class="absolute top-4 right-4 bg-emerald-600/10 text-emerald-700 border border-emerald-600/20 px-3 py-1 rounded-full text-xs font-semibold">Modern Excel</span>
+    </div>
+    <div class="p-6 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">Mô hình Tồn kho &amp; Công nợ (2M+ Dòng)</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Xây dựng Data Model trong Power Pivot vượt giới hạn 1 triệu dòng của Excel, tính toán hàm DAX về tuổi nợ và hiệu suất dòng tiền.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
+        <span class="bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full text-xs font-medium">Power Pivot</span>
+        <span class="bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full text-xs font-medium">DAX in Excel</span>
+        <span class="bg-emerald-100 text-emerald-900 px-2.5 py-1 rounded-full text-xs font-medium">Data Modeling</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Project 1 -->
+  <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="ai">
+    <div class="h-44 bg-surface-container relative flex items-center justify-center">
+      <span class="material-symbols-outlined text-indigo-600 text-6xl group-hover:scale-110 transition-transform">smart_toy</span>
+      <span class="absolute top-4 right-4 bg-indigo-600/10 text-indigo-700 border border-indigo-600/20 px-3 py-1 rounded-full text-xs font-semibold">AI for Business</span>
+    </div>
+    <div class="p-6 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">Sàng lọc &amp; Chấm điểm CV Tự động (AI RAG)</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Trợ lý AI tự động trích xuất kỹ năng từ file PDF CV bằng LLM Prompting &amp; chấm điểm độ phù hợp với tiêu chí tuyển dụng (JD).</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">AI Automation</span>
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">Prompt Engineering</span>
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">RAG System</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Project 2 -->
+  <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="ai">
+    <div class="h-44 bg-surface-container relative flex items-center justify-center">
+      <span class="material-symbols-outlined text-indigo-600 text-6xl group-hover:scale-110 transition-transform">auto_awesome</span>
+      <span class="absolute top-4 right-4 bg-indigo-600/10 text-indigo-700 border border-indigo-600/20 px-3 py-1 rounded-full text-xs font-semibold">AI for Business</span>
+    </div>
+    <div class="p-6 flex-1 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">Trợ lý AI Tự động hóa Insight Business</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Quy trình n8n &amp; ChatGPT API tự động đọc báo cáo doanh thu ngày, phát hiện bất thường và dự thảo email báo cáo gửi Ban Giám Đốc.</p>
+      </div>
+      <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">RPA Workflow</span>
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">ChatGPT API</span>
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">n8n</span>
+      </div>
+    </div>
+  </div>
+
 </div>
 </section>
 </main>
@@ -469,6 +569,33 @@
         }
       }
     });
+
+    // Also filter projects to match the selected program
+    filterProjects(tabId);
+  }
+
+  function filterProjects(category) {
+    const cards = document.querySelectorAll('.project-card-item');
+    cards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Update filter button styling
+    const filterBtns = document.querySelectorAll('.project-filter-btn');
+    filterBtns.forEach(btn => {
+      btn.classList.remove('bg-primary', 'text-on-primary');
+      btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+    });
+
+    const activeBtn = document.getElementById('project-btn-' + category);
+    if (activeBtn) {
+      activeBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      activeBtn.classList.add('bg-primary', 'text-on-primary');
+    }
   }
 
   function toggleMobileMenu() {
