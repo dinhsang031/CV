@@ -362,7 +362,7 @@
       .footer { flex-direction: row; justify-content: space-between; }
     }
     @media (min-width: 1024px) {
-      .projects-grid { grid-template-columns: repeat(3, 1fr); }
+      .projects-grid { grid-template-columns: repeat(4, 1fr); }
     }
   </style>
 </head>
@@ -370,13 +370,13 @@
 
   <!-- Navigation -->
   <nav class="nav" id="navbar">
-    <div class="nav-logo gold-text-gradient">S.N.D.</div>
+    <div class="nav-logo gold-text-gradient">Sang Nguyen Dinh</div>
     <div class="nav-links" id="desktopNav">
-      <a href="#work" id="nav-work">WORK</a>
-      <a href="training-portfolio.html" id="nav-training" style="color: var(--gold); font-weight: 600;">TRAINING PORTFOLIO</a>
       <a href="#about" id="nav-about">ABOUT</a>
       <a href="#experience" id="nav-experience">WORK EXPERIENCE</a>
+      <a href="#work" id="nav-work">PROJECTS</a>
       <a href="#contact" id="nav-contact">CONTACT</a>
+      <a href="training-portfolio.html" id="nav-training">TRAINING PORTFOLIO</a>
       <button class="lang-toggle" id="langToggle" onclick="toggleLang()">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
         <span id="langToggleText">VI</span>
@@ -391,11 +391,11 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#work" onclick="closeMobileMenu()" id="mob-work">WORK</a>
-    <a href="training-portfolio.html" onclick="closeMobileMenu()" id="mob-training" style="color: var(--gold); font-weight: 600;">TRAINING PORTFOLIO</a>
     <a href="#about" onclick="closeMobileMenu()" id="mob-about">ABOUT</a>
     <a href="#experience" onclick="closeMobileMenu()" id="mob-experience">WORK EXPERIENCE</a>
+    <a href="#work" onclick="closeMobileMenu()" id="mob-work">PROJECTS</a>
     <a href="#contact" onclick="closeMobileMenu()" id="mob-contact">CONTACT</a>
+    <a href="training-portfolio.html" onclick="closeMobileMenu()" id="mob-training">TRAINING PORTFOLIO</a>
     <button class="lang-btn" onclick="toggleLang(); closeMobileMenu();">
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
       <span id="mobLangText">English</span>
@@ -516,7 +516,7 @@
         name: "Sang Nguyen Dinh",
         heroHeadline: "Sang Nguyen Dinh",
         heroSubtext: "Data Analyst | Workforce Budgeting & HR Analytics | AI & Automation Enthusiast",
-        nav: { work: "CÔNG VIỆC", training: "ĐÀO TẠO", about: "GIỚI THIỆU", contact: "LIÊN HỆ", letsTalk: "HÃY TRÒ CHUYỆN" },
+        nav: { work: "DỰ ÁN", training: "TRAINING PORTFOLIO", about: "GIỚI THIỆU", contact: "LIÊN HỆ", letsTalk: "HÃY TRÒ CHUYỆN" },
         heroWorkBtn: "XEM CÔNG VIỆC",
         heroDownloadBtn: "TẢI CV",
         summary: {
@@ -552,10 +552,10 @@
         projects: {
           title: "DỰ ÁN NỔI BẬT",
           items: [
-            { title: "Chương trình Đào tạo Doanh nghiệp", description: "Hệ thống bài giảng & Workshop thực chiến về Power BI Mastery, Modern Excel và AI for Business cho tổ chức.", tags: ["Power BI", "Excel", "AI Automation", "Training"], link: "training-portfolio.html" },
             { title: "HR Dashboards cho Tập đoàn 20 công ty con", description: "Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo.", tags: ["Power BI", "SQL", "Data Viz"] },
             { title: "Mô hình Dự đoán Tỷ lệ nghỉ việc", description: "Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc và xác định các lý do chính gây ra sự biến động.", tags: ["Machine Learning", "Python", "Predictive Analytics"] },
-            { title: "Hệ thống Sàng lọc CV bằng AI", description: "Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc.", tags: ["AI", "Automation", "Python", "n8n"] }
+            { title: "Hệ thống Sàng lọc CV bằng AI", description: "Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc.", tags: ["AI", "Automation", "Python", "n8n"] },
+            { title: "Chương trình Đào tạo Doanh nghiệp", description: "Hệ thống bài giảng & Workshop thực chiến về Power BI Mastery, Modern Excel và AI for Business cho tổ chức.", tags: ["Power BI", "Excel", "AI Automation", "Training"], link: "training-portfolio.html" }
           ]
         },
         skills: {
@@ -570,7 +570,7 @@
         name: "Sang Nguyen Dinh",
         heroHeadline: "Sang Nguyen Dinh",
         heroSubtext: "Data Analyst | Workforce Budgeting & HR Analytics | AI & Automation Enthusiast",
-        nav: { work: "WORK", training: "TRAINING", about: "ABOUT", contact: "CONTACT", letsTalk: "LET'S TALK" },
+        nav: { work: "PROJECTS", training: "TRAINING PORTFOLIO", about: "ABOUT", contact: "CONTACT", letsTalk: "LET'S TALK" },
         heroWorkBtn: "VIEW SELECTED WORK",
         heroDownloadBtn: "DOWNLOAD RESUME",
         summary: {
@@ -606,10 +606,10 @@
         projects: {
           title: "KEY PROJECTS",
           items: [
-            { title: "Corporate Training Portfolio", description: "Practical curriculum & workshops on Power BI Mastery, Modern Excel, and AI for Business for enterprises.", tags: ["Power BI", "Excel", "AI Automation", "Training"], link: "training-portfolio.html" },
             { title: "HR Dashboards for Group of 20 Subsidiaries", description: "Designed and implemented comprehensive HR dashboards covering Recruitment, Payroll, Benefit & Training data.", tags: ["Power BI", "SQL", "Data Viz"] },
             { title: "Employee Turnover Prediction Model", description: "Developed a Machine Learning model to predict employee turnover and identify key reasons for attrition.", tags: ["Machine Learning", "Python", "Predictive Analytics"] },
-            { title: "AI CV Screening System", description: "Developed an AI system to automate CV extraction and candidate analysis against job requirements.", tags: ["AI", "Automation", "Python", "n8n"] }
+            { title: "AI CV Screening System", description: "Developed an AI system to automate CV extraction and candidate analysis against job requirements.", tags: ["AI", "Automation", "Python", "n8n"] },
+            { title: "Corporate Training Portfolio", description: "Practical curriculum & workshops on Power BI Mastery, Modern Excel, and AI for Business for enterprises.", tags: ["Power BI", "Excel", "AI Automation", "Training"], link: "training-portfolio.html" }
           ]
         },
         skills: {
@@ -748,15 +748,57 @@
       document.getElementById('closeIcon').style.display = 'none';
     }
 
-    // ====== SCROLL EFFECTS ======
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('navbar');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
+    // ====== SCROLL SPY & EFFECTS ======
+    function initCVScrollSpy() {
+      const sections = document.querySelectorAll('section[id]');
+      const desktopLinks = document.querySelectorAll('#desktopNav a');
+      const mobileLinks = document.querySelectorAll('#mobileMenu a');
+
+      function onScroll() {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+
+        let current = '';
+        const scrollPos = window.scrollY + 250;
+
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        desktopLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#') && href === '#' + current) {
+            link.style.color = 'var(--gold)';
+            link.style.fontWeight = '600';
+          } else if (href && href.startsWith('#')) {
+            link.style.color = '';
+            link.style.fontWeight = '';
+          }
+        });
+
+        mobileLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#') && href === '#' + current) {
+            link.style.color = 'var(--gold)';
+            link.style.fontWeight = '600';
+          } else if (href && href.startsWith('#')) {
+            link.style.color = '';
+            link.style.fontWeight = '';
+          }
+        });
       }
-    });
+
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    }
 
     // ====== REVEAL ON SCROLL ======
     function initReveal() {
@@ -775,6 +817,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       applyLanguage();
       initReveal();
+      initCVScrollSpy();
     });
   </script>
 </body>

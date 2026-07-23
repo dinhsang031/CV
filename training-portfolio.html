@@ -177,12 +177,12 @@
     <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary hover:text-secondary transition-colors">Sang Nguyen Dinh</a>
     <span class="hidden sm:inline text-xs bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded-full font-medium">Training Portfolio</span>
   </div>
-  <nav class="hidden md:flex items-center gap-8">
+  <nav class="hidden md:flex items-center gap-8" id="desktopNav">
     <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#about">About</a>
-    <a class="text-secondary border-b-2 border-secondary font-semibold pb-1 font-label-md text-label-md" href="#programs">Programs</a>
+    <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#programs">Programs</a>
     <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#projects">Projects</a>
     <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#contact">Contact</a>
-    <a class="text-secondary hover:underline transition-all font-label-md text-label-md py-2 flex items-center gap-1" href="index.html">
+    <a class="text-secondary hover:text-on-secondary-fixed-variant transition-colors font-label-md text-label-md py-2 flex items-center gap-1 font-semibold no-underline" href="index.html">
       <span class="material-symbols-outlined text-sm">arrow_back</span> CV Profile
     </a>
   </nav>
@@ -197,10 +197,10 @@
 <!-- Mobile Navigation Drawer -->
 <div id="mobile-menu" class="hidden md:hidden fixed top-20 inset-x-0 bg-surface/95 backdrop-blur-lg border-b border-outline-variant z-40 p-6 shadow-xl flex flex-col gap-4">
   <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#about">About</a>
-  <a onclick="toggleMobileMenu()" class="text-secondary text-lg font-semibold py-2 border-b border-outline-variant/30" href="#programs">Programs</a>
+  <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#programs">Programs</a>
   <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#projects">Projects</a>
   <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#contact">Contact</a>
-  <a onclick="toggleMobileMenu()" class="text-secondary text-lg font-medium py-2 flex items-center gap-2" href="index.html">
+  <a onclick="toggleMobileMenu()" class="text-secondary text-lg font-semibold py-2 flex items-center gap-2 no-underline" href="index.html">
     <span class="material-symbols-outlined text-sm">arrow_back</span> Xem Trang CV
   </a>
   <a onclick="toggleMobileMenu()" href="#contact" class="bg-secondary text-on-secondary text-center px-6 py-3 rounded-full font-label-md text-label-md mt-2">Book Session</a>
@@ -488,18 +488,18 @@
   <!-- AI Project 1 -->
   <div class="project-card-item bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group transition-all duration-300 hover:shadow-md" data-category="ai">
     <div class="h-44 bg-surface-container relative flex items-center justify-center">
-      <span class="material-symbols-outlined text-indigo-600 text-6xl group-hover:scale-110 transition-transform">smart_toy</span>
+      <span class="material-symbols-outlined text-indigo-600 text-6xl group-hover:scale-110 transition-transform">receipt_long</span>
       <span class="absolute top-4 right-4 bg-indigo-600/10 text-indigo-700 border border-indigo-600/20 px-3 py-1 rounded-full text-xs font-semibold">AI for Business</span>
     </div>
     <div class="p-6 flex-1 flex flex-col justify-between">
       <div>
-        <h3 class="font-headline-md text-headline-md text-primary mb-2">Sàng lọc &amp; Chấm điểm CV Tự động (AI RAG)</h3>
-        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Trợ lý AI tự động trích xuất kỹ năng từ file PDF CV bằng LLM Prompting &amp; chấm điểm độ phù hợp với tiêu chí tuyển dụng (JD).</p>
+        <h3 class="font-headline-md text-headline-md text-primary mb-2">Trợ lý AI Tự động Xử lý Hóa đơn &amp; Hợp đồng</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant mb-4">Trợ lý AI tích hợp OCR &amp; LLM tự động đọc file PDF/Ảnh (hóa đơn, chứng từ), trích xuất dữ liệu vào Excel và tự động phân loại văn bản văn phòng.</p>
       </div>
       <div class="flex flex-wrap gap-2 pt-4 border-t border-outline-variant/40">
         <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">AI Automation</span>
-        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">Prompt Engineering</span>
-        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">RAG System</span>
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">OCR &amp; LLM</span>
+        <span class="bg-indigo-100 text-indigo-900 px-2.5 py-1 rounded-full text-xs font-medium">Office Productivity</span>
       </div>
     </div>
   </div>
@@ -525,10 +525,38 @@
 
 </div>
 </section>
+<!-- Contact & Consultation Section -->
+<section class="py-24 bg-surface-container-low border-t border-outline-variant/60 text-primary relative overflow-hidden" id="contact">
+  <div class="px-4 md:px-margin-desktop max-w-container-max mx-auto text-center relative z-10">
+    <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-6 text-secondary shadow-sm">
+      <span class="material-symbols-outlined text-4xl">mail</span>
+    </div>
+    <h2 class="font-headline-lg text-headline-lg mb-4 text-primary font-bold">Liên hệ &amp; Tư vấn Đào tạo Doanh nghiệp</h2>
+    <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10 text-body-lg">Sẵn sàng trao đổi về giải pháp đào tạo dữ liệu, báo cáo tự động &amp; ứng dụng AI phù hợp nhất với nhu cầu doanh nghiệp của bạn.</p>
+    
+    <div class="flex flex-wrap justify-center gap-6 mb-12">
+      <a href="mailto:dinhsang031@gmail.com" class="inline-flex items-center gap-3 bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-all shadow-md active:scale-95">
+        <span class="material-symbols-outlined text-lg">mail</span> dinhsang031@gmail.com
+      </a>
+      <a href="tel:+84935764976" class="inline-flex items-center gap-3 bg-surface-container-lowest text-primary border border-outline-variant px-8 py-4 rounded-full font-label-md text-label-md hover:bg-surface-variant transition-all shadow-sm active:scale-95">
+        <span class="material-symbols-outlined text-lg">call</span> +84 935 764 976
+      </a>
+    </div>
+
+    <div class="flex justify-center items-center gap-6 text-on-surface-variant text-sm flex-wrap">
+      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-base">location_on</span> Hồ Chí Minh, Việt Nam</span>
+      <span class="hidden sm:inline text-outline-variant">•</span>
+      <a href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" rel="noopener" class="hover:text-secondary transition-colors no-underline inline-flex items-center gap-1.5 font-medium">
+        <svg class="w-4 h-4 fill-secondary shrink-0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.78a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/></svg>
+        <span>LinkedIn Profile</span>
+      </a>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- Footer -->
-<footer class="w-full py-stack-lg border-t border-outline-variant bg-surface-container-lowest" id="contact">
+<footer class="w-full py-stack-lg border-t border-outline-variant bg-surface-container-lowest">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-4 md:px-margin-desktop max-w-container-max mx-auto">
 <div class="col-span-1 md:col-span-2 mb-6 md:mb-0">
 <div class="font-headline-md text-headline-md font-bold text-primary mb-4">Sang Nguyen Dinh</div>
@@ -604,6 +632,59 @@
       menu.classList.toggle('hidden');
     }
   }
+
+  // Dynamic ScrollSpy
+  function initTrainingScrollSpy() {
+    const sections = document.querySelectorAll('section[id]');
+    const desktopLinks = document.querySelectorAll('#desktopNav a[href^="#"]');
+    const mobileLinks = document.querySelectorAll('#mobile-menu a[href^="#"]');
+
+    function onScroll() {
+      let current = '';
+      const scrollPos = window.scrollY + 250;
+
+      if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 80)) {
+        current = 'contact';
+      } else {
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollPos >= top && scrollPos < top + height) {
+            current = section.getAttribute('id');
+          }
+        });
+      }
+
+      desktopLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#' + current) {
+          link.classList.remove('text-on-surface-variant');
+          link.classList.add('text-secondary', 'border-b-2', 'border-secondary', 'font-semibold');
+        } else {
+          link.classList.remove('text-secondary', 'border-b-2', 'border-secondary', 'font-semibold');
+          link.classList.add('text-on-surface-variant');
+        }
+      });
+
+      mobileLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#' + current) {
+          link.classList.remove('text-on-surface');
+          link.classList.add('text-secondary', 'font-semibold');
+        } else {
+          link.classList.remove('text-secondary', 'font-semibold');
+          link.classList.add('text-on-surface');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initTrainingScrollSpy();
+  });
 </script>
 </body>
 </html>
