@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Sang Nguyen Dinh — Corporate Training Portfolio</title>
-<meta name="description" content="Chương trình đào tạo doanh nghiệp về Power BI, Modern Excel, và AI for Business bởi Sang Nguyễn Đình.">
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">try{
+<!DOCTYPE html><html lang="vi"><head><!--UIPATH_EXTENSION_ID: conkfbpnllelocpogdmbilgmnkabjfmf--><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
   tailwind.config = {
     darkMode: "class",
     theme: {
@@ -165,67 +155,35 @@
                         }
                 ]
         }
-      },
+},
     },
   }
-}catch(_e){}</script>
-</head>
-<body class="bg-background text-on-background min-h-screen pt-20">
+}catch(_e){}</script></head><body class="bg-background text-on-background min-h-screen pt-20">
 <!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant shadow-sm flex justify-between items-center h-20 px-4 md:px-margin-desktop max-w-container-max mx-auto left-0 right-0">
-  <div class="flex items-center gap-3">
-    <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary hover:text-secondary transition-colors">Sang Nguyen Dinh</a>
-    <span class="hidden sm:inline text-xs bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded-full font-medium">Training Portfolio</span>
-  </div>
-  <nav class="hidden md:flex items-center gap-8">
-    <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#about">About</a>
-    <a class="text-secondary border-b-2 border-secondary font-semibold pb-1 font-label-md text-label-md" href="#programs">Programs</a>
-    <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#projects">Projects</a>
-    <a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#contact">Contact</a>
-    <a class="text-secondary hover:underline transition-all font-label-md text-label-md py-2 flex items-center gap-1" href="index.html">
-      <span class="material-symbols-outlined text-sm">arrow_back</span> CV Profile
-    </a>
-  </nav>
-  <div class="flex items-center gap-3">
-    <a href="#contact" class="hidden md:block bg-secondary text-on-secondary px-6 py-3 rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors active:scale-95 shadow-sm">Book Session</a>
-    <button onclick="toggleMobileMenu()" class="md:hidden text-primary p-2 focus:outline-none" aria-label="Toggle menu">
-      <span class="material-symbols-outlined text-2xl">menu</span>
-    </button>
-  </div>
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-sm flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto left-0 right-0">
+<div class="font-headline-md text-headline-md font-bold text-primary">Sang Nguyen Dinh</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#about">About</a>
+<a class="text-secondary border-b-2 border-secondary font-semibold pb-1 font-label-md text-label-md" href="#programs">Programs</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-md text-label-md py-2" href="#contact">Contact</a>
+</nav>
+<button class="hidden md:block bg-secondary text-on-secondary px-6 py-3 rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors active:scale-95">Book Session</button>
 </header>
-
-<!-- Mobile Navigation Drawer -->
-<div id="mobile-menu" class="hidden md:hidden fixed top-20 inset-x-0 bg-surface/95 backdrop-blur-lg border-b border-outline-variant z-40 p-6 shadow-xl flex flex-col gap-4">
-  <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#about">About</a>
-  <a onclick="toggleMobileMenu()" class="text-secondary text-lg font-semibold py-2 border-b border-outline-variant/30" href="#programs">Programs</a>
-  <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#projects">Projects</a>
-  <a onclick="toggleMobileMenu()" class="text-on-surface text-lg font-medium py-2 border-b border-outline-variant/30" href="#contact">Contact</a>
-  <a onclick="toggleMobileMenu()" class="text-secondary text-lg font-medium py-2 flex items-center gap-2" href="index.html">
-    <span class="material-symbols-outlined text-sm">arrow_back</span> Xem Trang CV
-  </a>
-  <a onclick="toggleMobileMenu()" href="#contact" class="bg-secondary text-on-secondary text-center px-6 py-3 rounded-full font-label-md text-label-md mt-2">Book Session</a>
-</div>
-
 <main>
 <!-- Hero Section -->
-<section class="relative h-[600px] flex items-center justify-center overflow-hidden">
-<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/hero-bg.png');">
-<div class="absolute inset-0 bg-primary/75 backdrop-blur-[2px]"></div>
+<section class="relative h-[600px] flex items-center justify-center">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzEkptDoS3QEhq2EJeljcZcT-wB_hl5IzvYo_Bjn_MCeTQgutK4aUnxleu4QQo6N_mFoWTpEG3uQgCcL8_hFIlTghJ01nbloTjKQNbmrELbeD3y6ND5yahMoxTOymH-wadQd2fPl68KFlzUY8tAHaeH4e0zZRBVB0UGvwyajFFwkyWusMUIgq8ZBnwQfxibW04qv7WCpv-WTLJBnGlLnvVSXZH2NPvFdvMtbji-e8aTPHyzCVmYCxPQpzK-1PHNF7VYgkpULRell-j');">
+<div class="absolute inset-0 bg-primary/70"></div>
 </div>
 <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-<h1 class="font-display text-headline-lg-mobile md:text-display text-white mb-6 leading-tight">Biến dữ liệu thành Quyết định chiến lược</h1>
-<p class="font-body-lg text-body-md md:text-body-lg text-surface-variant mb-10 max-w-2xl mx-auto">Chuyên gia phân tích dữ liệu và đào tạo doanh nghiệp. Kinh nghiệm thực chiến tại Central Retail và Kim Tin Group, giúp tối ưu hóa quy trình và ra quyết định dựa trên dữ liệu.</p>
-<div class="flex flex-wrap justify-center gap-4">
-  <a href="#contact" class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors active:scale-95 shadow-lg">Book Session</a>
-  <a href="index.html" class="bg-surface-container-lowest/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-label-md hover:bg-white/20 transition-colors active:scale-95 shadow-lg flex items-center gap-2">
-    <span class="material-symbols-outlined text-sm">person</span> Xem Trang CV
-  </a>
-</div>
+<h1 class="font-display text-display text-white mb-6">Biến dữ liệu thành Quyết định chiến lược</h1>
+<p class="font-body-lg text-body-lg text-surface-variant mb-10 max-w-2xl mx-auto">Chuyên gia phân tích dữ liệu và đào tạo doanh nghiệp. Kinh nghiệm thực chiến tại Central Retail và Kim Tin Group, giúp tối ưu hóa quy trình và ra quyết định dựa trên dữ liệu.</p>
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors active:scale-95 shadow-lg">Book Session</button>
 </div>
 </section>
-
 <!-- About Section -->
-<section class="py-24 px-4 md:px-margin-desktop max-w-container-max mx-auto" id="about">
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto" id="about">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
 <div class="order-2 md:order-1">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-6">Về Sang Nguyễn Đình</h2>
@@ -247,15 +205,14 @@
 </div>
 <div class="order-1 md:order-2 flex justify-center">
 <div class="w-72 h-72 rounded-full overflow-hidden border-4 border-surface shadow-lg relative bg-surface-variant">
-<img class="object-cover w-full h-full" alt="Sang Nguyen Dinh" src="assets/avatar.png">
+<img class="object-cover w-full h-full" data-alt="Professional corporate headshot of a young Asian male data analyst in a modern office setting. He is wearing a smart casual navy blazer over a crisp white shirt, smiling slightly, looking directly at the camera. Soft, natural lighting from a nearby window creates a bright, trustworthy, and competent mood. The background is slightly blurred with subtle hints of glass partitions and a whiteboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjARP7Y0p7ppS31irrnnZ1bb947CSTitvGsNoW9o3pn82xuo2GfKE3l04GJJWJF2B1-ga6tQhEzULt1hfGIt7CDDXJoDgl8IhOvZmTg3nDaLe8qlks8BGQXltYf425kl_-puVH8cFCvjCklWNerWYoTtqzeUPKRyAOJ_NnHA9q3OZVeROzxOUiPdQz_ZqvkfP-LhwZbfULC0nmT7VGz4i3dtVbjSfx8lS5jMErHCss41bxBq_Fqb9JGb2Sze5QqMY19P4Rva3zuGIR">
 </div>
 </div>
 </div>
 </section>
-
 <!-- Programs Section -->
 <section class="py-24 bg-surface-container-lowest" id="programs">
-<div class="px-4 md:px-margin-desktop max-w-container-max mx-auto">
+<div class="px-margin-desktop max-w-container-max mx-auto">
 <div class="text-center mb-16">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Chương trình Đào tạo</h2>
 <p class="font-body-md text-body-md text-on-surface-variant">Thực chiến - Trọng tâm - Áp dụng ngay</p>
@@ -263,16 +220,16 @@
 
 <!-- Tabs -->
 <div class="flex flex-wrap justify-center gap-4 mb-12">
-<button class="tab-btn bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-md font-semibold transition-colors shadow-sm cursor-pointer" id="btn-powerbi" onclick="switchTab('powerbi')">Power BI</button>
-<button class="tab-btn bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label-md font-semibold transition-colors hover:bg-surface-variant cursor-pointer" id="btn-excel" onclick="switchTab('excel')">Modern Excel</button>
-<button class="tab-btn bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label-md font-semibold transition-colors hover:bg-surface-variant cursor-pointer" id="btn-ai" onclick="switchTab('ai')">AI for Business</button>
+<button class="tab-btn bg-secondary text-on-secondary px-8 py-3 rounded-full font-label-md font-semibold transition-colors shadow-sm" id="btn-powerbi" onclick="switchTab('powerbi')">Power BI</button>
+<button class="tab-btn bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label-md font-semibold transition-colors hover:bg-surface-variant" id="btn-excel" onclick="switchTab('excel')">Modern Excel</button>
+<button class="tab-btn bg-surface-container text-on-surface-variant px-8 py-3 rounded-full font-label-md font-semibold transition-colors hover:bg-surface-variant" id="btn-ai" onclick="switchTab('ai')">AI for Business</button>
 </div>
 
 <!-- Power BI Content -->
 <div class="tab-content" id="powerbi">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <div class="lg:col-span-4 bg-background rounded-xl p-8 border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
-<img alt="Power BI Icon" class="h-32 object-contain mb-6" src="assets/powerbi-icon.png">
+<img alt="Power BI Icon" class="h-32 object-contain mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnzYbF6WKmln9tYMKeYFzmp3vlXv0UkIBrQ1Ms1mppBlWsu5nM3J-u0nzuknCYKaBiVLwn7veoDO_iA0U1OeJ-xbp5KJ-UjEYEab_6pfbv36pAnZLMnokROARGldYO8OGCQgwcQm40JjxsL3dbsU6IeaTmr5lzdo9tVQ6Qw9VjKVrEovSwtqYi9HYoxVvSaqD-OzzzsvWFk6POl5fJHISYrlycqYNLR3HLxLmI9JShWGP5j8TwKxvjeJUuPWdFvnx2S1Ce1akVhnxE">
 <h3 class="font-headline-md text-primary mb-2">Power BI Mastery</h3>
 <p class="font-body-md text-on-surface-variant">Từ cơ bản đến chuyên sâu, xây dựng Dashboard quản trị tự động.</p>
 <div class="mt-6 py-2 px-4 bg-surface-container rounded-lg font-label-md text-primary">Thời lượng: 2-3 tháng</div>
@@ -314,7 +271,7 @@
 <div class="tab-content hidden" id="excel">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <div class="lg:col-span-4 bg-background rounded-xl p-8 border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
-<img alt="Modern Excel Icon" class="h-32 object-contain mb-6" src="assets/excel-icon.png">
+<img alt="Modern Excel Icon" class="h-32 object-contain mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCOwiI5yVq1fh_o4OpFLdrRQLqkiqFgHlR07J-wdkWUzdA8bIrH6h28CCK72ZwtpY03Vpf4O5ybfr5kKIjmGZ1UepFcrtKsTh6Orm9NWr-D8lY68C8BsbbxAcHPXld_Nker3DcC7AJLZI9WjCNT06DtYg7Cx0fZxdFIB29DcL8bkG75ckc42nZFOYUP4nPI6f7oW6smEvEtvqBewZYyMh6MxrP8_8NWeeiGL2WRHkQCgWKAkkb-vbQsWE7aa-Fy4R948SKQlDLsl9A">
 <h3 class="font-headline-md text-primary mb-2">Modern Excel</h3>
 <p class="font-body-md text-on-surface-variant">Tự động hóa báo cáo với các công cụ Excel hiện đại nhất, không cần VBA.</p>
 <div class="mt-6 py-2 px-4 bg-surface-container rounded-lg font-label-md text-primary">Thời lượng: 1-2 tháng</div>
@@ -354,7 +311,7 @@
 <div class="tab-content hidden" id="ai">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
 <div class="lg:col-span-4 bg-background rounded-xl p-8 border border-outline-variant shadow-sm flex flex-col items-center justify-center text-center">
-<img alt="AI Icon" class="h-32 object-cover rounded-lg mb-6" src="assets/ai-course.png">
+<img alt="AI Icon" class="h-32 object-cover rounded-lg mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTd5lLe_aAe5qKFRWygmN8sYHkf1sM2SdzCVzWT44ueNpIJzuwqJCCepONnC8kKgUhyNB2bYtc2D0OeJ35Nvt3Th9tiDhS7Ot5BCabnrghyrHreYP6lcQLi2nGuT2dK5hBGoysVclhP6YfzXGpg-0cQyeyPcblxgJPxjU04_O1ntP8fm6nhRRpeq01YJaZ5bbujuawPf_tNX0PQiWBCgsvAqEalNR1SjHe6qNL0jMr6_kPT1txiQRpbcnWKDpMPJd4XvtxMpy_s0DO">
 <h3 class="font-headline-md text-primary mb-2">AI for Business</h3>
 <p class="font-body-md text-on-surface-variant">Ứng dụng AI Automation và RPA Workflow để x10 hiệu suất công việc hàng ngày.</p>
 <div class="mt-6 py-2 px-4 bg-surface-container rounded-lg font-label-md text-primary">Thời lượng: 1 tháng</div>
@@ -391,9 +348,8 @@
 </div>
 </div>
 </section>
-
 <!-- Case Studies -->
-<section class="py-24 px-4 md:px-margin-desktop max-w-container-max mx-auto" id="projects">
+<section class="py-24 px-margin-desktop max-w-container-max mx-auto" id="projects">
 <h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Dự án Thực hành</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group">
@@ -426,57 +382,15 @@
 </div>
 </section>
 </main>
-
 <!-- Footer -->
 <footer class="w-full py-stack-lg border-t border-outline-variant bg-surface-container-lowest" id="contact">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-4 md:px-margin-desktop max-w-container-max mx-auto">
-<div class="col-span-1 md:col-span-2 mb-6 md:mb-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
 <div class="font-headline-md text-headline-md font-bold text-primary mb-4">Sang Nguyen Dinh</div>
 <p class="font-label-md text-label-md text-on-surface-variant">© 2024 Sang Nguyen Dinh. All rights reserved. Professional Corporate Training &amp; Analytics.</p>
 </div>
-<div class="col-span-1 md:col-span-2 flex justify-start md:justify-end gap-6 flex-wrap items-center">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all opacity-80 hover:opacity-100 flex items-center gap-2" href="index.html">
-  <span class="material-symbols-outlined text-sm">person</span> CV Profile
-</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all opacity-80 hover:opacity-100 flex items-center gap-2" href="https://www.linkedin.com/in/sang-nguyen-dinh-234790231" target="_blank" rel="noopener">
-  <span class="material-symbols-outlined text-sm">link</span> LinkedIn
-</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-all opacity-80 hover:opacity-100 flex items-center gap-2" href="https://github.com/dinhsang031" target="_blank" rel="noopener">
-  <span class="material-symbols-outlined text-sm">code</span> GitHub
-</a>
-</div></div></footer>
-
-<script>
-  function switchTab(tabId) {
-    const tabs = ['powerbi', 'excel', 'ai'];
-    tabs.forEach(id => {
-      const content = document.getElementById(id);
-      const btn = document.getElementById('btn-' + id);
-      if (content) {
-        if (id === tabId) {
-          content.classList.remove('hidden');
-        } else {
-          content.classList.add('hidden');
-        }
-      }
-      if (btn) {
-        if (id === tabId) {
-          btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
-          btn.classList.add('bg-secondary', 'text-on-secondary');
-        } else {
-          btn.classList.remove('bg-secondary', 'text-on-surface-variant');
-          btn.classList.add('bg-surface-container', 'text-on-surface-variant');
-        }
-      }
-    });
-  }
-
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    if (menu) {
-      menu.classList.toggle('hidden');
-    }
-  }
-</script>
-</body>
-</html>
+<div class="col-span-1 md:col-span-2 flex justify-start md:justify-end gap-4 flex-wrap items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary hover:underline transition-all opacity-80 hover:opacity-100 flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-sm">link</span> LinkedIn
+                </a>
+</div></div></footer></body></html>

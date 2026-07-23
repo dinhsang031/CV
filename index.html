@@ -373,6 +373,7 @@
     <div class="nav-logo gold-text-gradient">S.N.D.</div>
     <div class="nav-links" id="desktopNav">
       <a href="#work" id="nav-work">WORK</a>
+      <a href="training-portfolio.html" id="nav-training" style="color: var(--gold); font-weight: 600;">TRAINING PORTFOLIO</a>
       <a href="#about" id="nav-about">ABOUT</a>
       <a href="#experience" id="nav-experience">WORK EXPERIENCE</a>
       <a href="#contact" id="nav-contact">CONTACT</a>
@@ -391,6 +392,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#work" onclick="closeMobileMenu()" id="mob-work">WORK</a>
+    <a href="training-portfolio.html" onclick="closeMobileMenu()" id="mob-training" style="color: var(--gold); font-weight: 600;">TRAINING PORTFOLIO</a>
     <a href="#about" onclick="closeMobileMenu()" id="mob-about">ABOUT</a>
     <a href="#experience" onclick="closeMobileMenu()" id="mob-experience">WORK EXPERIENCE</a>
     <a href="#contact" onclick="closeMobileMenu()" id="mob-contact">CONTACT</a>
@@ -514,7 +516,7 @@
         name: "Sang Nguyen Dinh",
         heroHeadline: "Sang Nguyen Dinh",
         heroSubtext: "Data Analyst | Workforce Budgeting & HR Analytics | AI & Automation Enthusiast",
-        nav: { work: "CÔNG VIỆC", about: "GIỚI THIỆU", contact: "LIÊN HỆ", letsTalk: "HÃY TRÒ CHUYỆN" },
+        nav: { work: "CÔNG VIỆC", training: "ĐÀO TẠO", about: "GIỚI THIỆU", contact: "LIÊN HỆ", letsTalk: "HÃY TRÒ CHUYỆN" },
         heroWorkBtn: "XEM CÔNG VIỆC",
         heroDownloadBtn: "TẢI CV",
         summary: {
@@ -550,6 +552,7 @@
         projects: {
           title: "DỰ ÁN NỔI BẬT",
           items: [
+            { title: "Chương trình Đào tạo Doanh nghiệp", description: "Hệ thống bài giảng & Workshop thực chiến về Power BI Mastery, Modern Excel và AI for Business cho tổ chức.", tags: ["Power BI", "Excel", "AI Automation", "Training"], link: "training-portfolio.html" },
             { title: "HR Dashboards cho Tập đoàn 20 công ty con", description: "Thiết kế và triển khai các HR dashboard toàn diện bao gồm Tuyển dụng, Lương thưởng, Phúc lợi & Đào tạo.", tags: ["Power BI", "SQL", "Data Viz"] },
             { title: "Mô hình Dự đoán Tỷ lệ nghỉ việc", description: "Phát triển mô hình Machine Learning để dự đoán tỷ lệ nghỉ việc và xác định các lý do chính gây ra sự biến động.", tags: ["Machine Learning", "Python", "Predictive Analytics"] },
             { title: "Hệ thống Sàng lọc CV bằng AI", description: "Phát triển hệ thống AI tự động trích xuất CV và phân tích ứng viên theo yêu cầu công việc.", tags: ["AI", "Automation", "Python", "n8n"] }
@@ -567,7 +570,7 @@
         name: "Sang Nguyen Dinh",
         heroHeadline: "Sang Nguyen Dinh",
         heroSubtext: "Data Analyst | Workforce Budgeting & HR Analytics | AI & Automation Enthusiast",
-        nav: { work: "WORK", about: "ABOUT", contact: "CONTACT", letsTalk: "LET'S TALK" },
+        nav: { work: "WORK", training: "TRAINING", about: "ABOUT", contact: "CONTACT", letsTalk: "LET'S TALK" },
         heroWorkBtn: "VIEW SELECTED WORK",
         heroDownloadBtn: "DOWNLOAD RESUME",
         summary: {
@@ -603,6 +606,7 @@
         projects: {
           title: "KEY PROJECTS",
           items: [
+            { title: "Corporate Training Portfolio", description: "Practical curriculum & workshops on Power BI Mastery, Modern Excel, and AI for Business for enterprises.", tags: ["Power BI", "Excel", "AI Automation", "Training"], link: "training-portfolio.html" },
             { title: "HR Dashboards for Group of 20 Subsidiaries", description: "Designed and implemented comprehensive HR dashboards covering Recruitment, Payroll, Benefit & Training data.", tags: ["Power BI", "SQL", "Data Viz"] },
             { title: "Employee Turnover Prediction Model", description: "Developed a Machine Learning model to predict employee turnover and identify key reasons for attrition.", tags: ["Machine Learning", "Python", "Predictive Analytics"] },
             { title: "AI CV Screening System", description: "Developed an AI system to automate CV extraction and candidate analysis against job requirements.", tags: ["AI", "Automation", "Python", "n8n"] }
@@ -641,9 +645,9 @@
     function renderProjects(data) {
       const container = document.getElementById('projectsContainer');
       container.innerHTML = data.projects.items.map(project => `
-        <div class="project-card reveal">
+        <div class="project-card reveal" ${project.link ? `onclick="window.location.href='${project.link}'" style="cursor:pointer;"` : ''}>
           <div style="flex-grow:1">
-            <h3 class="project-title">${project.title}</h3>
+            <h3 class="project-title">${project.title} ${project.link ? `<span style="font-size:0.85rem; color:var(--gold); margin-left:4px;">↗</span>` : ''}</h3>
             <p class="project-desc">${project.description}</p>
           </div>
           <div class="project-tags">
@@ -670,6 +674,7 @@
 
       // Nav
       document.getElementById('nav-work').textContent = data.nav.work;
+      if (document.getElementById('nav-training')) document.getElementById('nav-training').textContent = data.nav.training || "TRAINING";
       document.getElementById('nav-about').textContent = data.nav.about;
       document.getElementById('nav-experience').textContent = data.experience.title;
       document.getElementById('nav-contact').textContent = data.nav.contact;
@@ -678,6 +683,7 @@
 
       // Mobile nav
       document.getElementById('mob-work').textContent = data.nav.work;
+      if (document.getElementById('mob-training')) document.getElementById('mob-training').textContent = data.nav.training || "TRAINING";
       document.getElementById('mob-about').textContent = data.nav.about;
       document.getElementById('mob-experience').textContent = data.experience.title;
       document.getElementById('mob-contact').textContent = data.nav.contact;
